@@ -2,24 +2,42 @@ header{
 	background-color: #FFF;
 }
 
-.textos{
-	color: #78787b;
-}
-
 .titulo{
-	font-size: 24px; 
+	font-size: 20px; 
 	padding: 5px;
 }
 .buscador{
 	margin: 5px;
-	font-size: 24px;
+	font-size: 20px;
 	color: #78787b;
-	border-color: #78787b;
+	background-color: rgba(0,0,0,.1);
 	border-width: 3px;
+	padding: 1px;
+	border-radius: 3px;
 }
-.gb_pe{position:absolute;
-	right:0;
-	cursor:default;
-	visibility:hidden;
-	-webkit-transition:opacity 250ms ease-out;
-	transition:opacity 250ms ease-out}
+.bm{
+	float: right;
+}
+
+.menu_buscador{
+	width: 100%;
+}
+
+.transpariencia{
+	background: none;
+	border: none;
+	outline: none;
+}
+.transpariencia button{
+	padding: 7px;
+}
+
+.btn_lateral{
+	color: rgba(0,0,0,.6);
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.cabecera div{
+	margin: 5px;
+}

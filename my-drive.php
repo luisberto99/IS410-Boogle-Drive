@@ -7,40 +7,29 @@
 </head>
 <body>
 	<div id="General" class="container-fluid">
-		<div class="row">
-			<div class="col-md-2 col-sm-2">
+		<div class="row cabecera">
+			<div class="col-md-2 col-sm-2 cabecera">
 				<a href="my-drive.php" value="Boogle Drive" class="textos"><label class="titulo">Boogle Drive</label></a>
 			</div>
-			<div class="col-md-7">
-				<form class="buscador">
-					<div class="btn-group" role="group">
-						<button type="button">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			<div class="col-md-6 cabecera">
+			<div class="row dropdown buscador">
+				<form id="buscador"">
+						<button class="transpariencia glyphicon glyphicon-search" aria-hidden="true"></button>
+						<input type="text" name="Buscar" id="txt-buscar" class=" transpariencia dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="buscador" placeholder="Buscar en drive">
+						<button class="transpariencia bm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="buscador" placeholder="Opciones de busqueda">
+							<span class="caret"></span>
 						</button>
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    Action <span class="caret"></span>
-						  </button>
-						  <ul class="dropdown-menu">
-						    <li><a href="#">Action</a></li>
-						    <li><a href="#">Another action</a></li>
-						    <li><a href="#">Something else here</a></li>
-						    <li role="separator" class="divider"></li>
-						    <li><a href="#">Separated link</a></li>
-						  </ul>
-					</div>
-				</form>
+						<ul class="dropdown-menu menu_buscador" aria-lablelledby="buscador">
+							<li><a href="#">opci</a></li>
+							<li><a href="#">asdfa</a></li>
+						</ul>
+						</form>
+				</div>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-1"></div>
+			<div class="col-md-2 cabecera">
 				<div class="row">
-					<div class="col-md-4">
-						<input type="button" name="btn1" value="bu">
-					</div>
-					<div class="col-md-4">
-						<input type="button" name="btn1" value="bu">
-					</div>
-					<div class="col-md-4">
-						<input type="button" name="btn1" value="bu">
-					</div>
+					<button class="transpariencia btn_lateral" type="button"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></button>
 				</div>
 			</div>
 		</div>
@@ -49,10 +38,52 @@
 				<input type="button" name="btn-Nuevo" value="Nuevo" class="btn btn-primary">
 			</div>
 			<div class="col-md-8">
-				<select>
-					<option>Mi unidad</option>
-					<option>Carpeta Nueva</option>
-				</select>
+				<div class="btn-group">
+					<button type="button" class=" btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Mi unidad <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-folder-open" aria-hiden="true">
+								</span>
+								Carpeta nueva...
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
+								Subir Archivos...
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
+								Subir Archivos...
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
+								Subir Carpeta...
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
+								Documento de boogle
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
+								Hoja de calculo de boogle
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div class="col-md-2">
 				<input type="button" name="btn1" value="bu">
@@ -63,9 +94,7 @@
 		<div class="row">
 
 			<div class="col-sm-4">
-				<div class="row">
-					<input type="button" name="btn-miUnidad" value="Mi Unidad">
-				</div>
+
 			</div>
 			<div class="col-sm-8">
 				
@@ -73,7 +102,7 @@
 		</div>
 	</div>
 
-	<script src="js/jquery.js"></script>
+	<script src="js/jquery-latest.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
 </html>
