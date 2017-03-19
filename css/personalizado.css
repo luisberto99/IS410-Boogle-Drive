@@ -1,0 +1,25 @@
+header{
+	background-color: #FFF;
+}
+
+.textos{
+	color: #78787b;
+}
+
+.titulo{
+	font-size: 24px; 
+	padding: 5px;
+}
+.buscador{
+	margin: 5px;
+	font-size: 24px;
+	color: #78787b;
+	border-color: #78787b;
+	border-width: 3px;
+}
+.gb_pe{position:absolute;
+	right:0;
+	cursor:default;
+	visibility:hidden;
+	-webkit-transition:opacity 250ms ease-out;
+	transition:opacity 250ms ease-out}
