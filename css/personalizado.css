@@ -10,9 +10,9 @@ header{
 	margin: 5px;
 	font-size: 20px;
 	color: #78787b;
-	background-color: rgba(0,0,0,.1);
+	background-color: rgba(0,0,0,.05);
 	border-width: 3px;
-	padding: 1px;
+	padding: 4px;
 	border-radius: 3px;
 }
 .bm{
@@ -40,4 +40,24 @@ header{
 
 .cabecera div{
 	margin: 5px;
+}
+.notificaciones{
+	width: 100%;
+	height: 100px;
+	background-color: #8992A3;
+}
+.barra_superior{
+	-webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.70);
+	-moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.70);
+	box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.70);
+}
+
+.dere{
+	float: right;
+}
+
+#btn_nuevo{
+	background-color: #005CFF;
+	border-radius: 3px;
+	margin-left: 30px
 }
