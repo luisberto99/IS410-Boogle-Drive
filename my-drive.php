@@ -58,7 +58,7 @@
 	<div id="General" class="barra_superior">
 		<div class="row cabecera">
 			<div class="col-md-2 col-sm-2 cabecera">
-				<a href="my-drive.php" value="Boogle Drive" class="textos"><label class="titulo">Boogle Drive</label></a>
+				<a href="my-drive.php" value="Boogle Drive" class="textos"><img src="img/boogledrive.jpg"></a>
 			</div>
 			<div class="col-md-6 cabecera">
 				<div class="row dropdown buscador">
