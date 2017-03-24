@@ -2,15 +2,16 @@ header{
 	background-color: #FFF;
 }
 
+
 .titulo{
-	font-size: 20px; 
-	padding: 5px;
+	width: 80%;
+	margin: 10px;
 }
 .buscador{
 	margin: 5px;
 	font-size: 20px;
 	color: #78787b;
-	background-color: rgba(0,0,0,.05);
+	background-color: rgba(0,0,0,.08);
 	border-width: 3px;
 	padding: 4px;
 	border-radius: 3px;
@@ -60,4 +61,10 @@ header{
 	background-color: #005CFF;
 	border-radius: 3px;
 	margin-left: 30px
+}
+
+.sidebar{
+	background-color: rgba(0,0,0,0.08);
+	min-height: 80px;
+	padding-top: 20px;
 }

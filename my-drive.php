@@ -58,7 +58,7 @@
 	<div id="General" class="barra_superior">
 		<div class="row cabecera">
 			<div class="col-md-2 col-sm-2 cabecera">
-				<a href="my-drive.php" value="Boogle Drive" class="textos"><img src="img/boogledrive.jpg"></a>
+				<a href="my-drive.php" value="Boogle Drive"><img class="titulo" src="img/boogledrive.jpg" ></a>
 			</div>
 			<div class="col-md-6 cabecera">
 				<div class="row dropdown buscador">
@@ -118,15 +118,15 @@
 				<?php btn_superiores("glyphicon glyphicon-cog") ?>
 			</div>
 		</div>
-		<div class="row">
-
-			<div class="col-sm-4">
-
+		<nav class="col-md-2 sidebar" >
+			<div class="col-md-10">
+				<div>
+					Mi unidad
+				</div>
 			</div>
-			<div class="col-sm-8">
-				
+			<div class="col-md-2">
 			</div>
-		</div>
+		</nav>
 	</div>
 
 	<script src="js/jquery-latest.js"></script>
