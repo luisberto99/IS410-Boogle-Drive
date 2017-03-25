@@ -1,0 +1,212 @@
+header{
+	background-color: #FFF;
+}
+
+
+.titulo{
+	width: 80%;
+	margin: 10px;
+}
+.buscador{
+	margin: 5px;
+	font-size: 20px;
+	color: #78787b;
+	background-color: rgba(0,0,0,.08);
+	border-width: 3px;
+	padding: 4px;
+	border-radius: 3px;
+}
+.bm{
+	float: right;
+}
+
+.menu_buscador{
+	width: 100%;
+}
+
+.transpariencia{
+	background: none;
+	border: none;
+	outline: none;
+}
+.transpariencia button{
+	padding: 7px;
+}
+
+.btn_lateral{
+	color: rgba(0,0,0,.6);
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.cabecera div{
+	margin: 5px;
+}
+.notificaciones{
+	width: 100%;
+	height: 100px;
+	background-color: #8992A3;
+}
+.barra_superior{
+	-webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.70);
+	-moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.70);
+	box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.70);
+}
+
+.dere{
+	float: right;
+}
+
+#btn_nuevo{
+	background-color: #005CFF;
+	border-radius: 3px;
+	margin-left: 30px
+}
+
+.sidebar{
+	background-color: rgba(0,0,0,0.08);
+	min-height: 80px;
+	padding-top: 20px;
+}
+
+#encabezado{
+	height: 49px;
+	display: table-cell;
+    margin-left: 22px;
+    margin-top: 9px;
+    text-align: right;
+
+}
+
+#subencabezado{
+	color: white;
+	font-size: 20px;
+    font-weight: bold;
+    height: 57px;
+    line-height: 57px;
+    background-color: #4285f4;
+    width: 100%;
+	display: block;
+    height: 57px;
+    padding-left: 24px; 
+}
+
+
+#boogle{
+	position: absolute;
+    left: 0px;
+    top: 5px;
+}
+#grafico{
+	height: 300px;
+}
+/* Carousel base class */
+.carousel {
+  height: 300px;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 280px;
+}
+
+ 
+.carousel-controll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+   
+    
+}
+
+.carousel-controll .glyphicon-chevron-left, .carousel-controll .glyphicon-chevron-right, .carousel-controll .icon-next, .carousel-controll.icon-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+}
+.carousel-controll .glyphicon-chevron-right, .carousel-controll .icon-next {
+    right: 50%;
+    margin-right: -10px;
+}
+.carousel-controll .glyphicon-chevron-left, .carousel-controll .glyphicon-chevron-right, .carousel-controll .icon-next, .carousel-controll .icon-prev {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.carousel-controll.right {
+    right: 0;
+    left: auto;
+  
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-controll.left {
+   
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+/*estilos de almacenamiento */
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 23px 0;
+    padding: 0;
+    margin: 0;
+    padding: 50px 0 35px 0;
+
+}
+
+.h1{
+    border-top: 1px solid #e5e5e5;
+    background-image: none;
+    width: 1120px;
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(top,#f4f4f4,#fff 25px);
+    background-image: linear-gradient(top,#f4f4f4,#fff 25px);
+    width: 1117px;
+}
+
+h2{
+	font-size: 17px;
+	color: rgba(0,0,0,0.87);
+	    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 0 7px 0;
+}
+
+p{
+	
+	font-size: 15px;
+	font-family: Roboto,RobotoDraft,'Helvetica Neue',arial,sans-serif;
+	color: rgba(0,0,0,0.65);
+}
