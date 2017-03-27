@@ -78,6 +78,19 @@ header{
 
 }
 
+/*ESTILOS ALMACENAMIENTO
+         !    !
+         !    !
+     ____!    !____
+     \            /
+      \          /
+       \        /
+        \      /
+         \    /
+          \  /
+           \/
+*/
+
 #encabezado{
 	height: 49px;
 	display: table-cell;
@@ -109,16 +122,8 @@ header{
 #grafico{
 	height: 300px;
 }
-/* Carousel base class */
-.carousel {
-  height: 300px;
-}
 
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 280px;
-}
-
+<<<<<<< HEAD
 .icono_lateral{
   	color: rgba(0,0,0,.6);
   	border-radius: 10px;
@@ -135,51 +140,9 @@ header{
     font-size: 20px;
     color: #fff;
 }
+=======
+>>>>>>> origin/master
 
-.carousel-controll .glyphicon-chevron-left, .carousel-controll .glyphicon-chevron-right, .carousel-controll .icon-next, .carousel-controll.icon-prev {
-    width: 30px;
-    height: 30px;
-    margin-top: -10px;
-    font-size: 30px;
-}
-.carousel-controll .glyphicon-chevron-right, .carousel-controll .icon-next {
-    right: 50%;
-    margin-right: -10px;
-}
-.carousel-controll .glyphicon-chevron-left, .carousel-controll .glyphicon-chevron-right, .carousel-controll .icon-next, .carousel-controll .icon-prev {
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    display: inline-block;
-    margin-top: -10px;
-}
-.glyphicon {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.carousel-controll.right {
-    right: 0;
-    left: auto;
-  
-    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
-    background-repeat: repeat-x;
-}
-.carousel-controll.left {
-   
-    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
-    background-repeat: repeat-x;
-}
-
-/*estilos de almacenamiento */
 h1 {
     display: block;
     font-size: 2em;
@@ -206,15 +169,31 @@ h1 {
     background-image: -webkit-linear-gradient(top,#f4f4f4,#fff 25px);
     background-image: linear-gradient(top,#f4f4f4,#fff 25px);
     width: 1117px;
+    margin-left: 100px;
 }
+
+.well{
+    height: 274px;
+    width: 188px;
+    text-align: center;
+}
+
+#contenido {
+  border: solid 1px #ccc;
+  width: 800px;
+  height: 340px;
+  padding: 0 20px;
+}
+
 
 h2{
 	font-size: 17px;
 	color: rgba(0,0,0,0.87);
-	    display: block;
+    display: block;
     font-size: 15px;
     font-weight: normal;
     margin: 0 0 7px 0;
+    margin-left: 70px;
 }
 
 p{
@@ -223,6 +202,7 @@ p{
 	font-family: Roboto,RobotoDraft,'Helvetica Neue',arial,sans-serif;
 	color: rgba(0,0,0,0.65);
 }
+<<<<<<< HEAD
 hr{
 	border-top: 1px solid rgba(0,0,0,0.1);
 	width: 75%;
@@ -233,3 +213,56 @@ hr{
 .izq{
 	float: left;
 }
+=======
+
+.planes {
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+#storage{
+    font-size: 24px;
+    color: rgba(0,0,0,0.87);
+}
+
+#txt{
+    padding-top: 20px;
+    color: rgba(0,0,0,0.65);
+    font-size: 13px;
+}
+
+
+#precio{
+    padding-top: 85px;
+}
+
+#preciobtn{
+    color: white;
+    font-size: 12px;
+    font-family: Roboto,RobotoDraft,'Helvetica Neue',arial,sans-serif;
+    
+    background-color: #4d90fe;
+    border: 1px solid #3079ed;
+    border-radius:2px;
+    margin:0 auto;
+        padding: 7px 40px 7px 40px;
+}
+
+#preciobtn2{
+    color: white;
+    font-size: 12px;
+    font-family: Roboto,RobotoDraft,'Helvetica Neue',arial,sans-serif;
+    
+    background-color: #4d90fe;
+    border: 1px solid #3079ed;
+    border-radius:2px;
+    margin:0 auto;
+        padding: 7px 35px 7px 35px;
+}
+
+.pad{
+padding-top: 85px;
+}
+
+/*FIN ALMACENAMIENTO */
+>>>>>>> origin/master
