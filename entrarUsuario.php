@@ -9,6 +9,7 @@
 	<title>Login</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="icon" href="img/logo.ico" type="image/x-icon">
 	<style >
 		
 		#div-formulario1{
