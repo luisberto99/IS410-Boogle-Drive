@@ -5,13 +5,13 @@
   $nombre="";
   $apellido="";
   $nombreUsuario="";
-  $creaContraseña="";
-  $confirmacionContraseña="";
+  $Contrasena="";
+  $confirmacionContrasena="";
   $fechaNacimiento="";
   $genero="";
   $celular="";
   $correo="";
-  $ubicacion="";
+  $pais="";
 
 
 
@@ -22,7 +22,7 @@
     $apellido = $_GET["txt-apellido"];
 
   if (isset($_GET["txt-nombreUsuario"]))
-    $apellido = $_GET["txt-nombreUsuario"];
+    $nombreUsuario = $_GET["txt-nombreUsuario"];
 
   if (isset($_GET["txt-correo"]))
     $correo = $_GET["txt-correo"];
@@ -37,7 +37,7 @@
     $fechaNacimiento = $_GET["txt-fecha-nacimiento"];
 
   if (isset($_GET["txt-telefono"]))
-    $telefono = $_GET["txt-telefono"];
+    $celular = $_GET["txt-telefono"];
 
   if (isset($_GET["slc-pais"]))
     $pais = $_GET["slc-pais"];
@@ -51,13 +51,13 @@
       $u = new Usuario($nombre,
           $apellido,
           $nombreUsuario,
-          $creaContraseña,
-          $confirmacionContraseña,
+          $Contrasena,
+          $confirmacionContrasena,
           $fechaNacimiento,
           $genero,
           $celular,
           $correo,
-          $ubicacion
+          $pais
          );
 
 
@@ -65,29 +65,7 @@
 
    }
 
-   $archivo = fopen("data/usuarios.csv","r") or die("No se pudo abrir el archivo :(");
-    // Output one line until end-of-file
-    $usuarios = array();
-    $partes = array();
-    while(!feof($archivo)) {
-      $linea = fgets($archivo);
-      $partes = explode(",",$linea);
-      if (sizeof($partes)>1){
-        $usuarios[] = new Usuario(
-            $partes[0],
-            $partes[1],
-            $partes[2],
-            $partes[3],
-            $partes[4],
-            $partes[5],
-            $partes[6],
-            $partes[7],
-            $partes[8],
-            $partes[9]
-        );
-      }
-    }
-    fclose($archivo);
+  
 
     
 
@@ -160,10 +138,11 @@
               <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
-                    <td <?php if ($nombre=="") echo 'class="has-error"'; ?> >
+                    <td <?php if (isset($_GET["btn-registrar"])){if(!isset($nombre)) echo 'class="has-error"'; }?> >
                     
-                    <input type="text" name="txt-apellido" class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>"></td>
-                    <td <?php if ($apellido=="") echo 'class="has-error"'; ?>><input type="text" name="txt-apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido; ?>"></td>
+                    <input type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>"></td>
+                    <td <?php if (!isset($apellido)) echo 'class="has-error"'; ?>>
+                    <input type="text" name="txt-apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido; ?>"></td>
                   </tr>
                   
                   <tr>
@@ -223,7 +202,7 @@
                           <?php
                             for ($i=0; $i <sizeof($paises) ; $i++) {
                                 
-                                  echo '<option '. (($paises[$i]->getCodigoPais()==$ubicacion)?"selected":"") .' value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';
+                                  echo '<option '. (($paises[$i]->getCodigoPais()==$pais)?"selected":"") .' value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';
                             }
 
 
