@@ -37,7 +37,7 @@
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12 h1" >
 
-	<h1>Tu espacio de almacenamiento se comparte en</h1>
+	<h4><strong>Tu espacio de almacenamiento se comparte en</strong></h4>
 
 <div class="col-lg-4">
 <h2 ><strong>Google Drive</strong></h2>
