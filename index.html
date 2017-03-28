@@ -4,53 +4,81 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Boogle Drive: almacenamiento en la nube, fotos, documentos y mucho más.</title>
     <link rel="icon" href="img/logo.ico" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
-  <style type="text/css">
+    <style type="text/css">
     h1{
       font-family: 'Cormorant Garamond', serif;
-  } 
-  div.fixed {
-    position: fixed;
-    width: 100%;
-    top: 0px;
-  }
-  </style>
+    } 
+    div.fixed {
+      position: fixed;
+      width: 100%;
+      top: 0px;
+    }
+    </style>
   </head>
+
   <body style="background-image:url(img/background.jpg); background-size:cover; background-attachment: fixed;">
-    
-    <div style="background-color:#fff; border-bottom:1px groove; border-color:#fff" class="fixed">
-     <div><a href="index.html"><img src="img/google.png" style="width:120px; margin:5px;"></a>
-        <span style="color:#A6A6A6;"><font size="6">Drive</font></span>
-            <span style="float:right; padding-top:12px; ">
-                <button type="button" class="btn btn-link"><a href="index.html"><strong>Descubre Drive</strong></a></button>
-                <button type="button" class="btn btn-link"><a href="como_usar_boogle.html">Como Usar Drive</a></button>
-                <button type="button" class="btn btn-link">Precios</button>
-                <button type="button" class="btn btn-link">Descargar</button>
-                <button type="button" class="btn btn-link">Para el trabajo</button>
-                <button type="button" class="btn btn-link">Ayuda</button>
-                <a href="entrarUsuario.php"><span style="background-color:#4386FC; hover-background-color:#fff; padding:20px;" align="left"><button type="button" class="btn btn-link" style="color:#fff;">Ir a Boogle Drive</button></span></a>
-            </span>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" >
+      <div class="container-fluid" style="margin-right:0px;">
+        <div class="navbar-header" class="nav navbar-nav navbar-left " style="margin-left:0px;">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span >
+            <a href="www.google.com"><a href="index.html"><img src="img/google.png" style="width:120px; margin:5px;"></a>
+            <span style="color:#A6A6A6;"><font size="6">Drive</font></span></a>
+          </span>
+          
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            
+          <ul class="nav navbar-nav navbar-right"  >
+            <li style="font-size:16px;"><a href="index.html">Descubre Drive</a></li>
+            <li style="font-size:16px;"><a href="como_usar_boogle.html">Como Usar Drive</a></li>
+            <li style="font-size:16px;"><a href="">Precios</a></li>
+            <li style="font-size:16px;"><a href="">Descargar</a></li>
+            <li style="font-size:16px;"><a href="">Para el Trabajo</a></li>
+            <li style="font-size:16px;"><a href="">Ayuda</a></li>
+            <li style="background-color:#4386FC;"><a href="entrarUsuario.php"><button type="button" class="btn btn-link"  style="color:#fff; font-size:16px;">Ir a Boogle Drive</button><span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-               
-      </div>
-       
-      
-        <div align="center" style="margin:200px">
-          <img src="img/logo.png"  style="width:100px;"><h1 style="color:#fff; font-size:60px;">Todos tus archivos estés<br>donde estés</h1><a href="entrarUsuario.php"><button class="btn btn-primary"></a><h4>Ir a Boogle Drive</h4></button>
+    </nav>
+
+    <div class="container-fluid" style="margin:0px; padding:0px;">
+
+      <!-- Main component for a primary marketing message or call to action -->
+     <div align="center" style="margin:200px">
+          <img src="img/logo.png"  style="width:100px;"><h1 style="color:#fff; font-size:60px;">Todos tus archivos estés<br>donde estés</h1><a href="entrarUsuario.php"><button class="btn btn-primary"><h4>Ir a Boogle Drive</h4></button></a>
       </div>
          
       <div style="background-color:#fff;">
@@ -145,9 +173,17 @@
       </table>
 
       </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
