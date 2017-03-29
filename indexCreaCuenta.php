@@ -5,7 +5,7 @@
   $nombre="";
   $apellido="";
   $nombreUsuario="";
-  $Contrasena="";
+  $contrasena="";
   $confirmacionContrasena="";
   $fechaNacimiento="";
   $genero="";
@@ -51,7 +51,7 @@
       $u = new Usuario($nombre,
           $apellido,
           $nombreUsuario,
-          $Contrasena,
+          $contrasena,
           $confirmacionContrasena,
           $fechaNacimiento,
           $genero,
@@ -138,33 +138,33 @@
               <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
-                    <td <?php if (isset($_GET["btn-registrar"])){if(!isset($nombre)) echo 'class="has-error"'; }?> >
+                    <td <?php if (isset($_GET["btn-registrar"])){if($nombre=="") echo 'class="has-error"'; }?> >
                     
-                    <input type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>"></td>
-                    <td <?php if (!isset($apellido)) echo 'class="has-error"'; ?>>
+                    <input type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>" ></td>
+                    <td <?php if (isset($_GET["btn-registrar"])){if($apellido=="") echo 'class="has-error"'; } ?>>
                     <input type="text" name="txt-apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido; ?>"></td>
                   </tr>
                   
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($nombreUsuario=="") echo 'class="has-error"'; }?> >
                     <label for="txt-nombreUsuario">Nombre de Usuario :</label>
                     <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" value="<?php echo $nombreUsuario; ?>"></td>
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($contrasena=="") echo 'class="has-error"'; }?>>
                     <label for="txt-contrasena">Crea una contraseña :</label>
                     <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña"></td>
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($confirmacionContrasena=="") echo 'class="has-error"'; }?>>
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
                     <input type="password" name="txt-confirmacion-contrasena" class="form-control" placeholder="Confirmar contraseña"></td>
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($fechaNacimiento=="") echo 'class="has-error"'; }?>>
                       <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento" value="<?php echo $fechaNacimiento; ?>"></td>
                   </tr>
 
@@ -173,7 +173,7 @@
                   
                   
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2"<?php if (isset($_GET["btn-registrar"])){if($genero=="") echo 'bgcolor="red"'; }?>>
                     <!--Para seleccionar por defecto un checkbox o radioboton utiliza la propiedad checked-->
                     <!--En el caso de los select utiliza la propiedad selected-->
                         <label>Genero:</label> 
@@ -183,22 +183,22 @@
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($celular=="") echo 'class="has-error"'; }?>>
                     <label for="txt-fecha-nacimiento">Telefono Celular:</label>
                     <input type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" value="<?php echo $celular; ?>"></td>
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($correo=="") echo 'class="has-error"'; }?>>
                     <label for="txt-fecha-nacimiento">Correo Electronico:</label>
                     <input type="text" name="txt-correo" class="form-control" placeholder="Correo electronico" value="<?php echo $correo; ?>"></td>
                   </tr>
 
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($pais=="0") echo 'class="has-error"'; }?>>
                     <label for="txt-fecha-nacimiento">Ubicacion:</label>
                       <select name="slc-pais" class="form-control">
-                          <option>--Ubicacion--</option>
+                          <option value="0">--Ubicacion--</option>
                           <?php
                             for ($i=0; $i <sizeof($paises) ; $i++) {
                                 
