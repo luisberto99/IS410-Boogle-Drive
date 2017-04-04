@@ -93,8 +93,6 @@
    
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    
-    <link href="css/jumbotron.css" rel="stylesheet">
 
     
   </head>
@@ -107,7 +105,7 @@
         <a href=""><img src="img/boogledrive.jpg" style="width:300px; margin:10px;"></a>
               
         <span style="float:right; padding-top:12px; margin:10px;">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
+        <a href="entrarUsuario.php" class="btn btn-lg btn-primary btn-block">Acceder</a>
         </span>
          <hr>
     </div>
@@ -129,45 +127,50 @@
           <br>
           <p>Cambia de dispositivo y continua desde los ultimos cambios que hayas realizado en tu version de Boogle</p>
           <br>
-          <img src="img/sobre.jpg">
+          <img src="img/portabilidad.png">
           </center>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="well" id = "div-formulario1">
-          <form action="indexCreaCuenta.php" method="GET">
+          <form action="indexCreaCuenta.php" method="post" onsubmit="return validar();">
               <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
                     <td <?php if (isset($_GET["btn-registrar"])){if($nombre=="") echo 'class="has-error"'; }?> >
                     
-                    <input type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>" ></td>
+                    <input id="txt-nombre" type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" onblur="validar('txt-nombre','td-nombre')" value="<?php echo $nombre; ?>"></td>
                     <td <?php if (isset($_GET["btn-registrar"])){if($apellido=="") echo 'class="has-error"'; } ?>>
-                    <input type="text" name="txt-apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido; ?>"></td>
+                    <input id="txt-apellido" type="text" name="txt-apellido" class="form-control" placeholder="Apellido" onblur='validar("txt-apellido", "td-nombre")' value="<?php echo $apellido; ?>"></td>
+                    <tr>
+                      <td id="td-nombre" style="color: red"></td>
+                    </tr>
                   </tr>
                   
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($nombreUsuario=="") echo 'class="has-error"'; }?> >
                     <label for="txt-nombreUsuario">Nombre de Usuario :</label>
-                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" value="<?php echo $nombreUsuario; ?>"></td>
+                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" onblur="validar('txt-usuario','td-usuario')" value="<?php echo $nombreUsuario; ?>" id="txt-usuario" data-toggle="popover" data-content="Puedes usar letras, numeros y puntos." data-container="body" data-placement="left"></td>
                   </tr>
-
+                  <tr><td id="td-usuario" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($contrasena=="") echo 'class="has-error"'; }?>>
                     <label for="txt-contrasena">Crea una contraseña :</label>
-                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña"></td>
+                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña" id="txt-contraseña"  onblur="contraseña('txt-contraseña','td-contraseña')"  data-toggle="popover" title="Seguridad de la contraseña:" data-content="Usa ocho caracteres como mínimo. No uses una contraseña de otro sitio ni un nombre demasiado común, como el nombre de tu mascota." data-placement="left" data-container="body"></td>
+                    
                   </tr>
-
+                  <tr><td id="td-contraseña" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($confirmacionContrasena=="") echo 'class="has-error"'; }?>>
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
-                    <input type="password" name="txt-confirmacion-contrasena" class="form-control" placeholder="Confirmar contraseña"></td>
+                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirmacionContraseña" onblur = "contraseña('txt-confirmacionContraseña','td-confirContraseña')"></td>
                   </tr>
-
+                  <tr><td id="td-confirContraseña" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($fechaNacimiento=="") echo 'class="has-error"'; }?>>
-                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento" value="<?php echo $fechaNacimiento; ?>"></td>
+                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> 
+                      <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento" value="<?php echo $fechaNacimiento; ?>" id="data-fechaNacimento" onblur="validar('data-fechaNacimiento', 'td-fecha')" ></td>
                   </tr>
-
+                  <tr><td id="td-fecha"></td></tr>
                   
 
                   
@@ -177,27 +180,27 @@
                     <!--Para seleccionar por defecto un checkbox o radioboton utiliza la propiedad checked-->
                     <!--En el caso de los select utiliza la propiedad selected-->
                         <label>Genero:</label> 
-                        <label><input type="radio" name="rbt-genero" value="Femenino" <?php if ($genero =="Femenino") echo "checked"; ?>>Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="radio" name="rbt-genero" value="Masculino" <?php if ($genero =="Masculino") echo "checked"; ?>>Masculino</label>
+                        <label><input id="rbt-genero" type="radio" name="rbt-genero" value="Femenino" <?php if ($genero =="Femenino") echo "checked"; ?>>Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label><input id="rbt-genero" type="radio" name="rbt-genero" value="Masculino" <?php if ($genero =="Masculino") echo "checked"; ?>>Masculino</label>
                     </td>
                   </tr>
 
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($celular=="") echo 'class="has-error"'; }?>>
-                    <label for="txt-fecha-nacimiento">Telefono Celular:</label>
-                    <input type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" value="<?php echo $celular; ?>"></td>
+                    <label>Telefono Celular:</label>
+                    <input id="txt-telefono" type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" onblur="validar('txt-telefono','td-telefono')" value="<?php echo $celular; ?>"></td>
                   </tr>
-
+                  <tr><td id="td-telefono" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($correo=="") echo 'class="has-error"'; }?>>
                     <label for="txt-fecha-nacimiento">Correo Electronico:</label>
-                    <input type="text" name="txt-correo" class="form-control" placeholder="Correo electronico" value="<?php echo $correo; ?>"></td>
+                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico" value="<?php echo $correo; ?>" onblur="validar('txt-correo','td-correo')"></td>
                   </tr>
-
+                  <tr><td id="td-correo" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($pais=="0") echo 'class="has-error"'; }?>>
                     <label for="txt-fecha-nacimiento">Ubicacion:</label>
-                      <select name="slc-pais" class="form-control">
+                      <select id="cmb-ubicacion" name="slc-pais" class="form-control">
                           <option value="0">--Ubicacion--</option>
                           <?php
                             for ($i=0; $i <sizeof($paises) ; $i++) {
@@ -247,6 +250,13 @@
     </div> 
 </div>
 
-    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/validarRegistro.js"></script>
+    <script type="text/javascript">
+      $(function () {
+    $('[data-toggle="popover"]').popover();
+      });
+    </script>
   </body>
 </html>
