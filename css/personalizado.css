@@ -1,3 +1,16 @@
+.login{
+    background-color: #4d90fe;
+    height: 29px;
+    width: 95px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: normal;
+    border: 1px solid #3079ed;
+    margin-right: 35px
+}
+
+
+
 header{
 	background-color: #FFF;
 }
@@ -172,7 +185,7 @@ h1 {
     margin-left: 100px;
 }
 
-.well{
+.welll{
     height: 274px;
     width: 188px;
     text-align: center;

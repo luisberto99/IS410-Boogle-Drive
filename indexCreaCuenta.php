@@ -26,7 +26,7 @@
 
    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/personalizado.css">
 
 
     
@@ -37,10 +37,10 @@
     
 
     <div>
-        <a href=""><img src="img/boogledrive.jpg" style="width:300px; margin:10px;"></a>
+        <a href=""><img src="img/boogledrive.jpg" style="width:300px; margin:10px;background-color: rgba(0,0,0,.2);"></a>
               
         <span style="float:right; padding-top:12px; margin:10px;">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
+        <a href="entrarUsuario.php"><button class="login" >Iniciar Sesion</button></a>
         </span>
          <hr>
     </div>
