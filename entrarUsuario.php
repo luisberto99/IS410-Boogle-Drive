@@ -45,7 +45,7 @@
 		        		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 		        		<br>
 		        		<br>
-		        		<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+		        		<a href="my-drive.php" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</a>
 
 		        		<br>
 		        		<a href="">¿Olvidaste tu contraseña?</a><br>
@@ -53,16 +53,9 @@
 					</div>
 					<a href="indexCreaCuenta.php">Crear Una Cuenta</a><br>
 				</center>
-				
-					
-		
-
-		
-		
 	</form>
 
 
-		
 
 </body>
 </html>

@@ -102,12 +102,12 @@
     
 
     <div>
-        <a href=""><img src="img/boogledrive.jpg" style="width:300px; margin:10px;"></a>
+        <a href="index.html"><img src="img/boogledrive.jpg" style="width:200px; padding: 10px; margin:10px;"></a>
               
         <span style="float:right; padding-top:12px; margin:10px;">
-        <a href="entrarUsuario.php" class="btn btn-lg btn-primary btn-block">Acceder</a>
+        <a href="entrarUsuario.php" class="btn btn-primary btn-block">Acceder</a>
         </span>
-         <hr>
+         <hr style="margin-top: 0px">
     </div>
     
     <h1><center><strong>Crear tu cuenta de Boogle Drive</strong></center></h1>
@@ -132,7 +132,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="well" id = "div-formulario1">
-          <form action="indexCreaCuenta.php" method="post" onsubmit="return validar();">
+          <form action="indexCreaCuenta.php" method="post" onsubmit="return registrar();">
               <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
@@ -162,7 +162,7 @@
                   <tr>
                     <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($confirmacionContrasena=="") echo 'class="has-error"'; }?>>
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
-                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirmacionContraseña" onblur = "contraseña('txt-confirmacionContraseña','td-confirContraseña')"></td>
+                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContraseña" onblur = "contraseña('txt-confirContraseña','td-confirContraseña')"></td>
                   </tr>
                   <tr><td id="td-confirContraseña" style="color: red"></td></tr>
                   <tr>
@@ -219,7 +219,7 @@
                     </td>
                   </tr>
                   
-                  
+                  <tr><td id="td-campos" style="color: red; padding: 8px;"></td></tr>
                   <tr>
                     <td colspan="2">
                       <a href="condiciones.php">

@@ -68,15 +68,15 @@
 <html>
 <head>
 	<title>Mi Unidad - Boogle Drive</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/personalizado.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/personalizado.css">
 </head>
 <body style="background-color: rgba(0,0,0,0.08);">
 	<div id="general" style="background-color: #FFF">
 		<div class="barra_superior">
-			<div class="cabecera row">
+			<div class="cabecera row" style="margin-right: 1px;">
 				<div class="col-md-2 col-sm-2 cabecera">
-					<a href="my-drivle.php" value="Boogle Drive"><img class="titulo" src="img/boogledrive.jpg" ></a>
+					<a href="my-drivle.php" value="Boogle Drive"><img class="titulo" src="../img/boogledrive.jpg" ></a>
 				</div>
 				<div class="col-md-6 cabecera">
 					<div class="dropdown buscador">
@@ -116,7 +116,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cabecera row">
+			<div class="cabecera row" style="margin-right: 1px;">
 				<div class="col-md-2">
 					<button type="button" value="Nuevo" id="btn_nuevo" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hapopup="true" aria-expanded="false">
 						Nuevo
@@ -135,7 +135,7 @@
 					<div id="iconos1">
 						<?php btn_superiores("glyphicon glyphicon-cog") ?>
 						<ul class="dropdown-menu">
-							<li><a href="#">Configuracion</a></li>
+							<li><a href="#" class="transpariencia" data-toggle="modal" data-target="#modal-configuarion">Configuración</a></li>
 							<li><a href="#">Combinaciones de teclas</a></li>
 							<li><a href="#">Ayuda</a></li>
 						</ul>
@@ -150,8 +150,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="principal">
-			<aside class="sidebar">
+		<div id="principal" >
+			<aside class="sidebar col-md-2">
 				<div>
 					<div>
 						<table class="table-hover">
@@ -209,9 +209,33 @@
 				</div>
 			</div>
 		</aside>
+		<div class="col-md-10" style="height: 480px">
+			<iframe src="vacio.php" class="transpariencia frame"></iframe>
+		</div>
 	</div>
 </div>
-<script src="js/jquery-latest.js"></script>
-<script src="js/bootstrap.js"></script>
+
+<div class="modal fade" id="modal-configuarion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modalConfiguracionTitulo">
+		<label class="modal-title">Configuracion</label>
+      	<button type="button" class="btn btn-primary dere" data-dismiss="modal">Listo</button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+	<script src="../js/jquery.min.js"></script>	
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/my-drive.js"></script>
 </body>
 </html>
