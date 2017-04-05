@@ -2,72 +2,6 @@
   include_once("class/class-usuario.php");
   include_once("class/class-pais.php");
 
-  $nombre="";
-  $apellido="";
-  $nombreUsuario="";
-  $contrasena="";
-  $confirmacionContrasena="";
-  $fechaNacimiento="";
-  $genero="";
-  $celular="";
-  $correo="";
-  $pais="";
-
-
-
-  if (isset($_GET["txt-nombre"]))
-    $nombre = $_GET["txt-nombre"];
-
-  if (isset($_GET["txt-apellido"]))
-    $apellido = $_GET["txt-apellido"];
-
-  if (isset($_GET["txt-nombreUsuario"]))
-    $nombreUsuario = $_GET["txt-nombreUsuario"];
-
-  if (isset($_GET["txt-correo"]))
-    $correo = $_GET["txt-correo"];
-
-  if (isset($_GET["txt-contrasena"]))
-    $contrasena = $_GET["txt-contrasena"];
-
-  if (isset($_GET["txt-confirmacion-contrasena"]))
-    $confirmacionContrasena = $_GET["txt-confirmacion-contrasena"];
-
-  if (isset($_GET["txt-fecha-nacimiento"]))
-    $fechaNacimiento = $_GET["txt-fecha-nacimiento"];
-
-  if (isset($_GET["txt-telefono"]))
-    $celular = $_GET["txt-telefono"];
-
-  if (isset($_GET["slc-pais"]))
-    $pais = $_GET["slc-pais"];
-
-  if (isset($_GET["rbt-genero"]))
-    $genero = $_GET["rbt-genero"];
-
-  
-   if (isset($_GET["btn-registrar"])){
-      
-      $u = new Usuario($nombre,
-          $apellido,
-          $nombreUsuario,
-          $contrasena,
-          $confirmacionContrasena,
-          $fechaNacimiento,
-          $genero,
-          $celular,
-          $correo,
-          $pais
-         );
-
-
-      $u->guardarRegistro();
-
-   }
-
-  
-
-    
 
     $paises = array();
     $paises[] = new Pais(1, "Honduras");
@@ -93,8 +27,7 @@
    
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    
-    <link href="css/jumbotron.css" rel="stylesheet">
+
 
     
   </head>
@@ -134,38 +67,38 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="well" id = "div-formulario1">
-          <form action="indexCreaCuenta.php" method="GET">
+          <form>
               <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
-                    <td <?php if (isset($_GET["btn-registrar"])){if($nombre=="") echo 'class="has-error"'; }?> >
+                    <td id="error">
                     
-                    <input type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>" ></td>
-                    <td <?php if (isset($_GET["btn-registrar"])){if($apellido=="") echo 'class="has-error"'; } ?>>
-                    <input type="text" name="txt-apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido; ?>"></td>
+                    <input type="text" id="txt-nombre" class="form-control " placeholder="Nombre" </td>
+                    <td class="error">
+                    <input type="text" id="txt-apellido" class="form-control"  placeholder="Apellido" </td>
                   </tr>
                   
-                  <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($nombreUsuario=="") echo 'class="has-error"'; }?> >
+                  <tr >
+                    <td colspan="2" id="error">
                     <label for="txt-nombreUsuario">Nombre de Usuario :</label>
-                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" value="<?php echo $nombreUsuario; ?>"></td>
+                    <input type="text" id="txt-nombreUsuario" class="form-control"  placeholder="Nombre Usuario" </td>
                   </tr>
 
-                  <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($contrasena=="") echo 'class="has-error"'; }?>>
+                  <tr id="error">
+                    <td colspan="2">
                     <label for="txt-contrasena">Crea una contraseña :</label>
-                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña"></td>
+                    <input type="password" id="txt-contrasena" class="form-control"  placeholder="Contraseña"></td>
                   </tr>
 
-                  <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($confirmacionContrasena=="") echo 'class="has-error"'; }?>>
+                  <tr >
+                    <td colspan="2" id="error">
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
-                    <input type="password" name="txt-confirmacion-contrasena" class="form-control" placeholder="Confirmar contraseña"></td>
+                    <input type="password" id="txt-confirmacion-contrasena"  class="form-control" placeholder="Confirmar contraseña"></td>
                   </tr>
 
                   <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($fechaNacimiento=="") echo 'class="has-error"'; }?>>
-                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento" value="<?php echo $fechaNacimiento; ?>"></td>
+                    <td colspan="2"  id="error">
+                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" id="txt-fecha-nacimiento" class="form-control"  placeholder="Fecha nacimiento" </td>
                   </tr>
 
                   
@@ -173,44 +106,37 @@
                   
                   
                   <tr>
-                    <td colspan="2"<?php if (isset($_GET["btn-registrar"])){if($genero=="") echo 'bgcolor="red"'; }?>>
+                    <td colspan="2" id="error">
                     <!--Para seleccionar por defecto un checkbox o radioboton utiliza la propiedad checked-->
                     <!--En el caso de los select utiliza la propiedad selected-->
                         <label>Genero:</label> 
-                        <label><input type="radio" name="rbt-genero" value="Femenino" <?php if ($genero =="Femenino") echo "checked"; ?>>Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="radio" name="rbt-genero" value="Masculino" <?php if ($genero =="Masculino") echo "checked"; ?>>Masculino</label>
+                        <label><input type="radio" id="rbt-genero" value="Femenino" >Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label><input type="radio" id="rbt-genero" value="Masculino" >Masculino</label>
                     </td>
                   </tr>
 
                   <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($celular=="") echo 'class="has-error"'; }?>>
+                    <td colspan="2" id="error" >
                     <label for="txt-fecha-nacimiento">Telefono Celular:</label>
-                    <input type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" value="<?php echo $celular; ?>"></td>
+                    <input type="text" id="txt-telefono"  class="form-control"  placeholder="Numero telefonico" </td>
                   </tr>
 
                   <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($correo=="") echo 'class="has-error"'; }?>>
+                    <td colspan="2" id="error" >
                     <label for="txt-fecha-nacimiento">Correo Electronico:</label>
-                    <input type="text" name="txt-correo" class="form-control" placeholder="Correo electronico" value="<?php echo $correo; ?>"></td>
+                    <input type="text" id="txt-correo"  class="form-control" placeholder="Correo electronico" </td>
                   </tr>
 
                   <tr>
-                    <td colspan="2" <?php if (isset($_GET["btn-registrar"])){if($pais=="0") echo 'class="has-error"'; }?>>
+                    <td colspan="2" id="error" >
                     <label for="txt-fecha-nacimiento">Ubicacion:</label>
-                      <select name="slc-pais" class="form-control">
+                      <select id="slc-pais"  class="form-control">
                           <option value="0">--Ubicacion--</option>
                           <?php
                             for ($i=0; $i <sizeof($paises) ; $i++) {
                                 
-                                  echo '<option '. (($paises[$i]->getCodigoPais()==$pais)?"selected":"") .' value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';
-                            }
-
-
-                      
-
-                            
-
-                           
+                                  echo '<option  value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';
+                            }                        
                           ?>                          
                       </select>  
                     </td>
@@ -219,8 +145,10 @@
                   
                   <tr>
                     <td colspan="2">
-                      <a href="condiciones.php">
-                      <input type="submit" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >
+                    <div id="resultado">
+                      
+                    </div>
+                      <input type="submit" id="btn-registrar" value="Siguiente paso" class="btn btn-primary" >
                       </a>
                       
                     </td>
@@ -231,8 +159,8 @@
           
             
           </td>
-              </table>            
-          </form>
+              </table>       
+              </form>     
        </div>
 
 </div>
@@ -246,7 +174,8 @@
       </footer>
     </div> 
 </div>
-
-    
+     <script type="text/javascript" src="js/jquery.min.js"></script>
+     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/registro.js"></script>
   </body>
 </html>
