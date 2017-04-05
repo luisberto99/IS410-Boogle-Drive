@@ -45,7 +45,7 @@
 		        		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 		        		<br>
 		        		<br>
-		        		<a href="my-drive.php" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</a>
+		        		<a href="my-drive/index.php" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</a>
 
 		        		<br>
 		        		<a href="">¿Olvidaste tu contraseña?</a><br>

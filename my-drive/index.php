@@ -76,7 +76,7 @@
 		<div class="barra_superior">
 			<div class="cabecera row" style="margin-right: 1px;">
 				<div class="col-md-2 col-sm-2 cabecera">
-					<a href="my-drivle.php" value="Boogle Drive"><img class="titulo" src="../img/boogledrive.jpg" ></a>
+					<a href="index.php" value="Boogle Drive"><img class="titulo" src="../img/boogledrive.jpg" ></a>
 				</div>
 				<div class="col-md-6 cabecera">
 					<div class="dropdown buscador">
