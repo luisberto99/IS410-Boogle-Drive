@@ -71,14 +71,14 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/personalizado.css">
 </head>
-<body style="background-color: rgba(0,0,0,0.08);">
+<body style="background-color: #EEE;">
 	<div id="general" style="background-color: #FFF">
 		<div class="barra_superior">
 			<div class="cabecera row" style="margin-right: 1px;">
-				<div class="col-md-2 col-sm-2 cabecera">
+				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 cabecera">
 					<a href="index.php" value="Boogle Drive"><img class="titulo" src="../img/boogledrive.jpg" ></a>
 				</div>
-				<div class="col-md-6 cabecera">
+				<div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 cabecera">
 					<div class="dropdown buscador">
 						<form id="buscador"">
 							<button class="transpariencia glyphicon glyphicon-search" aria-hidden="true"></button>
@@ -97,16 +97,16 @@
 						</form>
 					</div>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-2 cabecera dere">
+				<div class="col-md-1 col-sm-1 col-lg-1 col-xs-1"></div>
+				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 cabecera dere">
 					<div id="iconos1" class="row dere">
-						<div class="row col-md-2 dere">
+						<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
 							<?php btn_superiores("glyphicon glyphicon-user") ?>
 							<div class="notificaciones dropdown-menu menu_buscador" style="right: 0">
 								Perfil del usuario
 							</div>
 						</div>
-						<div class="row col-md-2 dere">
+						<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
 							<?php btn_superiores("glyphicon glyphicon-bell") ?>
 							<div class="dropdown-menu notificaciones menu_buscador" style="right: 0">
 								Notificaciones
@@ -117,13 +117,13 @@
 				</div>
 			</div>
 			<div class="cabecera row" style="margin-right: 1px;">
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
 					<button type="button" value="Nuevo" id="btn_nuevo" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hapopup="true" aria-expanded="false">
 						Nuevo
 					</button>
 					<?php menu_nuevo() ?>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-7 col-sm-7 col-lg-7 col-xs-7">
 					<div class="btn-group">
 						<button type="button" class="transpariencia btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Mi unidad <span class="caret"></span>
@@ -131,7 +131,7 @@
 						<?php menu_nuevo() ?>
 					</div>
 				</div>
-				<div class="col-md-2 dere">
+				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
 					<div id="iconos1">
 						<?php btn_superiores("glyphicon glyphicon-cog") ?>
 						<ul class="dropdown-menu">
@@ -151,7 +151,7 @@
 			</div>
 		</div>
 		<div id="principal" >
-			<aside class="sidebar col-md-2">
+			<aside class="sidebar col-md-2 col-sm-2 col-xs-2 col-lg-2">
 				<div>
 					<div>
 						<table class="table-hover">
@@ -200,21 +200,22 @@
 					<hr>
 				</div>
 				<div>
-					<p style="color: rgba(0,0,0,0.4);" data-toggle="popover" title="7 GB de 14 GB utilizados">7 GB de 14 GB utilizados</p>
+					<p style="color: rgba(0,0,0,0.4);" data-toggle="popover" data-trigger="hover" data-placement="top"  title="7 GB de 14 GB utilizados">7 GB de 14 GB utilizados</p>
 				</div>
 				<div>
-					<button class="transpariencia btn_lateral">
+					<a href="../almacenamiento.php" class="transpariencia btn_lateral">
 						<span class="glyphicon glyphicon-list izq" aria-hidden="true" style="margin-right: 10px"></span>Adquirir mas almacenamiento
-					</button>
+					</a>
 				</div>
 			</div>
 		</aside>
-		<div class="col-md-10" style="height: 480px">
+		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-10" style="height: 480px">
 			<iframe src="vacio.php" class="transpariencia frame"></iframe>
 		</div>
 	</div>
 </div>
 
+<!-- DIV MODAL DE CONFIGURACION  -->
 <div class="modal fade" id="modal-configuarion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -233,9 +234,20 @@
   </div>
 </div>
 
-	
+
+
+
 	<script src="../js/jquery.min.js"></script>	
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/my-drive.js"></script>
+	<script type="text/javascript">
+		 $(function () {
+    $('[data-toggle="popover"]').popover();
+      });
+		 $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+	</script>
 </body>
 </html>
