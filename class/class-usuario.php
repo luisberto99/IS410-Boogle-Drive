@@ -128,7 +128,7 @@
 
 
 		public function guardarRegistro(){
-			$archivo = fopen("data/usuariosRegistrados.csv","a+");
+			$archivo = fopen("../data/usuariosRegistrados.csv","a+");
 			fwrite($archivo, $this->__toString() .PHP_EOL);
 			fclose($archivo);
 		}
