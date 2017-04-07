@@ -53,10 +53,10 @@
 			<span class="'.$icono.' izq" aria-hidden="true" style="margin-right: 10px"></span>'.$texto.'
 		</button></td></tr>';
 	}
-	function btn_carpeta_expandible($icono,$nombre, $texto){
+	function btn_carpeta_expandible($icono,$nombre, $texto,$id){
 		echo '<div class="btn-group" style="margin-left: 15px; width:100%">
 		<button class="transpariencia" type="button" data-toggle="collapse" data-target="#'. $nombre .'" aria-expanded="false" aria-controls="'.$nombre.'">
-			<span class="glyphicon glyphicon-play izq" aria-hidden="true"></span>
+			<span id="'.$id.'" onclick="iconos('.$id.')" class="glyphicon glyphicon-triangle-right izq" aria-hidden="true"></span>
 		</button>
 		<button class="transpariencia btn_lateral">
 			<span class="glyphicon '.$icono.' izq" aria-hidden="true"></span> '.$texto.'
@@ -154,34 +154,34 @@
 			<aside class="sidebar col-md-2 col-sm-2 col-xs-2 col-lg-2">
 				<div>
 					<div>
-						<table class="table-hover">
+						<table id="tabla-lateral" class="table-hover">
 							<tr>
 								<td>
 									<div class="btn-group">
 										<button class="transpariencia" type="button" data-toggle="collapse" data-target="#Miunidad" aria-expanded="false" aria-controls="Miunidad">
-											<span class="glyphicon glyphicon-play izq" aria-hidden="true"></span>
+											<span id="carpetaMiUnidad" class="glyphicon glyphicon-triangle-right izq" onclick="iconos('carpetaMiUnidad')" aria-hidden="true"></span>
 										</button>
 										<button class="transpariencia btn_lateral">
 											<span class="glyphicon glyphicon-hdd izq" aria-hidden="true"></span> Mi unidad
 										</button>
 									</div>
 									<div id="Miunidad" class="collapse">
-										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta1", "carpeta 1") ?>
+										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta1", "carpeta 1","carpeta1") ?>
 										<div id="carpeta1" class="collapse">
 											Contenido de carpeta 1
 										</div>
 
-										<?php btn_carpeta_expandible("glyphicon-folder-close" ,"carpeta2", "carpeta 2") ?>
+										<?php btn_carpeta_expandible("glyphicon-folder-close" ,"carpeta2", "carpeta 2","carpeta2") ?>
 										<div id="carpeta2" class="collapse">
 											Contenido de carpeta 2
 										</div>
 
-										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta3", "carpeta 3") ?>
+										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta3", "carpeta 3","carpeta3") ?>
 										<div id="carpeta3" class="collapse">
 											Contenido de carpeta 3
 										</div>
 
-										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta4", "carpeta 4") ?>
+										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta4", "carpeta 4","carpeta4") ?>
 										<div id="carpeta4" class="collapse">
 											Contenido de carpeta 4
 										</div>
