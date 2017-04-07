@@ -81,7 +81,7 @@
               <h3><strong><p>Comienza ya mismo</p></strong></h3>
               <br>
              
-              <p><a class="btn btn-lg btn-primary" href="my-drive.php" role="button">Ir a Drive</a></p>
+              <p><a class="btn btn-lg btn-primary" href="my-drive/index.php" role="button">Ir a Drive</a></p>
               
             </div>
           </div>
