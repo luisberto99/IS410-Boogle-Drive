@@ -44,7 +44,7 @@
 	}
 
 	function btn_superiores($icon){
-		echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" aria-hidden="true"></span></button>';
+		echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size:20px" aria-hidden="true"></span></button>';
 	}
 
 	function btn_lateral($icono,$texto){
@@ -118,8 +118,8 @@
 			</div>
 			<div class="cabecera row" style="margin-right: 1px;">
 				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
-					<button type="button" value="Nuevo" id="btn_nuevo" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hapopup="true" aria-expanded="false">
-						Nuevo
+					<button type="button" value="Nuevo" id="btn_nuevo" class="botton2 dropdown-toggle" data-toggle="dropdown" aria-hapopup="true" aria-expanded="false">
+						NUEVO
 					</button>
 					<?php menu_nuevo() ?>
 				</div>
@@ -132,19 +132,20 @@
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
-					<div id="iconos1">
+					<div id="iconos1" >
 						<?php btn_superiores("glyphicon glyphicon-cog") ?>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu" style="width: 235px;height: 130px;">
 							<li><a href="#" class="transpariencia" data-toggle="modal" data-target="#modal-configuarion">Configuración</a></li>
+							<li><a href="https://g.co/getdrive" target="_blank">Descargar Drive</a></li>
 							<li><a href="#">Combinaciones de teclas</a></li>
 							<li><a href="#">Ayuda</a></li>
 						</ul>
 					</div>
 					<div>
-						<button class="transpariencia icono_lateral dere"><span class="glyphicon glyphicon-info-sign" aria-hiddet="true"></span></button>
+						<button class="transpariencia icono_lateral dere"><span class="glyphicon glyphicon-info-sign" aria-hiddet="true" style="font-size:20px"></span></button>
 					</div>
 					<div>
-						<button class="transpariencia icono_lateral dere"><span class="glyphicon glyphicon-list" aria-hiddent=true></span></button>
+						<button class="transpariencia icono_lateral dere"><span class="glyphicon glyphicon-list" aria-hiddent="true" style="font-size:14px"></span></button>
 					</div>
 					
 				</div>
@@ -241,18 +242,21 @@
 
 <!-- DIV MODAL DE CONFIGURACION  -->
 <div class="modal fade" id="modal-configuarion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+  <div class="modal-sizee" role="document">
+    <div class="modal-content ">
       <div class="modal-header modalConfiguracionTitulo">
 		<label class="modal-title">Configuracion</label>
-      	<button type="button" class="btn btn-primary dere" data-dismiss="modal">Listo</button>
+      	<button type="button" class="botton dere" data-dismiss="modal">LISTO</button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modalbod">
+        <div class="col-lg-2">
+      	 <p><strong>General</strong></p>
+      	 <p><strong>Notificaciones</strong></p>
+      	 <p><strong>Administrar Aplicaciones</strong></p>
+        </div>
+        <div class="col-lg-10">
+          <iframe id="contenido2" src="../configuraciones/general.php" ></iframe>
+        </div>
       </div>
     </div>
   </div>
