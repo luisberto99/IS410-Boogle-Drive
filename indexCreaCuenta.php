@@ -179,5 +179,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/validarRegistro.js"></script>
     <script type="text/javascript" src="js/registro.js"></script>
+    <script type="text/javascript">
+      $(function () {
+    $('[data-toggle="popover"]').popover();
+      });
+    </script>
   </body>
 </html>

@@ -200,7 +200,31 @@
 					<hr>
 				</div>
 				<div>
-					<p style="color: rgba(0,0,0,0.4);" data-toggle="popover" data-trigger="hover" data-placement="top"  title="7 GB de 14 GB utilizados">7 GB de 14 GB utilizados</p>
+					<p style="color: rgba(0,0,0,0.4);" data-toggle="popover" data-html="true"  data-trigger="hover" data-placement="top"  title="7 GB de 14 GB utilizados" data-content="
+                      <table class='pop' >
+                      <tr>
+                      <td><img src='../img/drive.png' width='20' height='20'></td>
+                      <td >Drive</td>
+                      <td id='c'>76MB</td>
+                      </tr>
+                      <tr>
+                      <td><img src='../img/gmail.png' width='20' height='20'></td>
+                      <td  >Gmail</td>
+                      <td id='c'>345MB</td>
+                      </tr>
+                      <tr>
+                      <td><img src='../img/fotos.png' width='20' height='20'></td>
+                      <td >Google Fotos</td>
+                      <td id='c'>32MB</td>
+                      </tr>
+                      </table>
+
+
+
+
+					">7 GB de 14 GB utilizados</p>
+
+
 				</div>
 				<div>
 					<a href="../almacenamiento.php" class="transpariencia btn_lateral">

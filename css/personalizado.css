@@ -9,7 +9,15 @@
     margin-right: 35px
 }
 
+.pop{
+   border-collapse: separate;
+  border-spacing:  5px 5px;
+  font-size: 14px;
 
+}
+.pop #c{
+    text-align: right;;
+}
 
 header{
 	background-color: #FFF;
