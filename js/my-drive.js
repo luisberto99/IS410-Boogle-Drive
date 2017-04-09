@@ -5,3 +5,11 @@ function iconos(id){
 	miUnidad.toggleClass("glyphicon-triangle-bottom");
 	
 }
+function ifra(link){
+    if (link==1)
+    	$("#ifra").html("<iframe id='contenido2' name='principal' src='../configuraciones/general.php' ></iframe>");
+    if(link==2)
+    	$("#ifra").html("<iframe id='contenido2' name='principal' src='../configuraciones/notificaciones.php' ></iframe>");
+     if(link==3)
+    	$("#ifra").html("<iframe id='contenido2' name='principal' src='../configuraciones/admapps.php' ></iframe>");
+}

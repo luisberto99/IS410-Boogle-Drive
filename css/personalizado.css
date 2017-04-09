@@ -8,6 +8,19 @@
     border: 1px solid #3079ed;
     margin-right: 35px
 }
+/*hover y link del iframe de config*/
+.link a:hover{
+background-color: #f5f5f5;
+display:block;
+text-decoration:none;
+}
+
+/*estilo texto celdas tabla de config*/
+#texx p{
+   font-size: 13px;
+   font-weight: 600;
+}
+
 
 .modalbod{
     width: 1000px;
@@ -51,6 +64,7 @@
     height: 500px;
     margin: 50px auto;
 }
+/*tabla de general.php*/
 .config{
     border-collapse: separate;
   border-spacing:  35px 15px;

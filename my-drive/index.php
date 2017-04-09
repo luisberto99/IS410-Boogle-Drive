@@ -250,12 +250,29 @@
       </div>
       <div class="modalbod">
         <div class="col-lg-2">
-      	 <p><strong>General</strong></p>
-      	 <p><strong>Notificaciones</strong></p>
-      	 <p><strong>Administrar Aplicaciones</strong></p>
-        </div>
-        <div class="col-lg-10">
-          <iframe id="contenido2" src="../configuraciones/general.php" ></iframe>
+        <table  style="margin-top: 20px;">
+        <tr>
+           
+             <td onclick="ifra(1)" class="link">
+               <a href="#"><p><strong>General</strong></p></a>
+        	 </td>
+        	
+        </tr>
+        <tr>
+        	<td onclick="ifra(2)" class="link">
+        		<a href="#"><p><strong>Notificaciones</strong></p></a>
+        	</td>
+        </tr>
+        <tr>
+        	<td onclick="ifra(3)" class="link">
+        		<a href="#"><p><strong>Administrar Aplicaciones</strong></p></a>
+        	</td>
+        </tr>
+        
+        </table> 
+       </div>
+        <div class="col-lg-10 " id="ifra">
+          <iframe id="contenido2" name="principal" src="../configuraciones/general.php" ></iframe>
         </div>
       </div>
     </div>
