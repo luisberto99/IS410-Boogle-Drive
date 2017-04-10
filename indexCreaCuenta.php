@@ -25,7 +25,7 @@
     <title>Crear Cuenta</title>
     
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/personalizado.css">
 
     
   </head>
@@ -38,7 +38,7 @@
         <a href="index.html"><img src="img/boogledrive.jpg" style="width:200px; padding: 10px; margin:10px;"></a>
               
         <span style="float:right; padding-top:12px; margin:10px;">
-        <a href="entrarUsuario.php" class="btn btn-primary btn-block">Acceder</a>
+        <a href="entrarUsuario.php" ><button id="newsesion">Iniciar sesion</button></a>
         </span>
          <hr style="margin-top: 0px">
     </div>

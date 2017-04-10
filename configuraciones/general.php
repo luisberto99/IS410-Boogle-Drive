@@ -11,7 +11,7 @@
 	<table class="config">
 		<tr>
 			<td ><p><strong>Almacenamiento</strong></p><hr></td>
-			<td id="texx"> <p>374 MB de 15 GB usado<br> <a href="#">Adquirir mas almacenamiento</a><hr></p></td>
+			<td id="texx"> <p>374 MB de 15 GB usado<br> <a href="../almacenamiento.php" target="_blank">Adquirir mas almacenamiento</a><hr></p></td>
 		</tr>
         <tr>
 			<td ><p><strong>Convertir archivos subidos</strong></p><hr></td>

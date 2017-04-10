@@ -180,6 +180,7 @@
            
              <td onclick="ifra(1)" class="link">
                <a href="#"><p><strong>General</strong></p></a>
+               
         	 </td>
         	
         </tr>

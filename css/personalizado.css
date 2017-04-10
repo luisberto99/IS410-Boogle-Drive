@@ -8,6 +8,18 @@
     border: 1px solid #3079ed;
     margin-right: 35px
 }
+
+#newsesion{
+    font-size: 13px;
+    font-weight: normal;
+    border: 1px solid #3079ed;
+    color:white;
+    background-color: #4d90fe;
+    padding: 0 8px;
+    height: 28px;
+    margin-right: 30px;
+    border-radius: 3px;
+}
 /*hover y link del iframe de config*/
 .link a:hover{
 background-color: #f5f5f5;
@@ -295,6 +307,7 @@ h1 {
   width: 800px;
   height: 340px;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 
