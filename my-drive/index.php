@@ -93,14 +93,27 @@
 					<div id="iconos1" class="row dere">
 						<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
 							<?php btn_superiores("glyphicon glyphicon-user") ?>
-							<div class="notificaciones dropdown-menu menu_buscador" style="right: 0">
+							<div class="dropdown-menu menu_buscador" style="right: 0">
 								Perfil del usuario
 							</div>
 						</div>
 						<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
 							<?php btn_superiores("glyphicon glyphicon-bell") ?>
-							<div class="dropdown-menu notificaciones menu_buscador" style="right: 0">
-								Notificaciones
+							<div class="dropdown-menu notificaciones menu_buscador " style="right: 0">
+							<div>
+								<button class="configuracionNotificaciones transpariencia">
+									<span class="glyphicon glyphicon-cog " aria-hidden="true"></span>
+								</button>
+								<span class="configuracionNotificaciones">Google</span><br>
+							</div>
+							<div align="center">
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							Has leído todas las notificaciones.
+							</div>
 							</div>
 						</div>
 
@@ -135,7 +148,7 @@
 					<div>
 						<button class="transpariencia icono_lateral dere"><span class="glyphicon glyphicon-info-sign" aria-hiddet="true" style="font-size:20px"></span></button>
 					</div>
-					<div>
+					<div >
 						<button class="transpariencia icono_lateral dere"><span class="glyphicon glyphicon-list" aria-hiddent="true" style="font-size:14px"></span></button>
 					</div>
 					
@@ -143,7 +156,7 @@
 			</div>
 		</div>
 		<div id="principal" >
-			<div class="sidebar col-md-2 col-sm-2 col-xs-2 col-lg-2" style="height: 480px;">
+			<div data-togge="sidebar" class="sidebar col-md-2 col-sm-2 col-xs-2 col-lg-2" style="height: 480px;">
 			<iframe src="aside.php" class="transpariencia frame"></iframe>
 			</div>
 		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-10" style="height: 480px">
