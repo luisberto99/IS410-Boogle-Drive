@@ -47,9 +47,19 @@
 		echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size:20px" aria-hidden="true"></span></button>';
 	}
 
-	function btn_lateral($icono,$texto){
-		echo '<tr><td>
+	function btn_carpeta_expandible($icono,$nombre, $texto,$id){
+		echo '<div class="btn-group" style="margin-left: 15px; width:100%">
+		<button class="transpariencia" type="button" data-toggle="collapse" data-target="#'. $nombre .'" aria-expanded="false" aria-controls="'.$nombre.'">
+			<span id="'.$id.'" onclick="iconos(\'#'.$id.'\')" class="glyphicon glyphicon-triangle-right izq" aria-hidden="true"></span>
+		</button>
 		<button class="transpariencia btn_lateral">
+			<span class="glyphicon '.$icono.' izq" aria-hidden="true"></span> '.$texto.'
+		</button>
+	</div>';
+}
+	function btn_lateral($icono,$texto,$archivo){
+		echo '<tr><td>
+		<button class="transpariencia btn_lateral" onclick="contenidos(\''.$archivo.'\')">
 			<span class="'.$icono.' izq" aria-hidden="true" style="margin-right: 10px"></span>'.$texto.'
 		</button></td></tr>';
 	}
@@ -171,11 +181,92 @@
 			</div>
 		</div>
 		<div id="principal" >
-			<div data-togge="sidebar" class="sidebar col-md-2 col-sm-2 col-xs-2 col-lg-2" style="height: 480px;">
-			<iframe src="aside.php" class="transpariencia frame"></iframe>
+			<div data-togge="sidebar" id="menu_lateral" class="sidebar overflowSidebar col-md-2 col-sm-2 col-xs-2 col-lg-2" style="height: 480px;">
+			<aside id="aside" style="width: 90%">
+				<div>
+					<div>
+						<table id="tabla-lateral" class="table-hover">
+							<tr>
+								<td>
+									<div class="btn-group">
+										<button class="transpariencia" type="button" data-toggle="collapse" data-target="#Miunidad" aria-expanded="false" aria-controls="Miunidad">
+											<span id="carpetaMiUnidad" class="glyphicon glyphicon-triangle-right izq" onclick="overflow('#carpetaMiUnidad')" aria-hidden="true"></span>
+										</button>
+										<button class="transpariencia btn_lateral" onclick="contenidos('Mi-unidad.php')">
+											<span class="glyphicon glyphicon-hdd izq" aria-hidden="true"></span> Mi unidad
+										</button>
+									</div>
+									<div id="Miunidad" class="collapse">
+										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta1", "carpeta 1","carp1") ?>
+										<div id="carpeta1" class="collapse">
+											Contenido de carpeta 1
+										</div>
+
+										<?php btn_carpeta_expandible("glyphicon-folder-close" ,"carpeta2", "carpeta 2","carp2") ?>
+										<div id="carpeta2" class="collapse">
+											Contenido de carpeta 2
+										</div>
+
+										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta3", "carpeta 3","carp3") ?>
+										<div id="carpeta3" class="collapse">
+											Contenido de carpeta 3
+										</div>
+
+										<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta4", "carpeta 4","carp4") ?>
+										<div id="carpeta4" class="collapse">
+											Contenido de carpeta 4
+										</div>
+									</div>
+								</td>
+							</div>
+						</tr>
+						<?php btn_lateral("glyphicon glyphicon-user","Compartido conmigo","compartido.php")	 ?>
+						<?php btn_lateral("glyphicon glyphicon-time","Reciente","reciente.php")	 ?>
+						<?php btn_lateral("glyphicon glyphicon-picture", "fotos","fotos.php")	 ?>
+						<?php btn_lateral("glyphicon glyphicon-star","Destacado","destacado.php")	 ?>
+						<?php btn_lateral("glyphicon glyphicon-trash","Papelera","papelera.php")	 ?>
+					</table>
+				</div>
+				<div>
+					<hr>
+				</div>
+				<div>
+					<p style="color: rgba(0,0,0,0.4);" data-toggle="popover" data-html="true"  data-trigger="hover" data-placement="top"  title="7 GB de 14 GB utilizados" data-content="
+                      <table class='pop' >
+                      <tr>
+                      <td><img src='../img/drive.png' width='20' height='20'></td>
+                      <td >Drive</td>
+                      <td id='c'>76MB</td>
+                      </tr>
+                      <tr>
+                      <td><img src='../img/gmail.png' width='20' height='20'></td>
+                      <td  >Gmail</td>
+                      <td id='c'>345MB</td>
+                      </tr>
+                      <tr>
+                      <td><img src='../img/fotos.png' width='20' height='20'></td>
+                      <td >Google Fotos</td>
+                      <td id='c'>32MB</td>
+                      </tr>
+                      </table>
+
+
+
+
+					">7 GB de 14 GB utilizados</p>
+
+
+				</div>
+				<div>
+					<a target="blank" href="../almacenamiento.php" class="transpariencia btn_lateral">
+						<span class="glyphicon glyphicon-list izq" aria-hidden="true" style="margin-right: 10px"></span>Adquirir mas almacenamiento
+					</a>
+				</div>
+			</div>
+		</aside>
 			</div>
 		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-10" style="height: 480px">
-			<iframe src="Mi-unidad.php" class="transpariencia frame"></iframe>
+			<iframe id="explorador" class="transpariencia frame"></iframe>
 		</div>
 	</div>
 </div>
