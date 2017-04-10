@@ -100,7 +100,7 @@ function btn_carpeta_expandible($icono,$nombre, $texto,$id){
 
 				</div>
 				<div>
-					<a href="../almacenamiento.php" class="transpariencia btn_lateral">
+					<a target="blank" href="../almacenamiento.php" class="transpariencia btn_lateral">
 						<span class="glyphicon glyphicon-list izq" aria-hidden="true" style="margin-right: 10px"></span>Adquirir mas almacenamiento
 					</a>
 				</div>
