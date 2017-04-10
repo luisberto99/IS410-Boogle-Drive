@@ -150,6 +150,22 @@ header{
   background-color: #EEE;
   color: rgba(0,0,0,.6);
 }
+.perfilUsuario{
+  width: 350px;
+  height: 150px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: initial;
+  align-self: initial;
+  color: rgba(0,0,0,.6);
+}
+.perfilUsuarioInferior{
+    background-color: #EEE;
+    height: 30%;
+    margin: 0;
+    padding: 6px;
+}
 
 .configuracionNotificaciones{
   font-size: 25px;

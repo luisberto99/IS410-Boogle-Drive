@@ -91,12 +91,27 @@
 				<div class="col-md-1 col-sm-1 col-lg-1 col-xs-1"></div>
 				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 cabecera dere">
 					<div id="iconos1" class="row dere">
-						<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
-							<?php btn_superiores("glyphicon glyphicon-user") ?>
-							<div class="dropdown-menu menu_buscador" style="right: 0">
-								Perfil del usuario
+							<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
+								<?php btn_superiores("glyphicon glyphicon-user") ?>
+								<div class="dropdown-menu menu_buscador perfilUsuario" style="right: 0; border: 0; margin: 0">
+									<div style="height: 70%; margin: 0">
+										<div class="col-md-3">
+										<span class="glyphicon glyphicon-user configuracionNotificaciones" style="font-size: 60px"></span>
+										</div>
+										<div class="col-md-7">
+										<br>
+										<strong>Dulce Maria Medina</strong><br>
+										<small>dulce.medina@gmail.com</small>
+										<button class="btn btn-primary" type="button">Mi cuenta</button>
+										</div>
+									</div>
+									<div class="perfilUsuarioInferior" style="margin: 0">
+										<button class="btn dere" type="button">Añadir cuenta</button>
+										<button class="btn izq" type="button">Cerrar sesion</button>
+									</div>
+
+								</div>
 							</div>
-						</div>
 						<div class="row col-md-2 col-sm-2 col-lg-2 col-xs-2 dere">
 							<?php btn_superiores("glyphicon glyphicon-bell") ?>
 							<div class="dropdown-menu notificaciones menu_buscador " style="right: 0">
