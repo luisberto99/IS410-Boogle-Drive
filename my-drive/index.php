@@ -175,7 +175,7 @@
 			<iframe src="aside.php" class="transpariencia frame"></iframe>
 			</div>
 		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-10" style="height: 480px">
-			<iframe src="vacio.php" class="transpariencia frame"></iframe>
+			<iframe src="Mi-unidad.php" class="transpariencia frame"></iframe>
 		</div>
 	</div>
 </div>

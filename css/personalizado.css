@@ -213,6 +213,55 @@ header{
     overflow-x: hidden;
 }
 
+.principal{
+  padding: 8px 8px 16px 22px;
+  color: rgba(0,0,0,.54);
+}
+.ordenElementos{
+  color: rgba(0,0,0,.54);
+}
+.carpeta{
+    height: 50px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
+    border: 3px;
+    border-radius: 3px;
+    font-size: 18px;
+    margin: 10px;
+    width: 16%
+}
+
+.archivo{
+  height: 150px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+  border: 3px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin: 10px;
+  background-color: #FFF
+}
+.archivo-imagen{
+  margin: auto;
+  position: absolute;
+  height: 110px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%
+}
+.archivo-audio{
+    font-size: 90px;
+    padding-left: 20%;
+    padding-top: 5%;
+}
+
+
+.cabeceraContenido{
+  padding-bottom: 8px; 
+  padding-top: 8px;
+}
 /*ESTILOS ALMACENAMIENTO
          !    !
          !    !
