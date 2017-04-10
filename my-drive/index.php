@@ -266,7 +266,7 @@
 		</aside>
 			</div>
 		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-10" style="height: 480px">
-			<iframe id="explorador" class="transpariencia frame"></iframe>
+			<iframe src="Mi-unidad.php" id="explorador" class="transpariencia frame"></iframe>
 		</div>
 	</div>
 </div>
