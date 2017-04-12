@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Boogle Drive: almacenamiento en la nube, fotos, documentos y mucho más.</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    h1{
+      font-family: 'Cormorant Garamond', serif;
+    } 
+    div.fixed {
+      position: fixed;
+      width: 100%;
+      top: 0px;
+    }
+    </style>
+  </head>
+
+  <body style="background-image:url(img/hero-drive-for-work-1600.jpg); background-size:cover; background-attachment: fixed;">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#fff;">
+      <div class="container-fluid" style="margin-right:0px;">
+        <div class="navbar-header" class="nav navbar-nav navbar-left " style="margin-left:0px;">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span >
+            <a href="www.google.com"><a href="index.html"><img src="img/google.png" style="width:120px; margin:5px;"></a>
+            <span style="color:#A6A6A6;"><font size="6">Drive</font></span></a>
+          </span>
+          
+          </div>
+          
+          <div id="navbar" class="navbar-collapse collapse">
+            
+          <ul class="nav navbar-nav navbar-right"  >
+            <li style="font-size:16px;"><a href="index.html">Presentacion de Drive</a></li>
+            <li style="font-size:16px;"><a href="comoUsar.html">Como Usar Drive</a></li>
+            <li style="font-size:16px;"><a href="descargar.html">Descargar</a></li>
+            <li style="font-size:16px;"><a href="paraTrabajo.html"><strong>For Work</strong></a></li>
+            <li style="font-size:16px;"><a href="entrarUsuario.php">Ayuda</a></li>
+            <li style="background-color:#4386FC;"><a><button type="button" class="btn btn-link"  style="color:#fff; font-size:16px;" onClick="scrollWin()">Como Empezar</button></a><span class="sr-only">(current)</span></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container-fuid">
+      <div class="row">
+
+      <!-- Main component for a primary marketing message or call to action -->
+       <div align="center" style="margin-top:160px; margin-bottom:160px; xs-hiden" class="col-lg-12-xs-12" >
+            <img src="img/logo.png"  style="width:100px;" class="img-responsive"><h1 style="color:#fff; font-size:60px; text-shadow: -1px 1px #000 ;">Llévate Drive al trabajo</h1>
+            <p style="color:#fff; font-size:25px; text-shadow: -1px 1px #000">Todo tu trabajo está seguro y disponible desde cualquier lugar, y puedes compartirlo fácilmente<br>
+            El plan mensual incluye almacenamiento ilimitado*</p>
+            <button class="btn btn-primary" onClick="scrollWin()"><h4>Como Empezar</h4></button>
+            <button class="btn btn-default" data-toggle="modal" data-target="#comoEmpezar" ><h4>Contactar</h4></button>
+            <!-- Modal -->
+            <div class="modal fade" id="comoEmpezar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header" style="background-color:#458FFD;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" ><h1 style="font-size:40px; text-align:left; color:#fff;">Nos tienes a tu servicio para lo que necesites</h1></h4>
+                  </div>
+                  <div class="modal-body">
+                    <div>¿Ya eres cliente? Ponte en contacto con el <strong style="color:#458FFD;">servicio de asistencia <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></strong></div>
+                  </div>
+                  <div class="row">
+                    <div style="padding:20px;" align="left" class="col-lg-12 col-xs-12 contenido xs-hidden">
+                      Indícanos tus preguntas.
+                      <textarea class="form-control" placeholder=""></textarea>
+                    </div>
+                    <div style="padding:20px;" align="left" class="col-lg-12 col-xs-12 contenido">
+                      <div class="col-lg-6 col-xs-12 contenido">
+                        Nombre:
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="col-lg-6 col-xs-12 contenido">
+                        Apellidos:
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div style="padding:20px;" align="left" class="col-lg-12 col-xs-12 contenido">
+                      <div class="col-lg-6 col-xs-12 contenido">
+                        Correo Electronico:
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="col-lg-6 col-xs-12 contenido">
+                        Telefono:
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div style="padding:20px;" align="left" class="col-lg-12 col-xs-12 contenido">
+                      <div class="col-lg-6 col-xs-12 contenido">
+                        Empresa:
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="col-lg-3 col-xs-12 contenido">
+                        Sector:
+                        <select class="form-control">
+                          <option>Seleccionar</option>
+                          <option>Servicios para Empresas</option>
+                          <option>Educatio</option>
+                          <option>Energía, productos químicos y servicios públicos</option>
+                          <option>Agricultura y ganadería, silvicultura y pesca</option>
+                          <option>Servicios financieros</option>
+                          <option>Government</option>
+                          <option>Salud y asistencia social</option>
+                          <option>Sociedades de cartera</option>
+                          <option>Fabricación</option>
+                          <option>Medios de comunicación y entretenimiento</option>
+                          <option>Minería y construcción</option>
+                          <option>Organizaciones sin ánimo de lucro</option>
+                          <option>Comercio mayorista y minorista</option>
+                          <option>Tecnología</option>
+                          <option>Viajes y Transporte</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-3 col-xs-12 contenido">
+                        Empleados:
+                        <select class="form-control">
+                          <option>Seleccionar</option>
+                          <option>1</option>
+                          <option>2-9</option>
+                          <option>10-19</option>
+                          <option>20-49</option>
+                          <option>50-99</option>
+                          <option>100-199</option>
+                          <option>200-349</option>
+                          <option>350-999</option>
+                          <option>1000-2999</option>
+                          <option>3000+</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div style="padding:20px;" align="left" class="col-lg-6 col-xs-12 contenido">
+                      Pais:
+                      <select id="country" name="Country" ng-model="contactForm.user.country" type="text" class="form-control" style="">
+                          <!-- ngRepeat: country in contactForm.countries -->
+                          <option ng-repeat="country in contactForm.countries" value="AF" class="ng-binding ng-scope">
+                            Afganistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AL" class="ng-binding ng-scope">
+                            Albania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="DE" class="ng-binding ng-scope">
+                            Alemania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AD" class="ng-binding ng-scope">
+                            Andorra
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AI" class="ng-binding ng-scope">
+                            Anguila
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AQ" class="ng-binding ng-scope">
+                            Antártida
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AG" class="ng-binding ng-scope">
+                            Antigua y Barbuda
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AN" class="ng-binding ng-scope">
+                            Antillas Neerlandesas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SA" class="ng-binding ng-scope">
+                            Arabia Saudí
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AR" class="ng-binding ng-scope">
+                            Argentina
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AM" class="ng-binding ng-scope">
+                            Armenia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AW" class="ng-binding ng-scope">
+                            Aruba
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AU" class="ng-binding ng-scope">
+                            Australia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AT" class="ng-binding ng-scope">
+                            Austria
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AZ" class="ng-binding ng-scope">
+                            Azerbaiyán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BS" class="ng-binding ng-scope">
+                            Bahamas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BH" class="ng-binding ng-scope">
+                            Bahréin
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BD" class="ng-binding ng-scope">
+                            Bangladesh
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BB" class="ng-binding ng-scope">
+                            Barbados
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BE" class="ng-binding ng-scope">
+                            Bélgica
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BZ" class="ng-binding ng-scope">
+                            Belice
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BJ" class="ng-binding ng-scope">
+                            Benín
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BM" class="ng-binding ng-scope">
+                            Bermudas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BY" class="ng-binding ng-scope">
+                            Bielorrusia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BO" class="ng-binding ng-scope">
+                            Bolivia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BA" class="ng-binding ng-scope">
+                            Bosnia-Herzegovina
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BW" class="ng-binding ng-scope">
+                            Botsuana
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BR" class="ng-binding ng-scope">
+                            Brasil
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BN" class="ng-binding ng-scope">
+                            Brunéi
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BG" class="ng-binding ng-scope">
+                            Bulgaria
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BF" class="ng-binding ng-scope">
+                            Burkina Faso
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BI" class="ng-binding ng-scope">
+                            Burundi
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BT" class="ng-binding ng-scope">
+                            Bután
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CV" class="ng-binding ng-scope">
+                            Cabo Verde
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KH" class="ng-binding ng-scope">
+                            Camboya
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CM" class="ng-binding ng-scope">
+                            Camerún
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CA" class="ng-binding ng-scope">
+                            Canadá
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TD" class="ng-binding ng-scope">
+                            Chad
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CL" class="ng-binding ng-scope">
+                            Chile
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CN" class="ng-binding ng-scope">
+                            China
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CY" class="ng-binding ng-scope">
+                            Chipre
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VA" class="ng-binding ng-scope">
+                            Ciudad del Vaticano
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CO" class="ng-binding ng-scope">
+                            Colombia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KM" class="ng-binding ng-scope">
+                            Comoras
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CG" class="ng-binding ng-scope">
+                            Congo - Brazzaville
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KR" class="ng-binding ng-scope">
+                            Corea del Sur
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CI" class="ng-binding ng-scope">
+                            Costa de Marfil
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CR" class="ng-binding ng-scope">
+                            Costa Rica
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="HR" class="ng-binding ng-scope">
+                            Croacia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="DK" class="ng-binding ng-scope">
+                            Dinamarca
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="DM" class="ng-binding ng-scope">
+                            Dominica
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="EC" class="ng-binding ng-scope">
+                            Ecuador
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="EG" class="ng-binding ng-scope">
+                            Egipto
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SV" class="ng-binding ng-scope">
+                            El Salvador
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AE" class="ng-binding ng-scope">
+                            Emiratos Árabes Unidos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ER" class="ng-binding ng-scope">
+                            Eritrea
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SK" class="ng-binding ng-scope">
+                            Eslovaquia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SI" class="ng-binding ng-scope">
+                            Eslovenia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ES" class="ng-binding ng-scope">
+                            España
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="US" class="ng-binding ng-scope">
+                            Estados Unidos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="EE" class="ng-binding ng-scope">
+                            Estonia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ET" class="ng-binding ng-scope">
+                            Etiopía
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PH" class="ng-binding ng-scope">
+                            Filipinas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="FI" class="ng-binding ng-scope">
+                            Finlandia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="FJ" class="ng-binding ng-scope">
+                            Fiyi
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="FR" class="ng-binding ng-scope">
+                            Francia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GA" class="ng-binding ng-scope">
+                            Gabón
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GM" class="ng-binding ng-scope">
+                            Gambia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GE" class="ng-binding ng-scope">
+                            Georgia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GH" class="ng-binding ng-scope">
+                            Ghana
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GI" class="ng-binding ng-scope">
+                            Gibraltar
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GD" class="ng-binding ng-scope">
+                            Granada
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GR" class="ng-binding ng-scope">
+                            Grecia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GL" class="ng-binding ng-scope">
+                            Groenlandia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GP" class="ng-binding ng-scope">
+                            Guadalupe
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GU" class="ng-binding ng-scope">
+                            Guam
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GT" class="ng-binding ng-scope">
+                            Guatemala
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GF" class="ng-binding ng-scope">
+                            Guayana Francesa
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GN" class="ng-binding ng-scope">
+                            Guinea
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GQ" class="ng-binding ng-scope">
+                            Guinea Ecuatorial
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GW" class="ng-binding ng-scope">
+                            Guinea-Bissau
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GY" class="ng-binding ng-scope">
+                            Guyana
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="HT" class="ng-binding ng-scope">
+                            Haití
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="HN" class="ng-binding ng-scope">
+                            Honduras
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="HK" class="ng-binding ng-scope">
+                            Hong Kong
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="HU" class="ng-binding ng-scope">
+                            Hungría
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IN" class="ng-binding ng-scope">
+                            India
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ID" class="ng-binding ng-scope">
+                            Indonesia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IQ" class="ng-binding ng-scope">
+                            Iraq
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IE" class="ng-binding ng-scope">
+                            Irlanda
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="BV" class="ng-binding ng-scope">
+                            Isla Bouvet
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CX" class="ng-binding ng-scope">
+                            Isla Christmas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NU" class="ng-binding ng-scope">
+                            Isla Niue
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NF" class="ng-binding ng-scope">
+                            Isla Norfolk
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IS" class="ng-binding ng-scope">
+                            Islandia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KY" class="ng-binding ng-scope">
+                            Islas Caimán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CC" class="ng-binding ng-scope">
+                            Islas Cocos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CK" class="ng-binding ng-scope">
+                            Islas Cook
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="FO" class="ng-binding ng-scope">
+                            Islas Feroe
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GS" class="ng-binding ng-scope">
+                            Islas Georgia del Sur y Sandwich del Sur
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="HM" class="ng-binding ng-scope">
+                            Islas Heard y McDonald
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="FK" class="ng-binding ng-scope">
+                            Islas Malvinas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MP" class="ng-binding ng-scope">
+                            Islas Marianas del Norte
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MH" class="ng-binding ng-scope">
+                            Islas Marshall
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="UM" class="ng-binding ng-scope">
+                            Islas menores alejadas de los Estados Unidos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PN" class="ng-binding ng-scope">
+                            Islas Pitcairn
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SB" class="ng-binding ng-scope">
+                            Islas Salomón
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TC" class="ng-binding ng-scope">
+                            Islas Turcas y Caicos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VG" class="ng-binding ng-scope">
+                            Islas Vírgenes Británicas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VI" class="ng-binding ng-scope">
+                            Islas Vírgenes de los Estados Unidos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IL" class="ng-binding ng-scope">
+                            Israel
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IT" class="ng-binding ng-scope">
+                            Italia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="JM" class="ng-binding ng-scope">
+                            Jamaica
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="JP" class="ng-binding ng-scope">
+                            Japón
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="JO" class="ng-binding ng-scope">
+                            Jordania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KZ" class="ng-binding ng-scope">
+                            Kazajistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KE" class="ng-binding ng-scope">
+                            Kenia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KG" class="ng-binding ng-scope">
+                            Kirguistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KI" class="ng-binding ng-scope">
+                            Kiribati
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KW" class="ng-binding ng-scope">
+                            Kuwait
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LA" class="ng-binding ng-scope">
+                            Laos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LS" class="ng-binding ng-scope">
+                            Lesoto
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LV" class="ng-binding ng-scope">
+                            Letonia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LB" class="ng-binding ng-scope">
+                            Líbano
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LR" class="ng-binding ng-scope">
+                            Liberia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LY" class="ng-binding ng-scope">
+                            Libia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LI" class="ng-binding ng-scope">
+                            Liechtenstein
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LT" class="ng-binding ng-scope">
+                            Lituania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LU" class="ng-binding ng-scope">
+                            Luxemburgo
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MO" class="ng-binding ng-scope">
+                            Macao
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MK" class="ng-binding ng-scope">
+                            Macedonia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MG" class="ng-binding ng-scope">
+                            Madagascar
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MY" class="ng-binding ng-scope">
+                            Malasia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MW" class="ng-binding ng-scope">
+                            Malaui
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MV" class="ng-binding ng-scope">
+                            Maldivas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ML" class="ng-binding ng-scope">
+                            Mali
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MT" class="ng-binding ng-scope">
+                            Malta
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MA" class="ng-binding ng-scope">
+                            Marruecos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MQ" class="ng-binding ng-scope">
+                            Martinica
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MU" class="ng-binding ng-scope">
+                            Mauricio
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MR" class="ng-binding ng-scope">
+                            Mauritania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="YT" class="ng-binding ng-scope">
+                            Mayotte
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MX" class="ng-binding ng-scope">
+                            México
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="FM" class="ng-binding ng-scope">
+                            Micronesia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MD" class="ng-binding ng-scope">
+                            Moldavia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MC" class="ng-binding ng-scope">
+                            Mónaco
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MN" class="ng-binding ng-scope">
+                            Mongolia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MS" class="ng-binding ng-scope">
+                            Montserrat
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="MZ" class="ng-binding ng-scope">
+                            Mozambique
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NA" class="ng-binding ng-scope">
+                            Namibia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NR" class="ng-binding ng-scope">
+                            Nauru
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NP" class="ng-binding ng-scope">
+                            Nepal
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NI" class="ng-binding ng-scope">
+                            Nicaragua
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NE" class="ng-binding ng-scope">
+                            Níger
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NG" class="ng-binding ng-scope">
+                            Nigeria
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NO" class="ng-binding ng-scope">
+                            Noruega
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NC" class="ng-binding ng-scope">
+                            Nueva Caledonia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NZ" class="ng-binding ng-scope">
+                            Nueva Zelanda
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="OM" class="ng-binding ng-scope">
+                            Omán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="NL" class="ng-binding ng-scope">
+                            Países Bajos
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PK" class="ng-binding ng-scope">
+                            Pakistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PW" class="ng-binding ng-scope">
+                            Palau
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PS" class="ng-binding ng-scope">
+                            Palestina
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PA" class="ng-binding ng-scope">
+                            Panamá
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PG" class="ng-binding ng-scope">
+                            Papúa Nueva Guinea
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PY" class="ng-binding ng-scope">
+                            Paraguay
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PE" class="ng-binding ng-scope">
+                            Perú
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PF" class="ng-binding ng-scope">
+                            Polinesia Francesa
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PL" class="ng-binding ng-scope">
+                            Polonia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PT" class="ng-binding ng-scope">
+                            Portugal
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PR" class="ng-binding ng-scope">
+                            Puerto Rico
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="QA" class="ng-binding ng-scope">
+                            Qatar
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="GB" class="ng-binding ng-scope">
+                            Reino Unido
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CF" class="ng-binding ng-scope">
+                            República Centroafricana
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CZ" class="ng-binding ng-scope">
+                            República Checa
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CD" class="ng-binding ng-scope">
+                            República Democrática del Congo
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="DO" class="ng-binding ng-scope">
+                            República Dominicana
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="RE" class="ng-binding ng-scope">
+                            Reunión
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="RW" class="ng-binding ng-scope">
+                            Ruanda
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="RO" class="ng-binding ng-scope">
+                            Rumanía
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="RU" class="ng-binding ng-scope">
+                            Rusia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="EH" class="ng-binding ng-scope">
+                            Sáhara Occidental
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="WS" class="ng-binding ng-scope">
+                            Samoa
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="AS" class="ng-binding ng-scope">
+                            Samoa Americana
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="KN" class="ng-binding ng-scope">
+                            San Cristóbal y Nieves
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SM" class="ng-binding ng-scope">
+                            San Marino
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="PM" class="ng-binding ng-scope">
+                            San Pedro y Miquelón
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VC" class="ng-binding ng-scope">
+                            San Vicente y las Granadinas
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SH" class="ng-binding ng-scope">
+                            Santa Elena
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LC" class="ng-binding ng-scope">
+                            Santa Lucía
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ST" class="ng-binding ng-scope">
+                            Santo Tomé y Príncipe
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SN" class="ng-binding ng-scope">
+                            Senegal
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SC" class="ng-binding ng-scope">
+                            Seychelles
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SL" class="ng-binding ng-scope">
+                            Sierra Leona
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SG" class="ng-binding ng-scope">
+                            Singapur
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SO" class="ng-binding ng-scope">
+                            Somalia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="LK" class="ng-binding ng-scope">
+                            Sri Lanka
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SZ" class="ng-binding ng-scope">
+                            Suazilandia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ZA" class="ng-binding ng-scope">
+                            Sudáfrica
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SE" class="ng-binding ng-scope">
+                            Suecia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="CH" class="ng-binding ng-scope">
+                            Suiza
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SR" class="ng-binding ng-scope">
+                            Surinam
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="SJ" class="ng-binding ng-scope">
+                            Svalbard y Jan Mayen
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TH" class="ng-binding ng-scope">
+                            Tailandia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TW" class="ng-binding ng-scope">
+                            Taiwán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TZ" class="ng-binding ng-scope">
+                            Tanzania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TJ" class="ng-binding ng-scope">
+                            Tayikistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="IO" class="ng-binding ng-scope">
+                            Territorio Británico del Océano Índico
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TF" class="ng-binding ng-scope">
+                            Territorios Australes Franceses
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TL" class="ng-binding ng-scope">
+                            Timor Oriental
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TG" class="ng-binding ng-scope">
+                            Togo
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TK" class="ng-binding ng-scope">
+                            Tokelau
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TO" class="ng-binding ng-scope">
+                            Tonga
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TT" class="ng-binding ng-scope">
+                            Trinidad y Tobago
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TN" class="ng-binding ng-scope">
+                            Túnez
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TM" class="ng-binding ng-scope">
+                            Turkmenistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TR" class="ng-binding ng-scope">
+                            Turquía
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="TV" class="ng-binding ng-scope">
+                            Tuvalu
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="UA" class="ng-binding ng-scope">
+                            Ucrania
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="UG" class="ng-binding ng-scope">
+                            Uganda
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="UY" class="ng-binding ng-scope">
+                            Uruguay
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="UZ" class="ng-binding ng-scope">
+                            Uzbekistán
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VU" class="ng-binding ng-scope">
+                            Vanuatu
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VE" class="ng-binding ng-scope">
+                            Venezuela
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="VN" class="ng-binding ng-scope">
+                            Vietnam
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="WF" class="ng-binding ng-scope">
+                            Wallis y Futuna
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="YE" class="ng-binding ng-scope">
+                            Yemen
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="DJ" class="ng-binding ng-scope">
+                            Yibuti
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ZM" class="ng-binding ng-scope">
+                            Zambia
+                          </option><!-- end ngRepeat: country in contactForm.countries --><option ng-repeat="country in contactForm.countries" value="ZW" class="ng-binding ng-scope">
+                            Zimbabue
+                          </option><!-- end ngRepeat: country in contactForm.countries -->
+                        </select>
+                    </div>
+                    <div class="col-lg-12 col-xs-12 contenido">
+                      <p>¿Te gustaría recibir correos electrónicos periódicos sobre noticias, actualizaciones de productos y ofertas especiales de Google Cloud o de nuestros partners?</p>
+                      <label><input type="radio">Si</label>
+                      <label><input type="radio">No</label>
+                    </div>
+                    <div style="margin:20px" class="col-lg-12 col-xs-12">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                  </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+           
+        <div style="background-color:#fff; border-top:0.2px groove; border-color:rgba(255,255,255,0.3);" class="col-lg-12 col-xs-12 contenido" align="center">
+           <h1 style="font-size:55px;" >Trabaja Sin Limites</h1>
+
+            <ul class="nav nav-tabs center" role="tablist"  >
+              <li role="presentation" class="active"><a href="#guardaAdjuntos" aria-controls="home" role="tab" data-toggle="tab">Todo Su Trabajo</a></li>
+              <li role="presentation"><a href="#busquedaAvanzada" aria-controls="profile" role="tab" data-toggle="tab">Seguro</a></li>
+              <li role="presentation"><a href="#boogleFotos" aria-controls="messages" role="tab" data-toggle="tab">Disponible estés donde estés</a></li>
+              <li role="presentation"><a href="#chromebooks" aria-controls="settings" role="tab" data-toggle="tab">Comparte y colabora</a></li>
+            </ul>
+
+          <!-- Tab panes -->
+            <div class="tab-content" align="center" style="padding:50px;">
+              <div role="tabpanel" class="tab-pane active" id="guardaAdjuntos" >                
+                 <div class="col-lg-6 col-xs-12 contenido">
+                    <p style="font-size:25px; font-family: 'Cormorant Garamond', serif;">
+                      Boogle Drive incluye almacenamiento ilimitado para que puedas guardar archivos, carpetas, copias de seguridad y todo el contenido importante* por tan solo 8 € mensuales por usuario. Sincroniza todos los archivos de la empresa, incluidos los archivos de Microsoft Office, en tu ordenador, teléfono y tablet para acceder a tu trabajo siempre que lo necesites.
+                      <br>
+                      <strong class="small">*Las cuentas con menos de cinco usuarios obtienen 1 TB de almacenamiento por usuario.</strong>
+                    </p>
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                   <img src="img/section1-tab1-all-your-work.jpg" class="img-responsive">
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="busquedaAvanzada">
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif;">
+                   Boogle Drive incluye decenas de funciones cruciales para la seguridad, que se han diseñado específicamente para mantener tus datos seguros, protegidos y bajo tu control. Tú eres el propietario de tu información, y nuestras herramientas te permiten controlarla e incluso decidir con quién y cómo la compartes. Nuestra red de centros de datos proporciona una seguridad excepcional y garantiza un acceso fiable a tus datos con un tiempo de actividad del 99,9%*, las 24 horas del día, los 7 días de la semana, los 365,25 días del año (exacto: no nos tomamos un respiro ni siquiera los años bisiestos).
+                  </p>
+                  <strong>*Las cuentas con menos de cinco usuarios obtienen 1 TB de almacenamiento por usuario.</strong>
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section1-tab2-safe.jpg" class="img-responsive">
+                </div>                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="boogleFotos">
+                
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif;">                   
+                   Puedes acceder a tu trabajo en Drive desde el ordenador, el tablet o el teléfono, incluso desde tu dispositivo Android o iOS favorito, tanto online como sin conexión. Obtén una vista previa de más de 40 formatos de archivo habituales con Drive, incluidos vídeos, imágenes, documentos de Microsoft® Office, hojas de cálculo y PDFs, sin necesidad de software ni costes adicionales. Incluso puedes editar archivos de Microsoft Word, PowerPoint® y Excel® en la Web, así como en dispositivos iOS y Android.
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section1-tab3-available-everywhere.jpg" class="img-responsive">
+                </div>                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="chromebooks">
+                
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:30px; font-family: 'Cormorant Garamond', serif;">             
+                  Comparte archivos de hasta 5 TB con cualquier persona, incluso si no tiene una cuenta de Boogle. Con la configuración de uso compartido puedes decidir cómo compartes los archivos, concediendo permisos para ver, comentar o editar, de forma que mantienes el control, evitas que haya varias versiones de los archivos y te ahorras el trabajo de combinarlas.
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section1-tab4-easy-to-share.png" class="img-responsive">
+                </div>                
+              </div>
+            </div>
+        </div>  
+
+        <div style="background-color:#fff; border-top:0.2px groove; border-color:rgba(255,255,255,0.3);" class="col-lg-12 col-xs-12 contenido" align="center">
+           <h1 style="font-size:55px;" >Seguro, Protegido y fiable</h1>
+
+            <ul class="nav nav-tabs center" role="tablist"  >
+              <li role="presentation" class="active"><a href="#seguridad" aria-controls="home" role="tab" data-toggle="tab">Seguridad en la nube</a></li>
+              <li role="presentation"><a href="#administracion" aria-controls="profile" role="tab" data-toggle="tab">TI y administración</a></li>
+              <li role="presentation"><a href="#encriptacion" aria-controls="messages" role="tab" data-toggle="tab">Encriptación empresarial</a></li>
+              <li role="presentation"><a href="#asistencia" aria-controls="settings" role="tab" data-toggle="tab">Asistencia initerrumpida</a></li>
+            </ul>
+
+          <!-- Tab panes -->
+            <div class="tab-content" align="center" style="padding:50px;">
+              <div role="tabpanel" class="tab-pane active" id="seguridad" >                
+                  <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                    <img src="img/section2-tab1-reliable-proven.png" class="img-responsive">
+                  </div>
+                  <div class="col-lg-6 col-xs-12 contenido">
+                    <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">
+                     Boogle Drive* y nuestros centros de datos han superado la auditoría Tipo II de SSAE 16 / ISAE 3402 (SOC 2) y cuentan con la certificación ISO 27001. Para áreas geográficas o sectores sujetos a normativas específicas, Boogle Drive (con la verificación del dominio) cumple con las leyes FISMA, FERPA e HIPAA, así como con los principios de privacidad de Safe Harbor.
+                     <br> <br>
+                     <strong style="font-size:18px">*Las certificaciones y los programas de cumplimiento normativo solo están disponibles actualmente para las cuentas administradas en el nivel de dominio.</strong>
+                    </p>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="administracion">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section2-tab2-it-admin.png" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">
+                   Boogle Drive* brinda a las empresas herramientas potentes y fáciles de usar con las que pueden administrar usuarios, proteger los dispositivos mediante la administración de dispositivos móviles, establecer permisos para compartir contenido y obtener información clave mediante las funciones avanzadas de auditoría y generación de informes.
+                   <br><br>
+                   <strong style="font-size:18px">*Las cuentas administradas por equipos pueden controlar los permisos básicos para compartir archivos y deben verificar el dominio previamente para acceder a todos los servicios y controles.</strong>
+                </div>                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="encriptacion">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section2-tab3-enterprise-encryption.jpg" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">                   
+                   Boogle Drive incluye decenas de funciones de seguridad clave diseñadas específicamente para mantener tus datos seguros, protegidos y bajo control. Una de estas funciones es el cifrado de los datos en tránsito cuando se transfieren desde tu dispositivo a Boogle o desde un centro de datos de Boogle a otro, y cuando se almacenan en tu dispositivo móvil.
+                  </p>
+                </div>                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="asistencia">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section2-tab4-support.png" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">             
+                  En Boogle Drive se ofrece asistencia ininterrumpida por teléfono, chat o correo electrónico. Estamos aquí para asegurarnos de que puedes acceder al contenido de tu trabajo sin problemas.
+                  </p>
+                </div>                
+              </div>
+            </div>
+        </div>
+                
+         <div style="background-color:#fff; border-top:0.2px groove; border-color:rgba(255,255,255,0.3);" class="col-lg-12 col-xs-12 contenido" align="center">
+           <h1 style="font-size:55px;" >Simplicidad y potencia</h1>
+
+            <ul class="nav nav-tabs center" role="tablist"  >
+              <li role="presentation" class="active"><a href="#documentos" aria-controls="home" role="tab" data-toggle="tab">No requiere formación previa</a></li>
+              <li role="presentation"><a href="#formulariosBoogle" aria-controls="profile" role="tab" data-toggle="tab">Búsqueda de Boogle</a></li>
+              <li role="presentation"><a href="#dibujosBoogle" aria-controls="messages" role="tab" data-toggle="tab">eDiscovery</a></li>
+              
+            </ul>
+
+          <!-- Tab panes -->
+            <div class="tab-content" align="center" style="padding:50px;">
+              <div role="tabpanel" class="tab-pane active" id="documentos" >
+                <div class="col-lg-6 col-xs-12 contenido">
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left; margin-top:80px;">
+                    Millones de personas usan Google Drive en su casa y en el trabajo. Como permite alternar fácilmente entre una cuenta y otra, los usuarios pueden pasar sin problemas de su cuenta del trabajo a la cuenta personal y viceversa, a la vez que mantienen todos los controles que garantizan la seguridad de la información y de los archivos del trabajo.
+                  </p> 
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section3-tab1-no-training.png" class="img-responsive">
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="formulariosBoogle">
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">
+                   Ya no tendrás que buscar los documentos importantes en montones de carpetas. Basta con realizar una búsqueda para localizar el archivo correcto en solo unos segundos, incluso si se trata de una imagen, de un PDF o de notas escritas a mano. Con el reconocimiento óptico de caracteres (OCR) automático y el reconocimiento de imágenes, ahora puedes disfrutar en el trabajo de la magia de la Búsqueda de Google.
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section3-tab2-search.png" class="img-responsive">
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="dibujosBoogle">
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">                   
+                  Google Vault permite buscar en todo el contenido de Drive y exportarlo para eDiscovery. Se trata de una forma inteligente de recopilar la información que tu equipo del Departamento jurídico necesita para el cumplimiento normativo, al tiempo que se evita la pérdida de datos debido a los cambios de empleados.
+                  </p>
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section3-tab3-ediscovery.png" class="img-responsive">
+                </div>
+              </div>
+            </div>
+        </div>
+
+       <div style="background-color:#fff; border-top:0.2px groove; border-color:rgba(255,255,255,0.3);" class="col-lg-12 col-xs-12 contenido" align="center">
+           <h1 style="font-size:55px;" >Diseñado para los equipos</h1>
+
+            <ul class="nav nav-tabs center" role="tablist"  >
+              <li role="presentation" class="active"><a href="#escaneaDocumentos" aria-controls="home" role="tab" data-toggle="tab">Fácil de compartir</a></li>
+              <li role="presentation"><a href="#sinConexion" aria-controls="profile" role="tab" data-toggle="tab">Colaboración en tiempo real</a></li>
+              <li role="presentation"><a href="#versionesAnteriores" aria-controls="messages" role="tab" data-toggle="tab">Mantente al día</a></li>
+            </ul>
+
+          <!-- Tab panes -->
+            <div class="tab-content" align="center" style="padding:50px;">
+              <div role="tabpanel" class="tab-pane active" id="escaneaDocumentos" >                
+                  <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                    <img src="img/section4-tab1-easy-to-share.png" class="img-responsive">
+                  </div>
+                  <div class="col-lg-6 col-xs-12 contenido">
+                    <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left; margin-top:50px;">
+                     Guarda los archivos o las carpetas del trabajo en Drive, accede a ellos desde cualquier dispositivo y compártelos al instante con tus compañeros de equipo, los clientes o los partners. Incluso puedes compartir archivos con personas que no utilizan Google Drive. Ya no necesitarás enviar archivos adjuntos ni perder tiempo combinando diferentes versiones de un archivo. Drive te ayuda a agilizar el flujo de trabajo de tu empresa.
+                    </p>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="sinConexion">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section4-tab2-collaboration.jpg" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido">
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">
+                   Con Google Drive y Documentos de Google puedes trabajar con tu equipo en el mismo documento en tiempo real. Además, con los comentarios en los archivos, las conversaciones se enmarcan en un contexto y, de esta forma, ya no tienes que perder tiempo enviando y recibiendo correos electrónicos.
+                  </p>
+                </div>                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="versionesAnteriores">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section4-tab3-up-to-date.jpg" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">                   
+                   Mantente al día de lo que ocurre en tu equipo gracias a las notificaciones de actividades automáticas, que muestran quién editó los archivos compartidos y cuándo. El sencillo control de versiones de los documentos y archivos te permite volver atrás en el tiempo a las versiones anteriores de un archivo, de modo que no tendrás que preocuparte de perder el rastro de los cambios.
+                  </p>
+                </div>                
+              </div>
+            </div>
+        </div>
+
+        <div style="background-color:#fff; border-top:0.2px groove; border-color:rgba(255,255,255,0.3);" class="col-lg-12 col-xs-12 contenido" align="center">
+           <h1 style="font-size:55px;" >Haz mucho más con Boogle</h1>
+
+            <ul class="nav nav-tabs center" role="tablist"  >
+              <li role="presentation" class="active"><a href="#heraamientas" aria-controls="home" role="tab" data-toggle="tab">Potentes herramientas empresariales</a></li>
+              <li role="presentation"><a href="#videollamdas" aria-controls="profile" role="tab" data-toggle="tab">Videollamadas</a></li>
+              <li role="presentation"><a href="#aplicaciones" aria-controls="messages" role="tab" data-toggle="tab">Aplicaciones de terceros para el trabajo</a></li>
+            </ul>
+
+          <!-- Tab panes -->
+            <div class="tab-content" align="center" style="padding:50px;">
+              <div role="tabpanel" class="tab-pane active" id="herramientas" >                
+                  <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px; margin-top:50px;">
+                    <img src="img/section5-tab1-powerful-suite.png" class="img-responsive">
+                  </div>
+                  <div class="col-lg-6 col-xs-12 contenido">
+                    <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left; margin-top:50px;">
+                     Con Google Drive tendrás acceso a G Suite, que incluye Formularios, Sites, Calendar, Documentos, Hojas de Cálculo, Presentaciones, Hangouts y Google+, entre otras aplicaciones. Es tu solución definitiva para la productividad del equipo.
+                    </p>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="videollamdas">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section5-tab2-video-meetings.png" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido">
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">
+                   El contenido se aprovecha aún mejor cuando puedes reunirte con otras personas para intercambiar ideas o para exponerlo. Conecta con los demás miembros de tu equipo, con los clientes o con los partners a través de vídeo de alta definición con varios participantes, voz o texto. Puedes ahorrar tiempo y dinero en viajes, sin renunciar a ninguna de las ventajas de las reuniones cara a cara.
+                  </p>
+                </div>                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="aplicaciones">
+                <div class="col-lg-6 col-xs-12 contenido" style="padding-bottom:50px">
+                  <img src="img/section5-tab3-third-party.jpg" class="img-responsive">
+                </div>
+                <div class="col-lg-6 col-xs-12 contenido" >
+                  <p style="font-size:25px; font-family: 'Cormorant Garamond', serif; text-align:left;">                   
+                   En las cuentas administradas en el nivel de dominio, se pueden utilizar cientos de aplicaciones integradas, como DocuSign para las firmas electrónicas, LucidCharts para plantillas de "mockups" y Smartsheets para la administración de proyectos, con las que podrás sacar el máximo partido a Drive en tu trabajo.
+                  </p>
+                </div>                
+              </div>
+            </div>
+        </div>
+
+        <div style="background-color:#fff;" class="col-lg-12 col-xs-12" align="center">
+          <h1 style="font-size:50px">Elige un Plan</h1>
+          <h3>Pruébalo gratis durante 14 días.</h3>
+          <div class="col-lg-12 col-xs-12 col-lg-offset-2">
+            <div class="col-lg-4 col-xs-12 " align="left" style="margin:20px; background-color:#F9F9F9;">
+              <h1>Ideal para equipos</h1>
+              <p style="font-size:20px">Úsalo con tu equipo. En cuanto introduzcas tu correo electrónico del trabajo y las direcciones de tu equipo, podréis poneros manos a la obra.</p>
+              <input type="text" class="form-control" placeholder="Mi correo del trabajo actual"><br>
+              <button class="btn btn-primary">Continuar</button><br>
+              <br>¿Ya dispones de una cuenta? <a href="entrarUsuario.php">Inicia sesión</a>
+            </div>
+            <div class="col-lg-4 col-xs-12" align="left" style="margin:20px; background-color:#F9F9F9;">
+              <h1>Ideal para empresas</h1>
+              <p style="font-size:20px">Despliégalo en toda la empresa, y te ayudaremos a configurar el dominio.</p>
+              <button class="btn btn-primary">Registrar mi Empresa  </button><br> 
+              <br><Br><br><br><Br><br><br><br>
+            </div>
+          </div>
+        </div>
+        <div style="background-color:#FFF; padding:50px;" align="center" >
+          <br><br>
+          <h1>Millones de empresas lo utilizan, entre ellas:</h1>
+          <img src="img/marcas.jpg">
+        </div>
+
+        <div style="background-color:#F9F9F9; border-bottom:1px groove; border-color:#fff; padding-left:100px; padding-right:100px;" class="col-lg-12 col-xs-12 contenido" >
+          <div class="col-lg-2 col-xs-4 col-lg-offset-1 contenido" style="padding:20px;">            
+            <strong>Acerca de Boogle Drive</strong></br></br>
+            <a href="">Descubre Boogle Drive</a>
+            <a href="">Como usar Drive</a>
+            <a href="">Introduccion a Boogle Drive</a>                
+          </div>
+          <div class="col-lg-2 col-xs-4 contenido" style="padding:20px;">            
+            <strong>Planes y Precios</strong></br></br>
+            <a href="">Descubre Boogle Drive</a>
+            <a href="">Como usar Drive</a>
+            <a href="">Introduccion a Boogle Drive</a>                
+          </div>
+          <div class="col-lg-2 col-xs-4 contenido" style="padding:20px;">            
+            <strong>Descargas</strong></br></br>
+            <a href="">Descubre Boogle Drive</a>
+            <a href="">Como usar Drive</a>
+            <a href="">Introduccion a Boogle Drive</a>                
+          </div>
+          <div class="col-lg-2 col-xs-4 contenido" style="padding:20px;">            
+            <strong>Asistencia Medica</strong></br></br>
+            <a href="">Descubre Boogle Drive</a>
+            <a href="">Como usar Drive</a>
+            <a href="">Introduccion a Boogle Drive</a>                
+          </div>
+          <div class="col-lg-2 col-xs-4 contenido" style="padding:20px;">            
+            <strong>Soluciones Relacionadas</strong></br></br>
+            <a href="">Descubre Boogle Drive</a>
+            <a href="">Como usar Drive</a>
+            <a href="">Introduccion a Boogle Drive</a>                
+          </div>
+          
+        </div>
+      </div>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      function scrollWin() {
+          window.scrollTo(0, 3400);
+      }
+</script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
