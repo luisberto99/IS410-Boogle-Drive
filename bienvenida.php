@@ -14,8 +14,7 @@ include_once("class/class-usuario.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <meta name="description" content="">
-    <meta name="author" content="">
-
+    
     <title>Bienvenida</title>
 
    
@@ -82,10 +81,35 @@ include_once("class/class-usuario.php");
       <center>
             <td colspan="2">
           
-            <a href="caracteristicas.php">
-            <input type="reset" name="btn-acepto" 
-            value="Continuar" class="btn btn-primary">
-            </a>
+            
+
+
+
+            <button role="button" class= "btn btn-primary" data-toggle="modal" data-target="#modal-caracteristicas">Continuar</button>
+            <div class="modal fade" tabindex="-1" role="dialog" id="modal-caracteristicas">
+              <div class="modal-dialog" role="document"  style="width:900px" style="height: 800px">
+                <div class="modal-content">
+                  
+                    
+                               
+                 
+                  <div class="modal-body">
+                               
+                    <?php  
+                      include_once("caracteristicas.php");
+                    ?>
+                    
+                  <center>
+                    <a class="btn btn-lg btn-primary" href="my-drive/index.php" role="button">Ir a Drive</a>
+                  </center>  
+                 
+                  </div>
+
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+
+              
+          </div><!-- /.modal -->
           </td>
       </center> 
       <br>

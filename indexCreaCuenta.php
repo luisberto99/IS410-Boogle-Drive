@@ -18,9 +18,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     
     <meta name="description" content="">
-    <meta name="author" content="">
+
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <style >
+    .overlay{
+     display: none;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: #000;
+     z-index:1001;
+     opacity:.75;
+     -moz-opacity: 0.75;
+     filter: alpha(opacity=75);
+    }
+
+   
+
+  </style>
 
     <title>Crear Cuenta</title>
     
@@ -150,6 +171,11 @@
                       
                     </div>
                       <input type="submit" id="btn-registrar" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >
+
+
+
+                      
+
                       
                     </td>
                   </tr>
@@ -184,5 +210,37 @@
     $('[data-toggle="popover"]').popover();
       });
     </script>
+
+
+    
+        <div  id="middle" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="modal fade" tabindex="-1" role="dialog" id="modal-condiciones" >
+              
+              <div class="modal-dialog" role="document"  style="width:900px" style="height: 800px" >
+                <div class="modal-content">
+                   
+                  <div class="modal-body">
+                        
+                        <?php 
+                         
+                          include_once("condiciones.php");
+                          
+                        ?>
+                      
+                        
+                 
+                  </div>
+                 
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+
+              
+          </div><!-- /.modal -->
+          </div>
+
+                  
+
+
+              
   </body>
 </html>

@@ -20,8 +20,12 @@ $("#btn-registrar").click(function(){
 		dataType:"json",
 		success:function(respuesta){
 			if (respuesta.codigo_resultado==1){
-			    $("#resultado").html('<div class="bg-success"> '+'<center>'+respuesta.mensaje+'</center>'+"</div>");
-			     window.location.href = "condiciones.php";
+			    $("#resultado").html('<div class="bg-success"> '+'<center>'+respuesta.mensaje+'</center>'+"</div>")+
+			    $(document).ready(function()
+				   {
+				      $("#modal-condiciones").modal("show");
+				   });
+							     
 			  }
 			if (respuesta.codigo_resultado==0){
 			    $("#resultado").html('<div class="bg-danger"> '+'<center>'+respuesta.mensaje+'</center>'+"</div>");
