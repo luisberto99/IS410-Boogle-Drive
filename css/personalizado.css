@@ -266,6 +266,38 @@ header{
   padding-bottom: 8px; 
   padding-top: 8px;
 }
+
+.chat{
+  margin-right: 100px;
+}
+.ventanaChat{
+  position: absolute; 
+  left: 1000px;
+  top: 215px; 
+  background-color: #FFF;
+  width: 300px;
+  height: 400px;
+  margin-right: 100px;
+  border: 5px;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+#conversacion{
+  text-align: left;
+  padding: 10px;
+  background-color: #eaeaea;
+}
+#mensajeEnviar{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-top: rgba(0,0,0,0.05);
+}
+.mostrarChat{
+  display: none;
+}
 /*ESTILOS ALMACENAMIENTO
          !    !
          !    !

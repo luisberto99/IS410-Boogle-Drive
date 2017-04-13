@@ -22,3 +22,7 @@ function ifra(link){
      if(link==3)
     	$("#ifra").html("<iframe id='contenido2' name='principal' src='../configuraciones/admapps.php' ></iframe>");
 }
+
+function chat(){
+    $("#chat").toggleClass("mostrarChat");
+}
