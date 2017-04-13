@@ -213,30 +213,38 @@
 
 
     
-        <div  id="middle" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="modal fade" tabindex="-1" role="dialog" id="modal-condiciones" >
+        
+        <div class="modal fade" tabindex="-1" role="dialog" id="modal-condiciones">
               
               <div class="modal-dialog" role="document"  style="width:900px" style="height: 800px" >
                 <div class="modal-content">
                    
                   <div class="modal-body">
-                        
-                        <?php 
-                         
-                          include_once("condiciones.php");
-                          
-                        ?>
-                      
-                        
-                 
-                  </div>
-                 
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
+                            <?php  
+                              include_once("condiciones.php");
+                            ?>
 
-              
+                       <div class="modal-footer">
+                        <center>
+                          <td colspan="2">
+                            <a href="indexCreaCuenta.php">
+                              <input type="submit" name="btn-cancelar" 
+                              value="Cancelar" class="btn btn-warning">
+                            </a>
+                            <a href="bienvenida.php">
+                            <input type="reset" name="btn-acepto" 
+                            value="Acepto" class="btn btn-primary">
+                            </a>
+                          </td>
+                        </center>
+                      </div> 
+                </div><!-- /.modal-content -->
+                
+              </div><!-- /.modal-dialog --> 
+               
           </div><!-- /.modal -->
-          </div>
+
+         
 
                   
 

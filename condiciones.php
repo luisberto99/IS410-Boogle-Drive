@@ -29,13 +29,11 @@
 
 		
 
-        <div class="container">
-
-		<div class="container">
+        
 				
 				<center><h1> <strong><img src="img/google.png" style="width:150px"></strong> </h1></center>
 				<center>
-				<div class= "well" id = "div-formulario1"  style="width:600px" style="height: 600px">
+				
 					<center><h1>Privacidad y Condiciones</h1></center>
 					<center>
 					<p>
@@ -73,35 +71,9 @@
 
 
 					</center>
-
-					<td colspan="2">
-						<a href="indexCreaCuenta.php">
-							<input type="submit" name="btn-cancelar" 
-							value="Cancelar" class="btn btn-warning">
-						</a>
-						<a href="bienvenida.php">
-						<input type="reset" name="btn-acepto" 
-						value="Acepto" class="btn btn-primary">
-						</a>
-					</td>
 				
 				</center>
-				</div>
-		</div>
-
-		<form class="container">
 				
-				
-				
-		
-
-		
-		
-		</form>
-
-
-
-	</div>
 
 	
 		

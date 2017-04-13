@@ -40,7 +40,7 @@
             <div class="carousel-caption"  >
               <br>
               <img src="img/caracteristica1.jpg">
-              <h3><strong><p>Almacenamiento seguro para todos rus archivos</p></strong></h3>
+              <h3><strong><p>Almacenamiento seguro para todos tus archivos</p></strong></h3>
              
               <h5><p>Obten 15 GB gratuitos para fotos documentos y otros elementos.</p></h5>
               
