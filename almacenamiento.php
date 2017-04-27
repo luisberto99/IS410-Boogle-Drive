@@ -29,7 +29,7 @@
 </div>
 
  <div  class="col-lg-6 col-md-4 col-sm-4 col-xs-4">
-<iframe id="contenido" src="planes.html" ></iframe>
+<iframe id="contenido" src="planes.php" ></iframe>
 
 
 </div>

@@ -83,6 +83,12 @@ text-decoration:none;
   font-size: 14px;
 
 }
+.config2{
+     
+    color: #222;
+    margin: 0 24px;
+    padding: 24px 0 20px;
+}
 .pop{
    border-collapse: separate;
   border-spacing:  5px 5px;
@@ -451,7 +457,7 @@ hr{
 }
 
 #txt{
-    padding-top: 20px;
+    padding-top: 5px;
     color: rgba(0,0,0,0.65);
     font-size: 13px;
 }
