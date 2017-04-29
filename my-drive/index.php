@@ -1,6 +1,5 @@
 		<?php
 
-	include "../conexion/funciones.php";
 	include_once("../class/class-conexion.php");
 	$conexion = new Conexion();
 
@@ -76,6 +75,7 @@ function btn_lateral($icono,$texto,$archivo){
 <html>
 <head>
 	<title>Mi Unidad - Boogle Drive</title>
+	<meta charset="ISO-8">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/personalizado.css">
 </head>

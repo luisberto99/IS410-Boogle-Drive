@@ -1,7 +1,7 @@
 <?php
-function carpeta($carpeta){
+function carpeta($id,$carpeta){
 	echo '<div>
-	<div id="'.$carpeta.'" class="carpeta col-md-2 col-sm-3">
+	<div id="carpeta_'.$id.'" class="carpeta col-md-2 col-sm-3" onclick="carpeta('.$id.')">
 		<div style="padding-top: 14px"><span class="glyphicon glyphicon-folder-close" style="padding-left: : 8px" aria-hidden="true">&nbsp;</span> '.$carpeta.'</div>
 	</div>
 </div>';

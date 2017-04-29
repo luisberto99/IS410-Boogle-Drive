@@ -7,7 +7,6 @@
 	$sql = "SELECT codigo_carpeta, 
 					codigo_usuario, 
 					codigo_carpeta_padre, 
-					codigo_organizacion, 
 					codigo_privacidad, 
 					nombre_carpeta, 
 					fecha_creacion, 
@@ -34,7 +33,7 @@
 			<div>
 				<?php 
 				while ($fila = $conexion->obtenerRegistro($carpetas)) {
-					carpeta($fila["nombre_carpeta"]);
+					carpeta($fila["codigo_carpeta"],$fila["nombre_carpeta"]);
 				}
 				
 				
@@ -66,6 +65,8 @@
 			</div>
 		</div>
 	</div>
-
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/funciones_archivos.js"></script>
 </body>
 </html>

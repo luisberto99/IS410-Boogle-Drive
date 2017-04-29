@@ -185,6 +185,7 @@ header{
     margin-bottom: 10px;
 }
 
+
 .dere{
 	float: right;
 }
@@ -239,6 +240,16 @@ header{
     font-size: 18px;
     margin: 10px;
     width: 16%
+}
+.carpetaSeleccionada{
+    height: 50px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    border: 3px;
+    border-radius: 3px;
+    font-size: 18px;
+    margin: 10px;
+    width: 16%
+    background-color: #005CFF;
 }
 
 .archivo{
