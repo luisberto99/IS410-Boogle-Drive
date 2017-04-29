@@ -1,6 +1,19 @@
 
 <?php 
 	include_once("metodosCuadricula.php");
+	include_once("../class/class-conexion.php");
+	$conexion = new Conexion();
+	$conexion->establecerConexion();
+	$sql = "SELECT codigo_carpeta, 
+					codigo_usuario, 
+					codigo_carpeta_padre, 
+					codigo_organizacion, 
+					codigo_privacidad, 
+					nombre_carpeta, 
+					fecha_creacion, 
+					descripcion 
+					FROM tbl_carpetas";
+	$carpetas = $conexion->ejecutarInstruccion($sql);
  ?>
 <!DOCTYPE html>
 <html>
@@ -20,19 +33,11 @@
 			<div class="cabeceraContenido">Carpetas</div>
 			<div>
 				<?php 
-				carpeta("Carpeta1");
-				carpeta("Carpeta2");
-				carpeta("Carpeta3");
-				carpeta("Carpeta4");
-				carpeta("Carpeta5");
-				carpeta("Carpeta6");
-				carpeta("Carpeta7");
-				carpeta("Carpeta8");
-				carpeta("Carpeta9");
-				carpeta("Carpeta10");
-				carpeta("Carpeta11");
-				carpeta("Carpeta12");
-				carpeta("Carpeta13");
+				while ($fila = $conexion->obtenerRegistro($carpetas)) {
+					carpeta($fila["nombre_carpeta"]);
+				}
+				
+				
 
 				?>
 			</div>

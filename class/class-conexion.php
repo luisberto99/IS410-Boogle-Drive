@@ -6,7 +6,7 @@
 		private $puerto = 3306;
 		private $usuario = "root";
 		private $contrasena = "";
-		private $baseDatos = "mydb";
+		private $baseDatos = "boogledrive";
 		private $enlace;
 
 		public function __construct(){}

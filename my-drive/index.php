@@ -1,6 +1,10 @@
 		<?php
 
 	include "../conexion/funciones.php";
+	include_once("../class/class-conexion.php");
+	$conexion = new Conexion();
+
+	$conexion->establecerConexion();
 
 		function menu_nuevo(){
 			echo '<ul class="dropdown-menu">
