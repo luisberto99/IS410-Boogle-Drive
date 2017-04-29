@@ -4,17 +4,66 @@
 	<title>Almacenamiento</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/personalizado.css">
+<style type="text/css">
+  body {
+    overflow-x: hidden;
+}
+</style>
 </head>
 <body>
 <div class="container-fluid">
 <div class="row">
-	
 
+<?php
+function btn_superiores2($icon){
+    echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size: 20px; margin-right: 45px" aria-hidden="true"></span></button>';
+  }
+	function btn_superiores($icon){
+    echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size: 20px; margin-right: 10px" aria-hidden="true"></span></button>';
+  }
+?>
 <!-- As a link -->
 <div  id="encabezado" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <img id="boogle" src="img/google.png" width="92" height="36"></a>
-  <span id="bell" class="glyphicon glyphicon-bell" style="font-size: 20px; margin-right: 20px" ></span>
-  <span id="user" class="glyphicon glyphicon-user" style="font-size: 20px; margin-right: 45px " ></span>
+<div>
+  <?php btn_superiores2("glyphicon glyphicon-user");?>
+<div class="dropdown-menu menu_buscador perfilUsuario" style="right: 60px; border: 0; margin: 0">
+                <div style="height: 70%; margin: 0">
+                  <div class="col-md-3">
+                    <span class="glyphicon glyphicon-user configuracionNotificaciones" style="font-size: 60px"></span>
+                  </div>
+                  <div class="col-md-7">
+                    <br>
+                    <strong>Dulce Maria Medina</strong><br>
+                    <small>dulce.medina@gmail.com</small>
+                    <button class="btn btn-primary" type="button">Mi cuenta</button>
+                  </div>
+                </div>
+                <div class="perfilUsuarioInferior" style="margin: 0">
+                  <button class="btn dere" type="button">Añadir cuenta</button>
+                  <button class="btn izq" type="button">Cerrar sesion</button>
+                </div>
+              </div>
+           </div>
+           <div>
+              <?php btn_superiores("glyphicon glyphicon-bell");?>
+              <div class="dropdown-menu notificaciones menu_buscador " style="right: 90px">
+                <div>
+                  <button class="configuracionNotificaciones transpariencia">
+                    <span class="glyphicon glyphicon-cog " aria-hidden="true"></span>
+                  </button>
+                  <span class="configuracionNotificaciones">Google</span><br>
+                </div>
+                <div align="center">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  Has leído todas las notificaciones.
+                </div>
+              </div>
+             </div> 
   
 </div>
 
@@ -28,7 +77,7 @@
 <div id="grafico" class="col-lg-4 col-md-4">
 </div>
 
- <div  class="col-lg-6 col-md-4 col-sm-4 col-xs-4">
+ <div  class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 <iframe id="contenido" src="planes.php" ></iframe>
 
 
@@ -39,7 +88,7 @@
 
 	<h4><strong>Tu espacio de almacenamiento se comparte en</strong></h4>
 
-<div class="col-lg-4">
+<div class="col-lg-4 col-xs-12 col-md-12">
 <h2 ><strong>Google Drive</strong></h2>
 <table>
   <tr>
@@ -58,7 +107,7 @@
 </div>
 
 
-<div class="col-lg-4">
+<div class="col-lg-4 col-xs-12 col-md-12">
 <h2 ><strong>Gmail</strong></h2>
 <table >
   <tr>
@@ -76,7 +125,7 @@
 </div>
 
 
-<div class="col-lg-4">
+<div class="col-lg-4 col-xs-12 col-md-12">
 <h2 ><strong>Google Fotos</strong></h2>
 <table>
   <tr>
