@@ -34,6 +34,10 @@
 			return mysqli_fetch_array($resultado);
 		}
 
+        public function cantidadRegistros($resultado){
+			return mysqli_num_rows($resultado);
+		}
+		
 		public function getHost(){
 			return $this->host;
 		}

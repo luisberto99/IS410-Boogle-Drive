@@ -23,25 +23,14 @@ include ("class/class-conexion.php");
 
       <p style="margin-left: 18px"><strong>Planes</strong>
       </p>
-     <div  class="col-md-2 col-sm-6 col-xs-4 col-lg-2">
-             <div class="welll"> 
-              <p id="storage">
-              15 GB
-              </p>
-              <div id="precio">
-                <p id="txt">
-                  <strong>Plan actual</strong>
-                </p>
-              </div>
-            </div>
-      </div>
+     
 
       <?php
       while ($fila=$conexion->obtenerRegistro($resultadoPlanes)) {
         echo
         '<div  class="col-md-2 col-sm-4 col-xs-4 col-lg-2">'.
           '<div class="welll"> '.
-            '<p id="storage">'.$fila["almacenamiento"].'</p>'.
+            '<p id="storage">'.$fila["nombre_plan"].'</p>'.
             '<div class="pad">'.
             '<button id="preciobtn2">'.$fila["precio"].' $/mes</button  >'.
              '</div>'.

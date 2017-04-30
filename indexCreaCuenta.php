@@ -1,17 +1,20 @@
 <?php
-  include_once("class/class-usuario.php");
-  include_once("class/class-pais.php");
-
-
-    $paises = array();
-    $paises[] = new Pais(1, "Honduras");
-    $paises[] = new Pais(2, "Nicaragua");
-    $paises[] = new Pais(3, "El Salvador");
-    $paises[] = new Pais(4, "Panama");
-    $paises[] = new Pais(6, "Guatemala");
-    $paises[] = new Pais(7, "Belice");
-    $paises[] = new Pais(8, "Mexico");
+  include ("class/class-conexion.php");
+  $conexion = new Conexion();
+  $conexion->establecerConexion();
+  $resultadoPais=$conexion->ejecutarInstruccion("SELECT codigo_pais, nombre_pais FROM tbl_pais");
+  $resultadoPreguntas=$conexion->ejecutarInstruccion("select a.codigo_pregunta,a.pregunta
+from tbl_preguntas a 
+where a.codigo_pregunta not in ( select codigo_pregunta
+from tbl_respuestas b 
+where b.codigo_usuario=3)");
+  $resultadoPreguntas2=$conexion->ejecutarInstruccion("select a.codigo_pregunta,a.pregunta
+from tbl_preguntas a 
+where a.codigo_pregunta not in ( select codigo_pregunta
+from tbl_respuestas b 
+where b.codigo_usuario=3)");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -91,9 +94,9 @@
                     <label for="txt-nombre">Nombre :</label>
                     <td >
                     
-                    <input id="txt-nombre" type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" onblur="validar('txt-nombre','td-nombre')" ></td>
+                    <input id="txt-nombre" type="text" name="txt-nombre"  class="form-control" placeholder="Nombre"  ></td>
                     <td >
-                    <input id="txt-apellido" type="text" name="txt-apellido" class="form-control" placeholder="Apellido" onblur='validar("txt-apellido", "td-nombre")' ></td>
+                    <input id="txt-apellido" type="text" name="txt-apellido" class="form-control" placeholder="Apellido" ></td>
                     <tr>
                       <td id="td-nombre" style="color: red"></td>
                     </tr>
@@ -102,26 +105,26 @@
                   <tr>
                     <td colspan="2"  >
                     <label for="txt-nombreUsuario">Nombre de Usuario :</label>
-                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" onblur="validar('txt-usuario','td-usuario')"  id="txt-usuario" data-toggle="popover" data-content="Puedes usar letras, numeros y puntos." data-container="body" data-placement="left"></td>
+                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" ></td>
                   </tr>
                   <tr><td id="td-usuario" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" >
                     <label for="txt-contrasena">Crea una contraseña :</label>
-                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña" id="txt-contraseña"  onblur="contraseña('txt-contraseña','td-contraseña')"  data-toggle="popover" title="Seguridad de la contraseña:" data-content="Usa ocho caracteres como mínimo. No uses una contraseña de otro sitio ni un nombre demasiado común, como el nombre de tu mascota." data-placement="left" data-container="body"></td>
+                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña" id="txt-contraseña"   ></td>
                     
                   </tr>
                   <tr><td id="td-contraseña" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" >
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
-                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContraseña" onblur = "contraseña('txt-confirContraseña','td-confirContraseña')"></td>
+                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContraseña" ></td>
                   </tr>
                   <tr><td id="td-confirContraseña" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" >
                       <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> 
-                      <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimento" onblur="validar('data-fechaNacimiento', 'td-fecha')" ></td>
+                      <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimento" ></td>
                   </tr>
                   <tr><td id="td-fecha"></td></tr>
                   
@@ -141,35 +144,73 @@
                   <tr>
                     <td colspan="2" >
                     <label>Telefono Celular:</label>
-                    <input id="txt-telefono" type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" onblur="validar('txt-telefono','td-telefono')" ></td>
+                    <input id="txt-telefono" type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" ></td>
                   </tr>
                   <tr><td id="td-telefono" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" >
                     <label for="txt-fecha-nacimiento">Correo Electronico:</label>
-                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico"  onblur="validar('txt-correo','td-correo')"></td>
+                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico" ></td>
                   </tr>
                   <tr><td id="td-correo" style="color: red"></td></tr>
                   <tr>
                     <td colspan="2" >
                     <label for="Ubicacion">Ubicacion:</label>
                       <select id="cmb-ubicacion" name="slc-pais" class="form-control">
-                          <option value="">--Ubicacion--</option>
+                          <option value="0">--Ubicacion--</option>
                           <?php
-                            for ($i=0; $i <sizeof($paises) ; $i++) {
-                                  echo '<option  value="'.$paises[$i]->getNombrePais().'">'.$paises[$i]->getNombrePais().'</option>';
-                            }     
+                            while ($fila=$conexion->obtenerRegistro($resultadoPais)) {
+                             echo '<option value="'.$fila["codigo_pais"].'">'.$fila["nombre_pais"].'</option>';
+                            }
+                                
                           ?>                          
                       </select>  
                     </td>
                   </tr>
+
                   
-                  <tr><td id="td-campos" style="color: red; padding: 8px;"></td></tr>
+                  <tr>
+                  <td colspan="2">
+                  <label>Pregutas de Seguridad</label>
+                  <select id="slc-preguntas" class="form-control">
+
+                    <option value="0">--Seleccione--</option>
+                    <?php
+                            while ($fila=$conexion->obtenerRegistro($resultadoPreguntas)) {
+                             echo '<option value="'.$fila["codigo_pregunta"].'">'.utf8_encode($fila["pregunta"]).'</option>';
+                            }
+                             
+
+                          ?> 
+
+                  </select>
+                  <br>
+                   <input type="text" class="form-control" placeholder="Respuesta" id="respuesta2" >
+                   <br> 
+                  <select id="slc-2" class="form-control">
+                    <option value="0">--Seleccione--</option>
+                    <?php
+                            while ($fila=$conexion->obtenerRegistro($resultadoPreguntas2)) {
+                             echo '<option value="'.$fila["codigo_pregunta"].'">'.utf8_encode($fila["pregunta"]).'</option>';
+                            }
+                             
+
+                          ?> 
+                  </select>
+                  <script>
+                    
+                  </script>
+                  <br>
+                   <input type="text" class="form-control" placeholder="Respuesta" id="respuesta2" > 
+                  </td>
+                  </tr>
                   <tr>
                     <td colspan="2">
                     <div id="resultado">
                       
                     </div>
+                    <br>
+                    
                       <input type="submit" id="btn-registrar" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >
 
 
@@ -200,21 +241,7 @@
       </footer>
     </div> 
 </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/validarRegistro.js"></script>
-    <script type="text/javascript" src="js/registro.js"></script>
-    <script type="text/javascript">
-      $(function () {
-    $('[data-toggle="popover"]').popover();
-      });
-    </script>
-
-
-    
-        
-        <div class="modal fade" tabindex="-1" role="dialog" id="modal-condiciones">
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-condiciones">
               
               <div class="modal-dialog" role="document"  style="width:900px" style="height: 800px" >
                 <div class="modal-content">
@@ -246,9 +273,11 @@
 
          
 
-                  
 
 
-              
+
+       <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="js/registro.js"></script>       
   </body>
 </html>
