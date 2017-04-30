@@ -92,47 +92,38 @@ where b.codigo_usuario=3)");
               <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
-                    <td >
-                    
-                    <input id="txt-nombre" type="text" name="txt-nombre"  class="form-control" placeholder="Nombre"  ></td>
-                    <td >
-                    <input id="txt-apellido" type="text" name="txt-apellido" class="form-control" placeholder="Apellido" ></td>
-                    <tr>
-                      <td id="td-nombre" style="color: red"></td>
-                    </tr>
+
+                    <td id="nombre"  >
+                    <input id="txt-nombre" type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" 
+                    </td>
+                    <td id="apellido">
+                    <input id="txt-apellido" type="text" name="txt-apellido" class="form-control" placeholder="Apellido" 
                   </tr>
                   
                   <tr>
-                    <td colspan="2"  >
+                    <td colspan="2" id="usuario" >
                     <label for="txt-nombreUsuario">Nombre de Usuario :</label>
-                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" ></td>
+                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" id="txt-usuario" data-toggle="popover" data-content="Puedes usar letras, numeros y puntos." data-container="body" data-placement="left"></td>
                   </tr>
-                  <tr><td id="td-usuario" style="color: red"></td></tr>
+                 
                   <tr>
-                    <td colspan="2" >
+                    <td colspan="2" id="contrasena">
                     <label for="txt-contrasena">Crea una contraseña :</label>
-                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña" id="txt-contraseña"   ></td>
+                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña" id="txt-contrasena"  data-toggle="popover" title="Seguridad de la contraseña:" data-content="Usa ocho caracteres como mínimo. No uses una contraseña de otro sitio ni un nombre demasiado común, como el nombre de tu mascota." data-placement="left" data-container="body"></td>  </td>
                     
                   </tr>
-                  <tr><td id="td-contraseña" style="color: red"></td></tr>
                   <tr>
-                    <td colspan="2" >
+                    <td colspan="2" id="confirContrasena">
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
-                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContraseña" ></td>
+                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContrasena"  ></td>
                   </tr>
-                  <tr><td id="td-confirContraseña" style="color: red"></td></tr>
                   <tr>
-                    <td colspan="2" >
+                    <td colspan="2" id="fechaNacimento">
                       <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> 
                       <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimento" ></td>
                   </tr>
-                  <tr><td id="td-fecha"></td></tr>
-                  
-
-                  
-                  
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" id="genero">
                     <!--Para seleccionar por defecto un checkbox o radioboton utiliza la propiedad checked-->
                     <!--En el caso de los select utiliza la propiedad selected-->
                         <label>Genero:</label> 
@@ -142,21 +133,19 @@ where b.codigo_usuario=3)");
                   </tr>
 
                   <tr>
-                    <td colspan="2" >
+                    <td colspan="2" id="telefono">
                     <label>Telefono Celular:</label>
-                    <input id="txt-telefono" type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" ></td>
+                    <input id="txt-telefono" type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico"  ></td>
                   </tr>
-                  <tr><td id="td-telefono" style="color: red"></td></tr>
                   <tr>
-                    <td colspan="2" >
-                    <label for="txt-fecha-nacimiento">Correo Electronico:</label>
-                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico" ></td>
+                    <td colspan="2" id="correo">
+                    <label >Correo Electronico:</label>
+                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico"  ></td>
                   </tr>
-                  <tr><td id="td-correo" style="color: red"></td></tr>
                   <tr>
-                    <td colspan="2" >
+                    <td colspan="2" id="ubicacion">
                     <label for="Ubicacion">Ubicacion:</label>
-                      <select id="cmb-ubicacion" name="slc-pais" class="form-control">
+                      <select id="slc-ubicacion" name="slc-pais" class="form-control">
                           <option value="0">--Ubicacion--</option>
                           <?php
                             while ($fila=$conexion->obtenerRegistro($resultadoPais)) {
@@ -168,64 +157,51 @@ where b.codigo_usuario=3)");
                     </td>
                   </tr>
 
-                  
                   <tr>
-                  <td colspan="2">
-                  <label>Pregutas de Seguridad</label>
-                  <select id="slc-preguntas" class="form-control">
-
-                    <option value="0">--Seleccione--</option>
-                    <?php
-                            while ($fila=$conexion->obtenerRegistro($resultadoPreguntas)) {
-                             echo '<option value="'.$fila["codigo_pregunta"].'">'.utf8_encode($fila["pregunta"]).'</option>';
-                            }
-                             
-
-                          ?> 
-
-                  </select>
-                  <br>
-                   <input type="text" class="form-control" placeholder="Respuesta" id="respuesta2" >
-                   <br> 
-                  <select id="slc-2" class="form-control">
-                    <option value="0">--Seleccione--</option>
-                    <?php
-                            while ($fila=$conexion->obtenerRegistro($resultadoPreguntas2)) {
-                             echo '<option value="'.$fila["codigo_pregunta"].'">'.utf8_encode($fila["pregunta"]).'</option>';
-                            }
-                             
-
-                          ?> 
-                  </select>
-                  <script>
-                    
-                  </script>
-                  <br>
-                   <input type="text" class="form-control" placeholder="Respuesta" id="respuesta2" > 
+                  <td colspan="2" id="preguntass">
+                     <label>Pregutas de Seguridad</label>
+                         <select id="slc-preguntas" class="form-control">
+                           <option value="0">--Seleccione--</option>
+                           <?php
+                                 while ($fila=$conexion->obtenerRegistro($resultadoPreguntas)) {
+                                   echo '<option value="'.$fila["codigo_pregunta"].'">'.utf8_encode($fila["pregunta"]).'</option>';
+                                 }
+                                  
+     
+                            ?> 
+                         </select>
+                  </td>
+                  <tr>
+                     <td colspan="2" id="respuesta1">
+                         <input type="text" class="form-control" placeholder="Respuesta" id="txt-respuesta1" >
+                     </td>
+                  </tr>
+                  <tr>
+                  <td colspan="2" id="22"><br> 
+                    <select id="slc-2" class="form-control">
+                          <option value="0">--Seleccione--</option>
+                              <?php
+                                      while ($fila=$conexion->obtenerRegistro($resultadoPreguntas2)) {
+                                       echo '<option value="'.$fila["codigo_pregunta"].'">'.utf8_encode($fila["pregunta"]).'</option>';
+                                      }
+                                       
+          
+                              ?> 
+                    </select>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td colspan="2" id="respuesta2">
+                       <input type="text" class="form-control" placeholder="Respuesta" id="txt-respuesta2" > 
                   </td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                    <div id="resultado">
-                      
-                    </div>
                     <br>
-                    
-                      <input type="submit" id="btn-registrar" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >
-
-
-
-                      
-
-                      
+                        <input type="submit" id="btn-registrar" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >    
                     </td>
                   </tr>
-
-
-                  
-          
-            
-          </td>
+                   </td>
               </table>            
           </form>
        </div>
@@ -278,6 +254,13 @@ where b.codigo_usuario=3)");
 
        <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-       <script type="text/javascript" src="js/registro.js"></script>       
+     <script type="text/javascript" src="js/registro.js"></script>
+    <script src="js/validarRegistro.js"></script>
+         
+       <script type="text/javascript">
+      $(function () {
+    $('[data-toggle="popover"]').popover();
+      });
+    </script>    
   </body>
 </html>
