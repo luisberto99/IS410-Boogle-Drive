@@ -224,7 +224,7 @@ header{
     height: 100%;
 }
 
-.principal{
+.principal{ins
   padding: 8px 8px 16px 22px;
   color: rgba(0,0,0,.54);
 }
@@ -237,20 +237,20 @@ header{
     background-color: #FFF;
     border: 3px;
     border-radius: 3px;
-    font-size: 18px;
+    font-size: 14px;
     margin: 10px;
-    width: 16%
+    width: 16%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-.carpetaSeleccionada{
-    height: 50px;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
-    border: 3px;
-    border-radius: 3px;
-    font-size: 18px;
-    margin: 10px;
-    width: 16%
-    background-color: #005CFF;
+.Seleccionada{
+    background-color: #4285F4 !important;
+    color: #FFF !important;
 }
+
+
 
 .archivo{
   height: 150px;
@@ -259,7 +259,12 @@ header{
   border-radius: 5px;
   font-size: 15px;
   margin: 10px;
-  background-color: #FFF
+  background-color: #FFF;
+  padding: 0;
+}
+
+.nombreArchivo{
+  width: 100%;
 }
 .archivo-imagen{
   margin: auto;

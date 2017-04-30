@@ -1,14 +1,14 @@
 <?php
 function carpeta($id,$carpeta){
 	echo '<div>
-	<div id="carpeta_'.$id.'" class="carpeta col-md-2 col-sm-3" onclick="carpeta('.$id.')">
+	<div id="carpeta_'.$id.'" class="carpeta col-md-2 col-sm-3" onclick="seleccion(\'#carpeta_'.$id.'\')">
 		<div style="padding-top: 14px"><span class="glyphicon glyphicon-folder-close" style="padding-left: : 8px" aria-hidden="true">&nbsp;</span> '.$carpeta.'</div>
 	</div>
 </div>';
 }
 
 function archivoImagen($imagen){
-	echo '<div class="archivo col-md-2">
+	echo '<div class="archivo col-md-2" onclick="seleccion('.$id.')">
 	<div style="width: 100$; height: 80%">
 		<img class="archivo-imagen" src="../img/'.$imagen.'">
 	</div>
@@ -29,12 +29,12 @@ function archivoAudio($audio){
 				</div>';
 }
 
-function archivoPDF($archivo){
-	echo '<div class="archivo col-md-2">
+function archivoPDF($id,$archivo){
+	echo '<div class="archivo col-md-2"  onclick="seleccion(\'#archivo_'.$id.'\')">
 					<div style="width: 100$; height: 80%">
 						<span class="glyphicon glyphicon-book archivo-audio" aria-hidden="true" ></span>
 					</div>
-					<div>
+					<div id="archivo_'.$id.'" class="nombreArchivo">
 						<span class="glyphicon glyphicon-book" style="font-size: 20px; color: #00993A" aria-hidden="true"></span> &nbsp;'.$archivo.'
 					</div>
 				</div>';

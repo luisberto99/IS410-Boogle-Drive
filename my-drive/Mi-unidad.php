@@ -11,8 +11,22 @@
 					nombre_carpeta, 
 					fecha_creacion, 
 					descripcion 
-					FROM tbl_carpetas";
+					FROM tbl_carpetas
+					WHERE (codigo_carpeta_padre IS NULL AND codigo_usuario = 1)";
 	$carpetas = $conexion->ejecutarInstruccion($sql);
+
+	$sql = "SELECT codigo_archivo, 
+			codigo_usuario, 
+			codigo_tipo_archivo, 
+			codigo_privacidad, 
+			nombre_archivo, 
+			tamanio_archivo, 
+			fecha_creacion, 
+			archivo, 
+			descripcion 
+			FROM tbl_archivos 
+			WHERE (codigo_usuario = 1)";
+	$archivos = $conexion->ejecutarInstruccion($sql);
  ?>
 <!DOCTYPE html>
 <html>
@@ -29,15 +43,13 @@
 			<button class="transpariencia dere ordenElementos"><strong>Nombre</strong></button>
 		</div>
 		<div id="div-carpetas">
+		<div>
 			<div class="cabeceraContenido">Carpetas</div>
 			<div>
 				<?php 
 				while ($fila = $conexion->obtenerRegistro($carpetas)) {
 					carpeta($fila["codigo_carpeta"],$fila["nombre_carpeta"]);
 				}
-				
-				
-
 				?>
 			</div>
 		</div>
@@ -45,19 +57,10 @@
 		<div id="div-archivos" style="margin-top: 260px">
 			<div class="cabeceraContenido">Archivos</div>
 			<div>
-				<?php 
-				archivoPDF("C++ desde...pdf");
-				archivoAudio("Cansion1.mp3");
-				archivoAudio("Cansion2.mp3");
-				archivoAudio("Cansion3.mp3");
-				archivoAudio("Cansion4.mp3");
-				archivoPDF("como progr...pdf");
-				archivoPDF("java desde...pdf");
-				archivoPDF("los hijos de...pdf");
-				archivoImagen("photo-1-1600.jpg");
-				archivoImagen("photo-2-1600.jpg");
-				archivoImagen("photo-3-1600.jpg");
-				archivoPDF("PHP desde...pdf");
+			<?php 
+				while ($fila = $conexion->obtenerRegistro($archivos)) {
+					archivoPDF($fila["codigo_archivo"],$fila["nombre_archivo"]);
+				}
 				?>
 
 				
@@ -65,6 +68,7 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" id="seleccion" value="0" >
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/funciones_archivos.js"></script>
