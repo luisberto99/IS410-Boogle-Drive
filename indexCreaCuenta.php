@@ -89,58 +89,64 @@ where b.codigo_usuario=3)");
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="well" id = "div-formulario1">
-              <table class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
+              <table   class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
 
                     <td id="nombre"  >
-                    <input id="txt-nombre" type="text" name="txt-nombre"  class="form-control" placeholder="Nombre" 
+                    <input id="txt-nombre" type="text" onclick="pop();" name="txt-nombre" data-html="true" class="form-control" placeholder="Nombre" data-toggle="popover" data-content="-usa [2-12] caracteres <br>-solo usa letras" data-container="body" data-placement="left"
                     </td>
                     <td id="apellido">
-                    <input id="txt-apellido" type="text" name="txt-apellido" class="form-control" placeholder="Apellido" 
+                    <input id="txt-apellido" type="text" onclick="pop();" name="txt-apellido" data-html="true" class="form-control" placeholder="Apellido" data-toggle="popover" data-content="-Usa [2-12] caracteres <br>-Solo usa letras" data-container="body" data-placement="top"
                   </tr>
                   
                   <tr>
                     <td colspan="2" id="usuario" >
                     <label for="txt-nombreUsuario">Nombre de Usuario :</label>
-                    <input type="text" name="txt-nombreUsuario" class="form-control" placeholder="Nombre Usuario" id="txt-usuario" data-toggle="popover" data-content="Puedes usar letras, numeros y puntos." data-container="body" data-placement="left"></td>
+                    <input type="text" name="txt-nombreUsuario" onclick="pop();" class="form-control" data-html="true" placeholder="Nombre Usuario" id="txt-usuario" data-toggle="popover" data-html="true"  data-content="-Usa [4-15] caracteres <br> -Puedes usar solo letras, numeros y puntos" data-container="body" data-placement="left"></td>
                   </tr>
                  
                   <tr>
                     <td colspan="2" id="contrasena">
                     <label for="txt-contrasena">Crea una contraseña :</label>
-                    <input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña" id="txt-contrasena"  data-toggle="popover" title="Seguridad de la contraseña:" data-content="Usa ocho caracteres como mínimo. No uses una contraseña de otro sitio ni un nombre demasiado común, como el nombre de tu mascota." data-placement="left" data-container="body"></td>  </td>
+                    <input type="password" name="txt-contrasena" class="form-control" onclick="pop();" placeholder="Contraseña" id="txt-contrasena"  data-toggle="popover" data-html="true" title="Seguridad de la contraseña:" data-content="-Usa [4-12] caracteres <br>
+                    -Usa una letra mayuscula y una miniscula como minimo <br>
+                    -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo" data-placement="left" data-container="body"></td>  </td>
                     
                   </tr>
                   <tr>
                     <td colspan="2" id="confirContrasena">
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
-                    <input type="password" name="txt-confirmacionContrasena" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContrasena"  ></td>
+                    <input type="password" name="txt-confirmacionContrasena" onclick="pop();" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContrasena" data-toggle="popover" data-html="true" title="Seguridad de la contraseña:" data-content="-Usa [4-12] caracteres <br>
+                    -Usa una letra mayuscula y una miniscula como minimo <br>
+                    -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo" data-placement="left" data-container="body" ></td>
                   </tr>
                   <tr>
                     <td colspan="2" id="fechaNacimento">
                       <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> 
-                      <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimento" ></td>
+                      <input type="date" name="txt-fecha-nacimiento" onclick="pop();" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimento" ></td>
                   </tr>
                   <tr>
-                    <td colspan="2" id="genero">
-                    <!--Para seleccionar por defecto un checkbox o radioboton utiliza la propiedad checked-->
-                    <!--En el caso de los select utiliza la propiedad selected-->
-                        <label>Genero:</label> 
-                        <label><input id="rbt-genero" type="radio" name="rbt-genero" value="Femenino" >Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input id="rbt-genero" type="radio" name="rbt-genero" value="Masculino" >Masculino</label>
+                    <td colspan="2"  id="genero">
+                    <label>Genero:</label>
+                    <select class="form-control" id="slc-genero" >
+                      <option value="0">--Seleccione--</option>
+                      <option value="F">Mujer</option>
+                      <option value="M">Hombre</option>
+                    </select>
                     </td>
                   </tr>
 
                   <tr>
                     <td colspan="2" id="telefono">
                     <label>Telefono Celular:</label>
-                    <input id="txt-telefono" type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico"  ></td>
+                    <input id="txt-telefono" type="text" name="txt-telefono" onclick="pop();" class="form-control" placeholder="Numero telefonico" data-toggle="popover"  data-content="Escribe tu dato Telefonico de la forma: +xxx xxxxxxxxx
+                    o +xx xxxxxxxxx" data-placement="left" data-container="body" ></td>
                   </tr>
                   <tr>
                     <td colspan="2" id="correo">
                     <label >Correo Electronico:</label>
-                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico"  ></td>
+                    <input id="txt-correo" type="email" name="txt-correo" class="form-control" placeholder="Correo electronico"  data-toggle="popover" onclick="pop();"  data-content="Correo de la forma: Name@example.xxx" data-placement="left" data-container="body" ></td>
                   </tr>
                   <tr>
                     <td colspan="2" id="ubicacion">
@@ -160,7 +166,7 @@ where b.codigo_usuario=3)");
                   <tr>
                   <td colspan="2" id="preguntass">
                      <label>Pregutas de Seguridad</label>
-                         <select id="slc-preguntas" class="form-control">
+                         <select id="slc-preguntas" class="form-control" >
                            <option value="0">--Seleccione--</option>
                            <?php
                                  while ($fila=$conexion->obtenerRegistro($resultadoPreguntas)) {
@@ -173,7 +179,7 @@ where b.codigo_usuario=3)");
                   </td>
                   <tr>
                      <td colspan="2" id="respuesta1">
-                         <input type="text" class="form-control" placeholder="Respuesta" id="txt-respuesta1" >
+                         <input type="text" class="form-control" placeholder="Respuesta" id="txt-respuesta1" data-html="true" data-toggle="popover" onclick="pop();" data-content="-Usa [2-12] caracteres <br>-Solo usa espacio y letras" data-placement="left" data-container="body">
                      </td>
                   </tr>
                   <tr>
@@ -192,7 +198,7 @@ where b.codigo_usuario=3)");
                   </tr>
                   <tr>
                   <td colspan="2" id="respuesta2">
-                       <input type="text" class="form-control" placeholder="Respuesta" id="txt-respuesta2" > 
+                       <input type="text" class="form-control" placeholder="Respuesta" id="txt-respuesta2" data-html="true" data-toggle="popover" onclick="pop();"  data-content="-Usa [2-12] caracteres <br>-Solo usa espacio y letras" data-placement="left" data-container="body" > 
                   </td>
                   </tr>
                   <tr>

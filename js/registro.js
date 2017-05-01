@@ -1,7 +1,5 @@
 $(document).ready(function(){
-	$("#btn-registrar").click(function(){
-document.getElementById('respuestas').style.display='none';
-});
+	
 
 $("#slc-preguntas").click(function(){
 	var x = document.getElementById("slc-preguntas");
