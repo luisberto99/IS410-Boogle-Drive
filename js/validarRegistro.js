@@ -25,176 +25,219 @@ $("#btn-registrar").click(function(){
 	dato[3]=d;
 	dato[4]=e;
 	dato[5]=f;
-    dato[6]=g;
-    dato[7]=h;
-    dato[8]=i;
-    dato[9]=j;
-    dato[10]=k;
-    dato[11]=l;
-    dato[12]=m;
-    dato[13]=n;
+  dato[6]=g;
+  dato[7]=h;
+  dato[8]=i;
+  dato[9]=j;
+  dato[10]=k;
+  dato[11]=l;
+  dato[12]=m;
+  dato[13]=n;
+
+  o=$("#nombre");
+  p= $("#apellido");
+  q=$("#usuario");
+  r=$("#correo");
+  s=$("#telefono");
+  t=$("#fechaNacimento");
+  u=$("#respuesta1");
+  v=$("#respuesta2");
+  w=$("#contrasena");
+  y=$("#confirContrasena");
+  aa=$("#ubicacion");
+  dd=$("#preguntass");
+  bb=$("#22");
+  cc=$("#genero");
+
+  dato2=new Array();
+  dato2[0]=o;
+  dato2[1]=p;
+  dato2[2]=q;
+  dato2[3]=r;
+  dato2[4]=s;
+  dato2[5]=t;
+  dato2[6]=u;
+  dato2[7]=v;
+  dato2[8]=w;
+  dato2[9]=y;
+  dato2[10]=aa;
+  dato2[11]=dd;
+  dato2[12]=bb;
+  dato2[13]=cc;
+  
     for (var z = 0; z < dato.length; z++) {
            if (dato[z]==null || dato[z].length == 0 || /^\s+$/.test(dato[z])) {
            	if (dato[z]==a) 
-           		$("#nombre").addClass('has-error');
+           		o.addClass('has-error');
            	
            	if (dato[z]==b) 
-                $("#apellido").addClass('has-error');
+               p.addClass('has-error');
 
            	if (dato[z]==c) 
-           		$("#usuario").addClass('has-error');
+           		q.addClass('has-error');
 
             if (dato[z]==d ) 
-           	    $("#correo").addClass('has-error');
+           	    r.addClass('has-error');
 
            	if (dato[z]==h)
-           		$("#telefono").addClass('has-error');
+           		s.addClass('has-error');
 
            	if (dato[z]==g) 
-           	    $("#fechaNacimento").addClass('has-error');
+           	    t.addClass('has-error');
 
            	if (dato[z]==l) 
-           	    $("#respuesta1").addClass('has-error');
+           	    u.addClass('has-error');
 
            	if (dato[z]==m) 
-           	    $("#respuesta2").addClass('has-error');
+           	    v.addClass('has-error');
 
            	if (dato[z]==e) 
-           	    $("#contrasena").addClass('has-error');
+           	    w.addClass('has-error');
 
            	if (dato[z]==f) 
-           	    $("#confirContrasena").addClass('has-error');
+           	    y.addClass('has-error');
 
            }else{
 
            	if (dato[z]==a){ 
            		if (dato[z].match(/^[a-zA-Z]+$/)) {
            			if ((dato[z].length>=2 && dato[z].length<=12)) {
-           		      $("#nombre").removeClass('has-error');
+           		      o.removeClass('has-error');
            		   }else{
            		   	    
-           		   	  $("#nombre").addClass('has-error');
+           		   	  o.addClass('has-error');
            		   }
            	    }else{
-           	    	$("#nombre").addClass('has-error');
+           	    	o.addClass('has-error');
            	    }
            	}
 
            	if (dato[z]==b) {
                 if (dato[z].match(/^[a-zA-Z]+$/)) {
            		  if ((dato[z].length>=2 && dato[z].length<=12)) {
-           		      $("#apellido").removeClass('has-error');
+           		      p.removeClass('has-error');
            		   }else{
            		   	    
-           		   	  $("#apellido").addClass('has-error');
+           		   	  p.addClass('has-error');
            		   }
            	    }else{
-           	    	$("#apellido").addClass('has-error');
+           	    	p.addClass('has-error');
            	    }
            	}
 
            	if (dato[z]==c) {
            		if (/^[A-Za-z\d.]{4,15}$/.test(dato[z])) {
-           		  $("#usuario").removeClass('has-error');
+           		  q.removeClass('has-error');
            	    }else{
-           	      $("#usuario").addClass('has-error');
+           	      q.addClasss
            	    }
            	}
 
             if (dato[z]==d){ 
 
             	if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(dato[z]))) {
-            		$("#correo").addClass('has-error');
+            		r.addClass('has-error');
             	}else{
-            		$("#correo").removeClass('has-error');
+            		r.removeClass('has-error');
             	}
            	 }
 
            	if (dato[z]==h){ 
-           		if (!/^\+\d{2,3}\s\d{9}$/.test(dato[z])) {
-           			$("#telefono").addClass('has-error');
+           		if (!/^\+\d{2,3}\s\d{8,9}$/.test(dato[z])) {
+           			s.addClass('has-error');
            		}else{
-           			$("#telefono").removeClass('has-error');
+           			s.removeClass('has-error');
            		}
            }
 
            	if (dato[z]==g) 
-           	    $("#fechaNacimento").removeClass('has-error');
+           	    t.removeClass('has-error');
            	
 
            	if (dato[z]==l) {
            		if (/^[a-zA-Z\s]{1,12}$/.test(dato[z])) {
-           			$("#respuesta1").removeClass('has-error');
+           			u.removeClass('has-error');
            		}else{
-                    $("#respuesta1").addClass('has-error');
+                    u.addClass('has-error');
            		}  
            	}
 
            	if (dato[z]==m){
 
            		if (/^[a-zA-Z\s]{1,12}$/.test(dato[z])) {
-           			$("#respuesta2").removeClass('has-error');
+           			v.removeClass('has-error');
            		}else{
-                    $("#respuesta2").addClass('has-error');
+                    v.addClass('has-error');
            		}  
            	} 
            	    
 
            	if (dato[z]==e) {
            		if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,12}$/.test(dato[z])) {
-                     $("#contrasena").addClass('has-error');
+                     w.addClass('has-error');
            		}else{
-           			 $("#contrasena").removeClass('has-error');
+           			 w.removeClass('has-error');
            		}
            	  } 
 
            	if (dato[z]==f) {
            		if(f==e){
                   if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,12}$/.test(dato[z])) {
-           	         $("#confirContrasena").addClass('has-error');
+           	         y.addClass('has-error');
                   }else{
-                     $("#confirContrasena").removeClass('has-error');
+                     y.removeClass('has-error');
                   }
            	    }else{
-                     $("#confirContrasena").addClass('has-error');
+                     y.addClass('has-error');
            	    }
             }
 
             if (dato[z]==i) {
             	if(dato[z]==0){
-           	      $("#ubicacion").addClass('has-error');
+           	      aa.addClass('has-error');
            	    }else{
-                   $("#ubicacion").removeClass('has-error');
+                   aa.removeClass('has-error');
            	    }
             }
 
            	if (dato[z]==j) {
            		if(dato[z]==0){
-           	      $("#preguntass").addClass('has-error');
+           	      dd.addClass('has-error');
            	    }else{
-                  $("#preguntass").removeClass('has-error');
+                  dd.removeClass('has-error');
            	    }
            	}
 
            	if (dato[z]==k) {
            		if(dato[z]==0){
-           	      $("#22").addClass('has-error');
+           	      bb.addClass('has-error');
            	    }else{
-                  $("#22").removeClass('has-error');
+                  bb.removeClass('has-error');
            	    }
            	}
 
            	if (dato[z]==n) {
                if (dato[z]==0) {
-               	 $("#genero").addClass('has-error');
+               	 cc.addClass('has-error');
                }else{
-               	 $("#genero").removeClass('has-error');
+               	 cc.removeClass('has-error');
                }
            	}
 
            
         }
     }
+        var error=0;
+        for (var x = 0; x < dato.length; x++) {
+            if (dato2[x].hasClass('has-error')) {
+               error++;
+            }
+        }
+        if(error==0){
+          // alert("Ajax");
+        }else{
+          //alert(error);
+        }
 		//alert(a+" "+b+" "+c+" "+d+" "+e+" "+f+" "+g+" "+h+" "+i+" "+j+" "+k+" "+l+" "+m+" "+n);
 });
 

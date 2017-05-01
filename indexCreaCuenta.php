@@ -140,8 +140,8 @@ where b.codigo_usuario=3)");
                   <tr>
                     <td colspan="2" id="telefono">
                     <label>Telefono Celular:</label>
-                    <input id="txt-telefono" type="text" name="txt-telefono" onclick="pop();" class="form-control" placeholder="Numero telefonico" data-toggle="popover"  data-content="Escribe tu dato Telefonico de la forma: +xxx xxxxxxxxx
-                    o +xx xxxxxxxxx" data-placement="left" data-container="body" ></td>
+                    <input id="txt-telefono" type="text" name="txt-telefono" onclick="pop();" class="form-control" placeholder="Numero telefonico" data-toggle="popover"  data-content="Escribe tu dato Telefonico de la forma: +xxx xxxxxxxx
+                    o +xx xxxxxxxx" data-placement="left" data-container="body" ></td>
                   </tr>
                   <tr>
                     <td colspan="2" id="correo">
