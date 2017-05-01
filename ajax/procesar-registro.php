@@ -1,40 +1,49 @@
 <?php
-      include("../class/class-usuario.php");
-                           
-  
+     include ("../class/class-conexion.php");
+     $conexion = new Conexion();
+     $conexion->establecerConexion();
+    
+     $fecharegistro=date("y/m/d");
+     $nombre = $_POST["nombre"];
+     $apellido = $_POST["apellido"];
+     $usuario = $_POST["usuario"];
+     $contrasena = $_POST["contrasena"];
+     $contrasenaencrip=sha1($contrasena);
+     $correo = $_POST["correo"];
+     $fechaNacimiento = $_POST["fechaNacimiento"];
+     $telefono = $_POST["telefono"];
+     $ubicacion = $_POST["ubicacion"];
+     $codigo1 = $_POST["codigop1"];
+     $codigo2 = $_POST["codigop2"];
+     $respuesta1 = $_POST["respuesta1"];
+     $respuesta2 = $_POST["respuesta2"];
+     $genero = $_POST["genero"];
+     
+     $sql = sprintf(
+          "INSERT INTO tbl_usuarios(codigo_plan, codigo_lugar_residencia, genero, nombre, apellido, email, fecha_registro, fecha_nacimiento, alias, clave, telefono)
+           VALUES (
+            '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'
+          )",
+          $conexion->getEnlace()->real_escape_string(stripslashes("1")),
+          $conexion->getEnlace()->real_escape_string(stripslashes($ubicacion)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($genero)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($nombre)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($apellido)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($correo)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($fecharegistro)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($fechaNacimiento)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($usuario)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($contrasenaencrip)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($telefono))
+      );
+     $resultadoInsert = $conexion->ejecutarInstruccion($sql);
       $resultado=array();
-      if ( $_POST["txt-contraseña"] != $_POST["txt-confirContraseña"]){
-            $resultado["mensaje"]="Las contraseñas no coinciden.";
-            $resultado["codigo_resultado"]=0;
-            echo json_encode($resultado);
-            exit;
+      if ($resultadoInsert === TRUE) {
+        $resultado["codigo"]=1;
+        $resultado["mensaje"]="Exito, el  registro fue almacenado";
+      } else {
+        $resultado["codigo"]=0;
+        $resultado["mensaje"]="Error: " . $sql . "<br>" . $conexion->getEnlace()->error;
       }
-      if (($_POST["txt-nombre"] || $_POST["txt-usuario"] || $_POST["txt-apellido"] || $_POST["txt-correo"] || $_POST["txt-contraseña"]
-            || $_POST["txt-confirContraseña"] || $_POST["data-fechaNacimento"] || $_POST["txt-telefono"] || $_POST["cmb-ubicacion"])=="") {
-            $resultado["mensaje"]="Debes llenar todos los campos.";
-            $resultado["codigo_resultado"]=2;
-            echo json_encode($resultado);
-            exit;
-      }
-      if ($_POST["rbt-genero"]=="undefined") {
-          $resultado["mensaje"]="Debes llenar todos los campos.";
-          $resultado["codigo_resultado"]=2;  
-          echo json_encode($resultado);
-          exit; 
-        }
-      $u = new Usuario($_POST["txt-nombre"],
-                       $_POST["txt-apellido"],
-                       $_POST["txt-usuario"],
-                       $_POST["txt-correo"],
-                       $_POST["txt-contraseña"],
-                       $_POST["txt-confirContraseña"],
-                       $_POST["data-fechaNacimento"],
-                       $_POST["txt-telefono"],
-                       $_POST["cmb-ubicacion"],
-                       $_POST["rbt-genero"]
-         );
-      $u->guardarRegistro();
-      $resultado["mensaje"]="Te haz registrado";
-      $resultado["codigo_resultado"]=1;
       echo json_encode($resultado);
 ?>

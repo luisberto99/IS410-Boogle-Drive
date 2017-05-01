@@ -122,9 +122,11 @@ where b.codigo_usuario=3)");
                     -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo" data-placement="left" data-container="body" ></td>
                   </tr>
                   <tr>
-                    <td colspan="2" id="fechaNacimento">
+                    <td colspan="2" id="fechaNacimiento">
                       <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> 
-                      <input type="date" name="txt-fecha-nacimiento" onclick="pop();" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimento" ></td>
+                      <input type="text" name="txt-fecha-nacimiento" value="--" onclick="pop();" class="form-control" placeholder="Fecha nacimiento"  id="data-fechaNacimiento" data-toggle="popover" data-html="true"  data-content="-Usa formato 20yy-mm-dd <br><center>o</center>-Usa formato 19yy-mm-dd" data-placement="left" data-container="body" >
+
+                      </td>
                   </tr>
                   <tr>
                     <td colspan="2"  id="genero">
@@ -204,7 +206,7 @@ where b.codigo_usuario=3)");
                   <tr>
                     <td colspan="2">
                     <br>
-                        <input type="submit" id="btn-registrar" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >    
+                        <input type="submit" id="btn-registrar" onclick="pop();" name="btn-registrar" value="Siguiente paso" class="btn btn-primary" >    
                     </td>
                   </tr>
                    </td>
@@ -232,16 +234,15 @@ where b.codigo_usuario=3)");
                             <?php  
                               include_once("condiciones.php");
                             ?>
-
+                      </div>
                        <div class="modal-footer">
                         <center>
                           <td colspan="2">
                             <a href="indexCreaCuenta.php">
-                              <input type="submit" name="btn-cancelar" 
+                              <input type="submit" name="btn-cancelar" id="cancelar" 
                               value="Cancelar" class="btn btn-warning">
                             </a>
-                            <a href="bienvenida.php">
-                            <input type="reset" name="btn-acepto" 
+                            <input type="reset" name="btn-acepto" id="acepto" 
                             value="Acepto" class="btn btn-primary">
                             </a>
                           </td>

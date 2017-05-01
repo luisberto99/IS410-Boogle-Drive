@@ -10,7 +10,7 @@ $("#btn-registrar").click(function(){
 	var d=$("#txt-correo").val();
 	var e=$("#txt-contrasena").val();
 	var f=$("#txt-confirContrasena").val();
-	var g=$("#data-fechaNacimento").val();
+	var g=$("#data-fechaNacimiento").val();
 	var h=$("#txt-telefono").val();
 	var i=$("#slc-ubicacion").val();
 	var j=$("#slc-preguntas").val();
@@ -39,7 +39,7 @@ $("#btn-registrar").click(function(){
   q=$("#usuario");
   r=$("#correo");
   s=$("#telefono");
-  t=$("#fechaNacimento");
+  t=$("#fechaNacimiento");
   u=$("#respuesta1");
   v=$("#respuesta2");
   w=$("#contrasena");
@@ -150,8 +150,14 @@ $("#btn-registrar").click(function(){
            		}
            }
 
-           	if (dato[z]==g) 
-           	    t.removeClass('has-error');
+           	if (dato[z]==g){
+              if (/^(19|20)\d\d\-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(dato[z])) {
+                   t.removeClass('has-error');
+              }else{
+                   t.addClass('has-error');
+              }
+            } 
+           	   
            	
 
            	if (dato[z]==l) {
@@ -234,12 +240,46 @@ $("#btn-registrar").click(function(){
             }
         }
         if(error==0){
-          // alert("Ajax");
+           $("#modal-condiciones").modal("show");
         }else{
           //alert(error);
         }
+
+
+
+
 		//alert(a+" "+b+" "+c+" "+d+" "+e+" "+f+" "+g+" "+h+" "+i+" "+j+" "+k+" "+l+" "+m+" "+n);
+
 });
 
 
-
+$("#acepto").click(function(){
+  var a=$("#txt-nombre").val();
+  var b=$("#txt-apellido").val();
+  var c=$("#txt-usuario").val();
+  var d=$("#txt-correo").val();
+  var e=$("#txt-contrasena").val();
+  var f=$("#txt-confirContrasena").val();
+  var g=$("#data-fechaNacimiento").val();
+  var h=$("#txt-telefono").val();
+  var i=$("#slc-ubicacion").val();
+  var j=$("#slc-preguntas").val();
+  var k=$("#slc-2").val();
+  var l=$("#txt-respuesta1").val();
+  var m=$("#txt-respuesta2").val();
+  var n=$("#slc-genero").val();
+    var parametros="nombre="+a+"&"+"apellido="+b+"&"+"usuario="+c+"&"+"correo="+d+"&"+"contrasena="+e+"&"+"fechaNacimiento="+g+"&"+"telefono="+h+"&"+"ubicacion="+i+"&"+"codigop1="+j+"&"+"codigop2="+k+"&"+"respuesta1="+l+"&"+"respuesta2="+m+"&"+"genero="+n;
+     $.ajax({
+        url:"ajax/procesar-registro.php",
+        data:parametros,
+        method:"POST",
+        dataType:'json',
+        success:function(respuesta){
+          if (respuesta.codigo==1){
+              window.location.href="bienvenida.php";
+          }else{
+            alert(respuesta.mensaje);
+          }
+        }
+     });       
+});
