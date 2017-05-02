@@ -3,16 +3,8 @@
   $conexion = new Conexion();
   $conexion->establecerConexion();
   $resultadoPais=$conexion->ejecutarInstruccion("SELECT codigo_pais, nombre_pais FROM tbl_pais");
-  $resultadoPreguntas=$conexion->ejecutarInstruccion("select a.codigo_pregunta,a.pregunta
-from tbl_preguntas a 
-where a.codigo_pregunta not in ( select codigo_pregunta
-from tbl_respuestas b 
-where b.codigo_usuario=3)");
-  $resultadoPreguntas2=$conexion->ejecutarInstruccion("select a.codigo_pregunta,a.pregunta
-from tbl_preguntas a 
-where a.codigo_pregunta not in ( select codigo_pregunta
-from tbl_respuestas b 
-where b.codigo_usuario=3)");
+  $resultadoPreguntas=$conexion->ejecutarInstruccion("select * from tbl_preguntas");
+  $resultadoPreguntas2=$conexion->ejecutarInstruccion("select * from tbl_preguntas");
 ?>
 
 <!DOCTYPE html>
@@ -92,12 +84,11 @@ where b.codigo_usuario=3)");
               <table   class="formulario" style="width: 500px" style="height: 400" style="margin: 10px">
                   <tr>
                     <label for="txt-nombre">Nombre :</label>
-
                     <td id="nombre"  >
-                    <input id="txt-nombre" type="text" onclick="pop();" name="txt-nombre" data-html="true" class="form-control" placeholder="Nombre" data-toggle="popover" data-content="-usa [2-12] caracteres <br>-solo usa letras" data-container="body" data-placement="left"
+                    <input id="txt-nombre" type="text" onclick="pop();" name="txt-nombre" data-html="true" class="form-control" placeholder="Nombre" data-toggle="popover" data-content="-usa [2-12] caracteres <br>-solo usa letras" data-container="body" data-placement="left">
                     </td>
                     <td id="apellido">
-                    <input id="txt-apellido" type="text" onclick="pop();" name="txt-apellido" data-html="true" class="form-control" placeholder="Apellido" data-toggle="popover" data-content="-Usa [2-12] caracteres <br>-Solo usa letras" data-container="body" data-placement="top"
+                    <input id="txt-apellido" type="text" onclick="pop();" name="txt-apellido" data-html="true" class="form-control" placeholder="Apellido" data-toggle="popover" data-content="-Usa [2-12] caracteres <br>-Solo usa letras" data-container="body" data-placement="top" >
                   </tr>
                   
                   <tr>

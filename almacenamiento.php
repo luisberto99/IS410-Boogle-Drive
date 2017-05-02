@@ -25,6 +25,7 @@ function btn_superiores2($icon){
 <!-- As a link -->
 <div  id="encabezado" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <img id="boogle" src="img/google.png" width="92" height="36"></a>
+
 <div>
   <?php btn_superiores2("glyphicon glyphicon-user");?>
 <div class="dropdown-menu menu_buscador perfilUsuario" style="right: 60px; border: 0; margin: 0">

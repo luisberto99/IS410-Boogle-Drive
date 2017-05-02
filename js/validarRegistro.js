@@ -270,7 +270,7 @@ $("#acepto").click(function(){
   var n=$("#slc-genero").val();
     var parametros="nombre="+a+"&"+"apellido="+b+"&"+"usuario="+c+"&"+"correo="+d+"&"+"contrasena="+e+"&"+"fechaNacimiento="+g+"&"+"telefono="+h+"&"+"ubicacion="+i+"&"+"codigop1="+j+"&"+"codigop2="+k+"&"+"respuesta1="+l+"&"+"respuesta2="+m+"&"+"genero="+n;
      $.ajax({
-        url:"ajax/procesar-registro.php",
+        url:"ajax/procesar-registro.php?accion=1",
         data:parametros,
         method:"POST",
         dataType:'json',

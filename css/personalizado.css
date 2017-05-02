@@ -430,6 +430,12 @@ h1 {
   height: 340px;
   padding: 0 20px;
 }
+#contenido3 {
+  border: solid 1px #ccc;
+  width: 870px;
+  height: 660px;
+  padding: 0 20px;
+}
 
 
 h2{

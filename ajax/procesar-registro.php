@@ -2,7 +2,9 @@
      include ("../class/class-conexion.php");
      $conexion = new Conexion();
      $conexion->establecerConexion();
-    
+
+    switch ($_GET["accion"]) {
+      case '1':
      $fecharegistro=date("y/m/d");
      $nombre = $_POST["nombre"];
      $apellido = $_POST["apellido"];
@@ -37,13 +39,34 @@
           $conexion->getEnlace()->real_escape_string(stripslashes($telefono))
       );
      $resultadoInsert = $conexion->ejecutarInstruccion($sql);
+     $filas=$conexion->ejecutarInstruccion("SELECT MAX(codigo_usuario) AS id FROM tbl_usuarios");
+     if ($row = mysqli_fetch_row($filas)){
+         $codigousuario = trim($row[0]);
+        }
+     $sql2= sprintf("INSERT INTO tbl_respuestas(codigo_usuario,codigo_pregunta,respuesta) VALUES ('%s','%s','%s'),('%s','%s','%s')",
+          $conexion->getEnlace()->real_escape_string(stripslashes($codigousuario)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($codigo1)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($respuesta1)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($codigousuario)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($codigo2)),
+          $conexion->getEnlace()->real_escape_string(stripslashes($respuesta2))
+      );
+      $resultadoInsert2 = $conexion->ejecutarInstruccion($sql2);
+     
       $resultado=array();
-      if ($resultadoInsert === TRUE) {
+      if ($resultadoInsert && $resultadoInsert2 === TRUE) {
         $resultado["codigo"]=1;
         $resultado["mensaje"]="Exito, el  registro fue almacenado";
       } else {
         $resultado["codigo"]=0;
-        $resultado["mensaje"]="Error: " . $sql . "<br>" . $conexion->getEnlace()->error;
+        $resultado["mensaje"]="Error: " . $sql ." ". $sql2."<br>" . $conexion->getEnlace()->error;
       }
       echo json_encode($resultado);
+        break;
+      
+      default:
+        # code...
+        break;
+    }
+     
 ?>
