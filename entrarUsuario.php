@@ -2,13 +2,11 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-	<meta charset="utf-8">
 
 	<title>Login</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="icon" href="img/logo.ico" type="image/x-icon">
 	<style >
 		
@@ -29,13 +27,8 @@
 				<center><h1>Una Cuenta. Todo Boogle</h1></center>
 				<center><h4>Inicia sesion para acceder a Boogle Drive</h4></center>
 				</div>
-		<form class="container">
-		
-		
-	    
-			
-				
-				<center>
+
+		<center>
 					<div class= "well" id = "div-formulario1"  style="width:400px" style="height: 500px">
 						<td colspan="2"><label for="inputEmail" class="sr-only">Correo Electronico</label>
 		        		<input type="Correo" id="inputCorreo" class="form-control" placeholder="correo Electronico" required autofocus></td>
@@ -44,8 +37,11 @@
 						<label for="inputPassword" class="sr-only">Contraseña</label>
 		        		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 		        		<br>
+		        		<div id="resultado">
+		        			
+		        		</div>
 		        		<br>
-		        		<a href="my-drive/index.php" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</a>
+		        		<input type="submit" id="login"  value="Ingresar" class="btn btn-primary btn btn-lg" >
 
 		        		<br>
 		        		<a href="">¿Olvidaste tu contraseña?</a><br>
@@ -53,9 +49,10 @@
 					</div>
 					<a href="indexCreaCuenta.php">Crear Una Cuenta</a><br>
 				</center>
-	</form>
+	
 
-
-
+<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script src="js/IniciarSesion.js"></script>
 </body>
 </html>
