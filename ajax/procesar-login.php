@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("../class/class-conexion.php");
      $conexion = new Conexion();
      $conexion->establecerConexion();
@@ -20,6 +21,7 @@ include ("../class/class-conexion.php");
       $respuesta=array();
       if($conexion->cantidadRegistros($consulta) >0){
           $fila = $conexion->obtenerRegistro($consulta);
+          $_SESSION["codigo_usuario"]=$fila["codigo_usuario"];
           $respuesta["codigo"] = 1;
           $respuesta["mensaje"] = "login successful";
         }

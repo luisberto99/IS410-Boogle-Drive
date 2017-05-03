@@ -1,4 +1,5 @@
 <?php
+session_start();
      include ("../class/class-conexion.php");
      $conexion = new Conexion();
      $conexion->establecerConexion();
@@ -55,6 +56,7 @@
      
       $resultado=array();
       if ($resultadoInsert && $resultadoInsert2 === TRUE) {
+        $_SESSION["codigo_usuario"]=$codigousuario;
         $resultado["codigo"]=1;
         $resultado["mensaje"]="Exito, el  registro fue almacenado";
       } else {

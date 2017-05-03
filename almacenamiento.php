@@ -1,3 +1,8 @@
+<?php
+session_start(); 
+  if(!isset($_SESSION['codigo_usuario']))
+    header("Location:entrarUsuario.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,18 +36,19 @@ function btn_superiores2($icon){
 <div class="dropdown-menu menu_buscador perfilUsuario" style="right: 60px; border: 0; margin: 0">
                 <div style="height: 70%; margin: 0">
                   <div class="col-md-3">
-                    <span class="glyphicon glyphicon-user configuracionNotificaciones" style="font-size: 60px"></span>
+                  <img src="../f/icono3.png" class="configuracionNotificaciones" width="105" height="105" style="border-radius: 50%">
+                    
                   </div>
                   <div class="col-md-7">
                     <br>
                     <strong>Dulce Maria Medina</strong><br>
                     <small>dulce.medina@gmail.com</small>
-                    <button class="btn btn-primary" type="button">Mi cuenta</button>
+                    <a href="https://myaccount.google.com/intro" target="_blank"><button class="btn btn-primary" type="button">Mi cuenta</button></a>
                   </div>
                 </div>
                 <div class="perfilUsuarioInferior" style="margin: 0">
                   <button class="btn dere" type="button">Añadir cuenta</button>
-                  <button class="btn izq" type="button">Cerrar sesion</button>
+                  <a href="cerrarSesion.php"><button class="btn izq" type="button">Cerrar sesion</button></a>
                 </div>
               </div>
            </div>

@@ -1,4 +1,7 @@
 		<?php
+       session_start(); 
+	if(!isset($_SESSION['codigo_usuario']))
+		header('Location:http://localhost/IS410-Boogle-Drive/entrarUsuario.php');
 
 	include_once("../class/class-conexion.php");
 	$conexion = new Conexion();
@@ -124,7 +127,7 @@ function btn_lateral($icono,$texto,$archivo){
 								</div>
 								<div class="perfilUsuarioInferior" style="margin: 0">
 									<button class="btn dere" type="button">Añadir cuenta</button>
-									<button class="btn izq" type="button">Cerrar sesion</button>
+									<a href="../cerrarSesion.php"><button class="btn izq" type="button">Cerrar sesion</button></a>
 								</div>
 
 							</div>

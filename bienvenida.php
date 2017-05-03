@@ -1,4 +1,9 @@
 <?php
+session_start(); 
+
+  if(!isset($_SESSION['codigo_usuario']))
+    header("Location:entrarUsuario.php");
+  
 include_once("class/class-usuario.php");
 function btn_superiores2($icon){
     echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size: 20px; margin-right: 45px; padding-top:20px" aria-hidden="true"></span></button>';
@@ -44,7 +49,7 @@ function btn_superiores2($icon){
                 </div>
                 <div class="perfilUsuarioInferior" style="margin: 0">
                   <button class="btn dere" type="button">Añadir cuenta</button>
-                  <button class="btn izq" type="button">Cerrar sesion</button>
+                  <a href="cerrarSesion.php"><button class="btn izq" type="button">Cerrar sesion</button></a>
                 </div>
               </div>
            </div>
