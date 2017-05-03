@@ -3,7 +3,7 @@ session_start();
      include ("../class/class-conexion.php");
      $conexion = new Conexion();
      $conexion->establecerConexion();
-
+    
     switch ($_GET["accion"]) {
       case '1':
      $fecharegistro=date("y/m/d");
@@ -21,12 +21,15 @@ session_start();
      $respuesta1 = $_POST["respuesta1"];
      $respuesta2 = $_POST["respuesta2"];
      $genero = $_POST["genero"];
-     
+       $usuarios=$conexion->ejecutarInstruccion("SELECT codigo_usuario  FROM tbl_usuarios");
+        $codigousuario = ($conexion->cantidadRegistros($usuarios))+1;
+        
      $sql = sprintf(
-          "INSERT INTO tbl_usuarios(codigo_plan, codigo_lugar_residencia, genero, nombre, apellido, email, fecha_registro, fecha_nacimiento, alias, clave, telefono)
+          "INSERT INTO tbl_usuarios(codigo_usuario,codigo_plan, codigo_lugar_residencia, genero, nombre, apellido, email, fecha_registro, fecha_nacimiento, alias, clave, telefono)
            VALUES (
-            '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'
+            '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'
           )",
+          $conexion->getEnlace()->real_escape_string(stripslashes($codigousuario)),
           $conexion->getEnlace()->real_escape_string(stripslashes("1")),
           $conexion->getEnlace()->real_escape_string(stripslashes($ubicacion)),
           $conexion->getEnlace()->real_escape_string(stripslashes($genero)),
@@ -40,10 +43,7 @@ session_start();
           $conexion->getEnlace()->real_escape_string(stripslashes($telefono))
       );
      $resultadoInsert = $conexion->ejecutarInstruccion($sql);
-     $filas=$conexion->ejecutarInstruccion("SELECT MAX(codigo_usuario) AS id FROM tbl_usuarios");
-     if ($row = mysqli_fetch_row($filas)){
-         $codigousuario = trim($row[0]);
-        }
+     $usuarios=$conexion->ejecutarInstruccion("SELECT codigo_usuario  FROM tbl_usuarios");
      $sql2= sprintf("INSERT INTO tbl_respuestas(codigo_usuario,codigo_pregunta,respuesta) VALUES ('%s','%s','%s'),('%s','%s','%s')",
           $conexion->getEnlace()->real_escape_string(stripslashes($codigousuario)),
           $conexion->getEnlace()->real_escape_string(stripslashes($codigo1)),

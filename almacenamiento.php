@@ -2,6 +2,12 @@
 session_start(); 
   if(!isset($_SESSION['codigo_usuario']))
     header("Location:entrarUsuario.php");
+
+  include_once("class/class-conexion.php");
+  $conexion = new Conexion();
+  $conexion->establecerConexion();
+
+    $resultadoUsuario=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,8 +47,11 @@ function btn_superiores2($icon){
                   </div>
                   <div class="col-md-7">
                     <br>
-                    <strong>Dulce Maria Medina</strong><br>
-                    <small>dulce.medina@gmail.com</small>
+                    <?php if($conexion->cantidadRegistros($resultadoUsuario) >0) {
+                      $fila = $conexion->obtenerRegistro($resultadoUsuario);
+                      echo '<strong>'.$fila["nombre"]." ".$fila["apellido"].'</strong><br>'.
+                            '<small>'.$fila["email"].'</small>';
+                    }  ?>
                     <a href="https://myaccount.google.com/intro" target="_blank"><button class="btn btn-primary" type="button">Mi cuenta</button></a>
                   </div>
                 </div>

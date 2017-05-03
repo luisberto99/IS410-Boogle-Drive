@@ -3,10 +3,12 @@
 	if(!isset($_SESSION['codigo_usuario']))
 		header('Location:http://localhost/IS410-Boogle-Drive/entrarUsuario.php');
 
+    
 	include_once("../class/class-conexion.php");
 	$conexion = new Conexion();
-
 	$conexion->establecerConexion();
+
+    $resultadoUsuario=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
 
 		function menu_nuevo(){
 			echo '<ul class="dropdown-menu">
@@ -120,9 +122,12 @@ function btn_lateral($icono,$texto,$archivo){
 									</div>
 									<div class="col-md-7">
 										<br>
-										<strong>Dulce Maria Medina</strong><br>
-										<small>dulce.medina@gmail.com</small>
-										<button class="btn btn-primary" type="button">Mi cuenta</button>
+										<?php if($conexion->cantidadRegistros($resultadoUsuario) >0) {
+											$fila = $conexion->obtenerRegistro($resultadoUsuario);
+											echo '<strong>'.$fila["nombre"]." ".$fila["apellido"].'</strong><br>'.
+											      '<small>'.$fila["email"].'</small>';
+										}  ?>
+										<a href="https://myaccount.google.com/intro" target="_blank"><button class="btn btn-primary" type="button">Mi cuenta</button></a>
 									</div>
 								</div>
 								<div class="perfilUsuarioInferior" style="margin: 0">

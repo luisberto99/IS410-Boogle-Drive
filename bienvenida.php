@@ -5,6 +5,12 @@ session_start();
     header("Location:entrarUsuario.php");
   
 include_once("class/class-usuario.php");
+include_once("class/class-conexion.php");
+$conexion = new Conexion();
+  $conexion->establecerConexion();
+
+    $resultadoUsuario=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
+
 function btn_superiores2($icon){
     echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size: 20px; margin-right: 45px; padding-top:20px" aria-hidden="true"></span></button>';
   }
@@ -42,9 +48,12 @@ function btn_superiores2($icon){
                   </div>
                   <div class="col-md-7">
                     <br>
-                    <strong>Dulce Maria Medina</strong><br>
-                    <small>dulce.medina@gmail.com</small>
-                    <button class="btn btn-primary" type="button">Mi cuenta</button>
+                    <?php if($conexion->cantidadRegistros($resultadoUsuario) >0) {
+                      $fila = $conexion->obtenerRegistro($resultadoUsuario);
+                      echo '<strong>'.$fila["nombre"]." ".$fila["apellido"].'</strong><br>'.
+                            '<small>'.$fila["email"].'</small>';
+                    }  ?>
+                    <a href="https://myaccount.google.com/intro" target="_blank"><button class="btn btn-primary" type="button">Mi cuenta</button></a>
                   </div>
                 </div>
                 <div class="perfilUsuarioInferior" style="margin: 0">
