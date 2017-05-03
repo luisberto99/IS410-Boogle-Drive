@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		
-		<div id="div-archivos" style="margin-top: 260px">
+		<div id="div-archivos" style="margin-top: 160px">
 			<div class="cabeceraContenido">Archivos</div>
 			<div>
 			<?php 

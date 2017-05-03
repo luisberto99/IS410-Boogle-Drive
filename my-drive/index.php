@@ -341,6 +341,7 @@ function btn_lateral($icono,$texto,$archivo){
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/my-drive.js"></script>
 <script src="../js/chat.js"></script>
+<script src="../js/funciones_archivos.js"></script>
 <script type="text/javascript">
 	$(function () {
 		$('[data-toggle="popover"]').popover();

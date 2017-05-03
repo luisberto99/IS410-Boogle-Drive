@@ -9,6 +9,8 @@ function seleccion(id){
 	}
 }
 
-$(document).ready(function(){
 
-})
+function abrirCarpeta(id){
+	window.location = "../my-drive/abrirCarpeta.php?carpeta="+id;
+	
+}
