@@ -44,7 +44,7 @@
 		        		<input type="submit" id="login"  value="Ingresar" class="btn btn-primary btn btn-lg" >
 
 		        		<br>
-		        		<a href="">¿Olvidaste tu contraseña?</a><br>
+		        		<a href="nuevaContrasena.php">¿Olvidaste tu contraseña?</a><br>
 
 					</div>
 					<a href="indexCreaCuenta.php">Crear Una Cuenta</a><br>

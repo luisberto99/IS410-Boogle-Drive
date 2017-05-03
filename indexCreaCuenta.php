@@ -102,7 +102,7 @@
                     <label for="txt-contrasena">Crea una contraseña :</label>
                     <input type="password" name="txt-contrasena" class="form-control" onclick="pop();" placeholder="Contraseña" id="txt-contrasena"  data-toggle="popover" data-html="true" title="Seguridad de la contraseña:" data-content="-Usa [4-12] caracteres <br>
                     -Usa una letra mayuscula y una miniscula como minimo <br>
-                    -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo" data-placement="left" data-container="body"></td>  </td>
+                    -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo <br>-Asegurate de que las contraseñas coincidan" data-placement="left" data-container="body"></td>  </td>
                     
                   </tr>
                   <tr>
@@ -110,7 +110,7 @@
                     <label for="txt-contrasena">Confirmar Contraseña :</label>
                     <input type="password" name="txt-confirmacionContrasena" onclick="pop();" class="form-control" placeholder="Confirmar contraseña" id="txt-confirContrasena" data-toggle="popover" data-html="true" title="Seguridad de la contraseña:" data-content="-Usa [4-12] caracteres <br>
                     -Usa una letra mayuscula y una miniscula como minimo <br>
-                    -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo" data-placement="left" data-container="body" ></td>
+                    -Un numero y un carater especial [?,*,!,&,%,$,@] como minimo <br>-Asegurate de que las contraseñas coincidan" data-placement="left" data-container="body" ></td>
                   </tr>
                   <tr>
                     <td colspan="2" id="fechaNacimiento">

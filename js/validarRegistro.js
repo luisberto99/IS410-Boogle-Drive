@@ -179,12 +179,16 @@ $("#btn-registrar").click(function(){
            	    
 
            	if (dato[z]==e) {
-           		if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,12}$/.test(dato[z])) {
+              if(e==f){
+           		  if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,12}$/.test(dato[z])) {
                      w.addClass('has-error');
-           		}else{
+           		  }else{
            			 w.removeClass('has-error');
-           		}
-           	  } 
+           		  }
+              }else{
+                w.addClass('has-error');
+              }
+            } 
 
            	if (dato[z]==f) {
            		if(f==e){
