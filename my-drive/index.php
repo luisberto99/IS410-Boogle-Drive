@@ -78,6 +78,24 @@ function btn_lateral($icono,$texto,$archivo){
 	<meta charset="ISO-8">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/personalizado.css">
+
+
+
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="facivon.ico">
+
+    
+    <link href="style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="script.js"></script>
+
+
+
 </head>
 <body style="background-color: #EEE;">
 	<div id="general" style="background-color: #FFF; position: relative;">
@@ -297,9 +315,23 @@ function btn_lateral($icono,$texto,$archivo){
 			 	</div>
 			 </center>
 			</div>
-			<button id="btn_chat" type="button" onclick="chat();" class="dere chat">Chat </button>
+			<button id="btn_chat" type="button" onclick="chat();" class="dere chat">Chat</button>
 			
+
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</div>
 </div>
 
