@@ -1,5 +1,8 @@
 
 <?php 
+ session_start(); 
+	if(!isset($_SESSION['codigo_usuario']))
+		header('Location:http://localhost/IS410-Boogle-Drive/entrarUsuario.php');
 include_once("metodosCuadricula.php");
 include_once("../class/class-conexion.php");
 $conexion = new Conexion();
@@ -12,10 +15,10 @@ nombre_carpeta,
 fecha_creacion, 
 descripcion 
 FROM tbl_carpetas
-WHERE (codigo_carpeta_padre IS NULL AND codigo_usuario = 1)";
+WHERE (codigo_carpeta_padre IS NULL AND codigo_usuario = ".$_SESSION['codigo_usuario'].")";
 $carpetas = $conexion->ejecutarInstruccion($sql);
 
-$sql = "SELECT a.codigo_archivo, 
+$sql = sprintf( "SELECT a.codigo_archivo, 
 a.codigo_usuario, 
 a.codigo_tipo_archivo, 
 a.codigo_privacidad, 
@@ -31,7 +34,9 @@ WHERE a.codigo_archivo not in
 	select tbl.codigo_archivo 
 	from tbl_archivos_x_carpetas tbl
 	) 
-	AND a.codigo_usuario = 1 AND a.codigo_tipo_archivo = t.codigo_tipo_archivo";
+	AND a.codigo_usuario = '%s' AND a.codigo_tipo_archivo = t.codigo_tipo_archivo",
+		 $conexion->getEnlace()->real_escape_string(stripslashes($_SESSION["codigo_usuario"]))
+	);
 
 	$archivos = $conexion->ejecutarInstruccion($sql);
 	?>

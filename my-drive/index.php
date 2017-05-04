@@ -23,13 +23,6 @@
 			<li role="separator" class="divider"></li>
 			<li>
 				<a href="#" onclick="subirArchivo()">
-				<input type="file">
-					<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
-					Subir Archivos...
-				</a>
-			</li>
-			<li>
-				<a href="#">
 					<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
 					Subir Archivos...
 				</a>
@@ -311,8 +304,8 @@ function btn_lateral($icono,$texto,$archivo){
 </div>
 
 <!-- SUBIR ARCHIVOS -->
-<form style="display: none">
-<input type="file" enctype="multipart/form-data" id="subir">
+<form style="display: none" enctype="multipart/form-data">
+<input type="file" onchange="archivo(this.value)" id="subir">
 </form>
 
 <!-- DIV MODAL DE CONFIGURACION  -->
