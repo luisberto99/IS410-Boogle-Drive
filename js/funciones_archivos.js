@@ -1,16 +1,14 @@
 function seleccion(id){
-	if ($("#seleccion").val() == 0) {
-		$(id).toggleClass("Seleccionada");
-		$("#seleccion").val(id);
-	}else{
-		$(id).toggleClass("Seleccionada");
-		$($("#seleccion").val()).toggleClass("Seleccionada");
-		$("#seleccion").val(id);
-	}
+	$(id).addClass("Seleccionada");
+	$($("#seleccion").val()).removeClass("Seleccionada");
+	$("#seleccion").val(id);
 }
 
 
 function abrirCarpeta(id){
-	window.location = "../my-drive/abrirCarpeta.php?carpeta="+id;
-	
+	window.location = "../my-drive/abrirCarpeta.php?carpeta="+id;	
+}
+
+function subirArchivo(){
+	alert("llkajdfla");
 }

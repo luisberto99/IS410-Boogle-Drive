@@ -22,7 +22,8 @@
 			</li>
 			<li role="separator" class="divider"></li>
 			<li>
-				<a href="#">
+				<a href="#" onclick="subirArchivo()">
+				<input type="file">
 					<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
 					Subir Archivos...
 				</a>
