@@ -93,8 +93,8 @@ function btn_superiores2($icon){
     
       <?php
         
-        echo "<p><strong>Te damos la bienvenida,</strong></p><br>";
-        echo "<h3>Tu nueva direccion de correo electronico es: </h3><br>";
+        echo "<p><strong>Te damos la bienvenida, "."<strong>".$fila["nombre"]."</strong></p><br>";
+        echo "<h3>Tu nueva direccion de correo electronico es: "."<strong>".$fila["email"]."</strong> </h3><br>";
 
       
         ?>
