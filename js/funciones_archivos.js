@@ -10,5 +10,5 @@ function abrirCarpeta(id){
 }
 
 function subirArchivo(){
-	alert("llkajdfla");
+
 }

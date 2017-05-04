@@ -310,6 +310,11 @@ function btn_lateral($icono,$texto,$archivo){
 	</div>
 </div>
 
+<!-- SUBIR ARCHIVOS -->
+<form style="display: none">
+<input type="file" enctype="multipart/form-data" id="subir">
+</form>
+
 <!-- DIV MODAL DE CONFIGURACION  -->
 <div class="modal fade" id="modal-configuarion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-sizee" role="document">
