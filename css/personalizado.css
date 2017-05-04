@@ -9,6 +9,8 @@
     margin-right: 35px
 }
 
+
+
 #newsesion{
     font-size: 13px;
     font-weight: normal;
@@ -434,8 +436,8 @@ h1 {
 #contenido3 {
   border: solid 1px #ccc;
   width: 870px;
-  height: 660px;
-  padding: 0 20px;
+  height: 560px;
+ 
 }
 
 
@@ -461,6 +463,11 @@ hr{
 	width: 75%;
 	margin-left: 0px;
 	margin-right: auto;
+}
+
+.centro{
+float: middle;
+
 }
 
 .izq{

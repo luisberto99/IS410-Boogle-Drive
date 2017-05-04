@@ -24,7 +24,7 @@
   <br>
   <br>
   <br>
-   <div class= "container" id = "div-formulario1"  style="width:800px" style="height: 500px" >
+   <div class= "container" id = "div-formulario1"  style="width:700px" style="height: 400px" >
     <div id="myCarousel" class="carousel slide" data-ride="carousel" >
       
         <ol class="carousel-indicators" >

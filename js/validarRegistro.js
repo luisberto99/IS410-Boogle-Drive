@@ -280,7 +280,7 @@ $("#acepto").click(function(){
         dataType:'json',
         success:function(respuesta){
           if (respuesta.codigo==1){
-              window.location.href="bienvenida.php";
+              window.location.href="my-drive/bienvenida.php";
           }else{
             alert(respuesta.mensaje);
           }

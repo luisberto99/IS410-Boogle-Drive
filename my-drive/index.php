@@ -9,6 +9,7 @@
 	$conexion->establecerConexion();
 
     $resultadoUsuario=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
+    $resultadoUsuario2=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
 
 		function menu_nuevo(){
 			echo '<ul class="dropdown-menu">
@@ -117,10 +118,14 @@ function btn_lateral($icono,$texto,$archivo){
 							<?php btn_superiores("glyphicon glyphicon-user") ?>
 							<div class="dropdown-menu menu_buscador perfilUsuario" style="right: 0; border: 0; margin: 0">
 								<div style="height: 70%; margin: 0">
-									<div class="col-md-3">
-										<span class="glyphicon glyphicon-user configuracionNotificaciones" style="font-size: 60px"></span>
+									<div class="col-md-3" id="fotoo">
+									<?php if($conexion->cantidadRegistros($resultadoUsuario2) >0) {
+											$fila = $conexion->obtenerRegistro($resultadoUsuario2);
+											echo '<img src='.$fila["fotografia"].' class="configuracionNotificaciones" width="100" height="100" style="border-radius: 50%">';
+										}  ?>
+										
 									</div>
-									<div class="col-md-7">
+									<div class="col-md-7" >
 										<br>
 										<?php if($conexion->cantidadRegistros($resultadoUsuario) >0) {
 											$fila = $conexion->obtenerRegistro($resultadoUsuario);
@@ -128,11 +133,13 @@ function btn_lateral($icono,$texto,$archivo){
 											      '<small>'.$fila["email"].'</small>';
 										}  ?>
 										<a href="https://myaccount.google.com/intro" target="_blank"><button class="btn btn-primary" type="button">Mi cuenta</button></a>
+
 									</div>
 								</div>
 								<div class="perfilUsuarioInferior" style="margin: 0">
-									<button class="btn dere" type="button">Añadir cuenta</button>
-									<a href="../cerrarSesion.php"><button class="btn izq" type="button">Cerrar sesion</button></a>
+									<button class="btn izq" type="button">Añadir cuenta</button>
+									<button id="fotoperfil" class="btn centro" style="margin-left: 11px">Foto Perfil</button>
+									<a href="../cerrarSesion.php"><button class="btn dere" type="button">Cerrar sesion</button></a>
 								</div>
 
 							</div>
@@ -273,7 +280,7 @@ function btn_lateral($icono,$texto,$archivo){
 
 					</div>
 					<div>
-						<a target="blank" href="../almacenamiento.php" class="transpariencia btn_lateral">
+						<a target="blank" href="almacenamiento.php" class="transpariencia btn_lateral">
 							<span class="glyphicon glyphicon-list izq" aria-hidden="true" style="margin-right: 10px"></span>Adquirir mas almacenamiento
 						</a>
 					</div>
@@ -342,14 +349,46 @@ function btn_lateral($icono,$texto,$archivo){
 	</div>
 </div>
 
+<div class="modal fade" tabindex="-1" role="dialog" id="imagen">
+              <div class="modal-dialog" role="document"  style="width:900px" style="height: 800px">
+                <div class="modal-content">
+                  
+                  <div class="modal-body">
+                      
+                <form method="post" id="formulario" enctype="multipart/form-data">
+                <div class="well">
+                <center>
+                  <table>
+                  	<tr>
+                  		<td><h3>Cambiar foto de Perfil</h3></td>
+                  	</tr>
+                  	<tr>
+                  		<td>
+                  			<label>Subir imagen:</label>
+                  			<input type="file" name="file"> 
+                  		</td>
+                  	</tr>
+                  </table>
+                  </center>
+                   </div>
+                </form>
+                 <div id="respuesta"></div>         
+                            
+                  </div>
 
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
 
+              
+          </div><!-- /.modal -->
 
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="../js/jquery.min.js"></script>	
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/my-drive.js"></script>
 <script src="../js/chat.js"></script>
 <script src="../js/funciones_archivos.js"></script>
+<script src="../js/imagenes.js"></script>
 <script type="text/javascript">
 	$(function () {
 		$('[data-toggle="popover"]').popover();
