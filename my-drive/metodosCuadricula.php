@@ -7,10 +7,10 @@ function carpeta($id,$carpeta){
 </div>';
 }
 
-function archivoImagen($id,$imagen){
+function archivoImagen($id,$imagen,$foto){
 	echo '<div id="imagen_'.$id.'" class="archivo col-md-2 col-lg-2 col-sm-2" onclick="seleccion(\'#imagen_'.$id.'\')">
 	<div style="width: 100%; height: 80%">
-		<img class="archivo-imagen" >
+		<img class="archivo-imagen" src="'.$foto.'">
 	</div>
 	<div>
 		<span class="glyphicon glyphicon-picture" style="font-size: 20px; color: #C43C27" aria-hidden="true"></span> &nbsp;'.$imagen.'

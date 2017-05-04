@@ -13,25 +13,30 @@ function subirArchivo(){
 $("#subir").click();
 }
 
-/*$("#subir").on("change", function(){
+$("input[name='subir']").on("change", function(){
 	  var formData = new FormData($("#subirArchivo")[0]);
 	  var ruta = "../ajax/SubirArchivo.php";
 	  $.ajax({
                 url: ruta,
                 type: "POST",
-                dataType:'',
+                dataType: 'html',
                 data: formData,
                 contentType: false,
                 processData: false,
                 success: function(datos)
                 {
-
-                	$("#aside").html(datos); 
-                	alert("hola");                 
-                }
+                	alert(datos);
+                	$('#explorador').attr('src', $('#explorador').attr('src'));
+                },
+			    error: function(xhr, textStatus, error){
+			      console.log(xhr.statusText);
+			      console.log(textStatus);
+			      console.log(error);
+  }
             });
 
-});*/
+});
+
 function archivo(src){
 	$.ajax({
 		url: "../ajax/SubirArchivo.php",
@@ -40,7 +45,11 @@ function archivo(src){
         dataType: 'html',
         success: function(datos)
         {
-        	  alert(datos);      
+        	$("#aside").html(datos);
+        	if (data.ingreso)
+        	  alert("Se agrego con exito.");
+			else
+			 alert("Ha habido un error.");      
         },
          error: function(xhr, textStatus, error){
       console.log(xhr.statusText);

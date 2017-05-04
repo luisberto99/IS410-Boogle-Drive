@@ -27,7 +27,8 @@ a.tamanio_archivo,
 a.fecha_creacion, 
 a.archivo, 
 a.descripcion,
-t.tipo_archivo tipo 
+t.tipo_archivo tipo,
+t.extension
 FROM tbl_archivos a, tbl_tipo_archivos t
 WHERE a.codigo_archivo not in 
 (
@@ -37,6 +38,7 @@ WHERE a.codigo_archivo not in
 	AND a.codigo_usuario = '%s' AND a.codigo_tipo_archivo = t.codigo_tipo_archivo",
 		 $conexion->getEnlace()->real_escape_string(stripslashes($_SESSION["codigo_usuario"]))
 	);
+
 
 	$archivos = $conexion->ejecutarInstruccion($sql);
 	?>
@@ -83,21 +85,22 @@ WHERE a.codigo_archivo not in
 						<div>
 							<?php 
 							while ($fila = $conexion->obtenerRegistro($archivos)) {
+								$img = 'image/'.$fila["extension"];
+								if ($fila["tipo"] == $img) {
+									archivoImagen(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]),$fila["archivo"]);
+								}
+								$audio ="audio/".$fila["extension"];
+								if ($fila["tipo"] == $audio) {
+									archivoAudio(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
+								}
+								if ($fila["tipo"] == 'application/pdf') {
+									archivoPDF(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
+								}
 								switch ($fila["tipo"]) {
-									case 'imagen':
-									archivoImagen(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
-									break;
 									case 'comprimido':
 									archivoComprimido(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
 									break;
-
-									case 'audio':
-									archivoAudio(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
-									break;
-
-									case 'texto':
-									archivoPDF(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
-									break;
+									
 								}
 
 							}

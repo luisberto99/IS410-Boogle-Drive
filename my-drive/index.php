@@ -304,8 +304,8 @@ function btn_lateral($icono,$texto,$archivo){
 </div>
 
 <!-- SUBIR ARCHIVOS -->
-<form style="display: none" enctype="multipart/form-data">
-<input type="file" onchange="archivo(this.value)" id="subir">
+<form id="subirArchivo" style="display: none;" enctype="multipart/form-data">
+<input type="file" name="subir" id="subir">
 </form>
 
 <!-- DIV MODAL DE CONFIGURACION  -->
