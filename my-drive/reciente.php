@@ -13,16 +13,7 @@
 			<button class="transpariencia dere ordenElementos"><strong>Fecha en que se compartio</strong></button>
 		</div>
 		<div id="div-carpetas">
-			<div style="padding-top: 25px">
-				<?php 
-				archivoAudio("todo me gusta...");
-				archivoAudio("mi vida sin...");
-				archivoAudio("Cansion3.mp3");
-				archivoAudio("Cansion4.mp3");
-				archivoPDF("PHP desde...pdf");
-
-				?>
-			</div>
+			
 		</div>
 		</div>
 	</div>

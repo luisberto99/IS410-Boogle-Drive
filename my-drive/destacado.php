@@ -1,4 +1,16 @@
-<?php  include_once("metodosCuadricula.php") ?>
+<?php  include_once("metodosCuadricula.php"); 
+
+session_start(); 
+ if(!isset($_SESSION['codigo_usuario']))
+    header('Location:http://localhost/IS410-Boogle-Drive/entrarUsuario.php');
+include_once("../class/class-conexion.php");
+include_once("metodosCuadricula.php");
+$conexion = new Conexion();
+$conexion->establecerConexion();
+
+$sql = "SELECT codigo_carpeta, codigo_usuario, codigo_archivo, fecha_registo FROM tbl_favoritos WHERE codigo_usuario =".$_SESSION['codigo_usuario'];
+$favoritos = $conexion->ejecutarInstruccion($sql);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -13,31 +25,7 @@
 			<button class="transpariencia dere ordenElementos"><strong>Nombre</strong></button>
 		</div>
 		<div id="div-carpetas">
-			<div class="cabeceraContenido">Carpetas</div>
-			<div>
-				<?php 
-				carpeta("Carpeta1");
-				carpeta("Carpeta4");
-				carpeta("Carpeta6");
-				carpeta("Carpeta10");
-				carpeta("Carpeta12");
 
-				?>
-			</div>
-		</div>
-		<div style="padding-top: 80px">
-			<div class="cabeceraContenido">Archivos</div>
-			<div>
-				<?php 
-				archivoPDF("como progr...pdf");
-				archivoPDF("java desde...pdf");
-				archivoPDF("los hijos de...pdf");
-				archivoImagen("photo-1-1600.jpg");
-				archivoImagen("photo-2-1600.jpg");
-				archivoImagen("photo-3-1600.jpg");
-				?>
-			</div>
-		</div>
 
 	</div>
 

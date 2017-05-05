@@ -4,6 +4,23 @@ function seleccion(id){
 	$("#seleccion").val(id);
 }
 
+function favorito(id){
+	$.ajax({
+		url: "../ajax/favorito.php",
+		method: "POST",
+		data: "id="+id,
+		dataType: 'html',
+		success: function(datos){
+				alert(datos);
+		},
+		error: function(xhr, textStatus, error){
+			console.log(xhr.statusText);
+			console.log(textStatus);
+			console.log(error);
+		}
+	});
+}
+
 
 function abrirCarpeta(id){
 	window.location = "../my-drive/abrirCarpeta.php?carpeta="+id;	

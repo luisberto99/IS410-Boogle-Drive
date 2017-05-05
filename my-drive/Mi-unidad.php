@@ -102,7 +102,7 @@ WHERE a.codigo_archivo not in
 				<?php
 			}
 			?>
-
+			
 			<input type="hidden" id="seleccion" value="0" >
 			<script src="../js/jquery.min.js"></script>
 			<script src="../js/bootstrap.min.js"></script>
