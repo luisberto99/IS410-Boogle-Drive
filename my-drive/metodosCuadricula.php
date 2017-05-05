@@ -2,7 +2,7 @@
 function carpeta($id,$carpeta){
 	echo '<div>
 	<div id="carpeta_'.$id.'" class="carpeta col-md-2 col-lg-2 col-sm-2 " onclick="seleccion(\'#carpeta_'.$id.'\')" ondblclick="abrirCarpeta('.$id.')">
-		<div style="padding-top: 14px"><span class="glyphicon glyphicon-folder-close" style="padding-left: : 8px" aria-hidden="true">&nbsp;</span> '.substr($carpeta, 0 , 15 ).'</div>
+		<div style="padding-top: 14px"><span class="glyphicon glyphicon-folder-close" style="padding-left: : 8px" aria-hidden="true">&nbsp;</span> '.substr($carpeta, 0 , 10 ).'</div>
 	</div>
 </div>';
 }
@@ -46,7 +46,7 @@ function archivoAudio($id,$audio){
 						<span class="glyphicon glyphicon-music archivo-audio" aria-hidden="true" ></span>
 					</div>
 					<div id="audio_'.$id.'" class="nombreArchivo">
-						<span class="glyphicon glyphicon-music" style="font-size: 20px; color: blue" aria-hidden="true"></span> &nbsp;'.$audio.'
+						<span class="glyphicon glyphicon-music" style="font-size: 20px; color: blue" aria-hidden="true"></span> &nbsp;'.substr($audio, 0 , 15 ).'
 					</div>
 				</div>';
 }
