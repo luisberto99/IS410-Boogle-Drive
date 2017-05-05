@@ -86,7 +86,6 @@ $("input[name='subir']").on("change", function(){
 		processData: false,
 		success: function(datos)
 		{
-			alert(datos.tipo);
 			if (datos.carpeta == "miUnidad") {
 				$('#explorador').attr('src', $('#explorador').attr('src'));
 			}else{

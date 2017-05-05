@@ -25,7 +25,7 @@ function archivoComprimido($id,$archivo){
 		<span class="glyphicon glyphicon-compressed archivo-audio" aria-hidden="true" ></span>
 	</div>
 	<div id="comprimido_'.$id.'" class="nombreArchivo">
-		<span class="glyphicon glyphicon-compressed" style="font-size: 20px; color: #C43C27" aria-hidden="true"></span> &nbsp;'.$archivo.'
+		<span class="glyphicon glyphicon-compressed" style="font-size: 20px; color: #C43C27" aria-hidden="true"></span> &nbsp;'.substr($archivo, 0 , 15 ).'
 	</div>
 </div>';
 }
@@ -35,7 +35,7 @@ function otro($id,$archivo){
 		<span class="glyphicon glyphicon-compressed archivo-audio" aria-hidden="true" ></span>
 	</div>
 	<div id="comprimido_'.$id.'" class="nombreArchivo">
-		<span class="glyphicon glyphicon-file" style="font-size: 20px; color: #C43C27" aria-hidden="true"></span> &nbsp;'.$archivo.'
+		<span class="glyphicon glyphicon-file" style="font-size: 20px; color: #C43C27" aria-hidden="true"></span> &nbsp;'.substr($archivo, 0 , 15 ).'
 	</div>
 </div>';
 }
