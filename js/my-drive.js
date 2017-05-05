@@ -24,5 +24,8 @@ function ifra(link){
 }
 
 function chat(){
-    $("#chat").toggleClass("mostrarChat");
+    $("#chat").toggleClass("mostrarChat");}
+
+function amigos(){
+    $("#amigos").toggleClass("mostrarAmigos");
 }

@@ -283,6 +283,7 @@ function btn_lateral($icono,$texto,$archivo){
 		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-8" style="height: 480px">
 			<iframe src="Mi-unidad.php" id="explorador" class="transpariencia frame"></iframe>
 		</div>
+
 		<div style="background-color: #EEE">
 			<div id="chat" class="ventanaChat mostrarChat">
 				<center>
@@ -300,6 +301,32 @@ function btn_lateral($icono,$texto,$archivo){
 			
 
 		</div>
+		
+
+		<div style="background-color: #EEE">
+			<div id="amigos" class="ventanaAmigos mostrarAmigos">
+				<center>
+				<div class="col-lg-12">
+			 	<?php
+		          $query="SELECT a.codigo_usuario, a.nombre, a.apellido, a.email FROM tbl_usuarios a INNER JOIN tbl_amigos b ON (a.codigo_usuario = b.codigo_usuario_amigo) WHERE b.codigo_usuario = 1";
+
+              $s = $conexion->ejecutarInstruccion($query);
+	          while ($r = $conexion->obtenerRegistro($s)) {
+	          	
+	          	echo   '<div class="well col-lg-4"  ">'.
+                        $r["nombre"]." ".$r["apellido"].'<br>'.
+                        '</div>';
+          
+          	          }
+	          	        ?>
+			 </center>
+			 </div>
+			</div>
+			<button id="btn-amigos" style="margin-right: 10px" type="button" onclick="amigos();"  class="dere">Amigos</button>
+			
+
+		</div>
+	
 	</div>
 </div>
 

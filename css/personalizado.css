@@ -316,6 +316,18 @@ header{
   border: 5px;
   border: 1px solid rgba(0,0,0,0.5);
 }
+.ventanaAmigos{
+  position: absolute; 
+  left: 1000px;
+  top: 215px; 
+  background-color: #FFF;
+  width: 300px;
+  height: 400px;
+  margin-right: 100px;
+  border: 5px;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+
 #conversacion{
   text-align: left;
   padding: 10px;
@@ -331,6 +343,9 @@ header{
   border-top: rgba(0,0,0,0.05);
 }
 .mostrarChat{
+  display: none;
+}
+.mostrarAmigos{
   display: none;
 }
 /*ESTILOS ALMACENAMIENTO

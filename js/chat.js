@@ -20,13 +20,12 @@ function verificar(e){
 }
 
 function enviarMensaje(){
-	var texto = $("#mensajeEnviar").val();
-	var parametros = {
-		"texto" : texto
-	};
+	var texto ="texto=" +$("#mensajeEnviar").val();
+	
 	$.ajax({
-		data : parametros,
 		url : "../ajax/enviar.php",
+		data :texto,
+		
 		method : "post",
 		success:function(response){
 			cargarMensajes();
