@@ -1,5 +1,6 @@
+$(document).ready(function(){
 $("#preciobtn1").click(function(){
-	$("#oculto").val(1);
+  $("#oculto").val(1);
   $("#planees").modal('show');
   
 });
@@ -30,49 +31,28 @@ $("#oculto").val(6);
 });
 
 $("#preciobtn7").click(function(){
-	$("#oculto").val(7);
+  $("#oculto").val(7);
   $("#planees").modal('show');
 });
 
 $("#btn-aceptar").click(function(){
-	var p="codigo="+$("#oculto").val();
+  var p="codigo="+$("#oculto").val();
 
-	$.ajax({
+  $.ajax({
 
         url:"../ajax/planes.php?accion=1",
-		data:p,
-		method:"POST",
+    data:p,
+    method:"POST",
         dataType:'json',
         success:function(respuesta){
           if (respuesta.codigo==1) {
-          	if (respuesta.plan_anterior==1) {
-              $(".pad1").html('<button id="preciobtn1">0 $/mes</button>');  
-          	}
-          	if (respuesta.plan_anterior==2) {
-              $(".pad2").html('<button id="preciobtn2">1.99 $/mes</button>'); 
-          	}
-          	if (respuesta.plan_anterior==3) {
-              $(".pad3").html('<button id="preciobtn3">9.99 $/mes</button>');
-          	}
-          	if (respuesta.plan_anterior==4) {
-             $(".pad4").html('<button id="preciobtn4">19.99 $/mes</button>'); 
-          	}
-          	if (respuesta.plan_anterior==5) {
-             $(".pad5").html('<button id="preciobtn5">99.99 $/mes</button>'); 
-          	}
-          	if (respuesta.plan_anterior==6) {
-             $(".pad6").html('<button id="preciobtn6">199.99 $/mes</button>'); 
-          	}
-          	if (respuesta.plan_anterior==7) {
-             $(".pad7").html('<button id="preciobtn7">299.99 $/mes</button>'); 
-          	}
-
-          	$("."+respuesta.variable).html(respuesta.comando);
-          	$("#respuesta2").html("<div class='bg-success'><center>"+respuesta.mensaje+"</center></div>");
+            $("#respuesta2").html("<div class='bg-success'><center>"+respuesta.mensaje+"</center></div>");
+            $("#middle").html(respuesta.datos);
           }
 
         }
 
-		
-	});
+    
+  });
+});
 });
