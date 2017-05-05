@@ -1,4 +1,23 @@
-<?php  include_once("metodosCuadricula.php") ?>
+<?php  include_once("metodosCuadricula.php");
+
+session_start(); 
+	if(!isset($_SESSION['codigo_usuario']))
+		header('Location:http://localhost/IS410-Boogle-Drive/entrarUsuario.php');
+include_once("metodosCuadricula.php");
+include_once("../class/class-conexion.php");
+$conexion = new Conexion();
+$conexion->establecerConexion();
+
+
+			$sql = "SELECT codigo_archivo, codigo_usuario, codigo_privacidad, nombre_archivo, tamanio_archivo, fecha_creacion, archivo 
+					FROM tbl_archivos a
+					left join tbl_tipo_archivos t
+					on ( left(t.codigo_tipo_archivo , 5 ) = 'image') 
+					where codigo_usuario = ".$_SESSION['codigo_usuario'];
+
+$imagenes = $conexion->ejecutarInstruccion($sql);
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -8,30 +27,19 @@
 </head>
 <body style="background-color: #EEE">
 	<div class="principal">
-		<div>
+		<!--<div>
 			<button class="transpariencia dere ordenElementos"><strong><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></strong></button>
 			<button class="transpariencia dere ordenElementos"><strong>Nombre</strong></button>
-		</div>
+		</div>-->
 		<div id="div-carpetas">
-			<div class="cabeceraContenido">Esta semana</div>
-			<div>
-				<?php 
-				archivoImagen("photo-1-1600.jpg");
-				archivoImagen("photo-2-1600.jpg");
-				archivoImagen("photo-3-1600.jpg");
-				?>
-			</div>
-		</div>
-		<div id="div-carpetas" style="margin-top: 170px">
-			<div class="cabeceraContenido">Marzo 2017</div>
-			<div>
-				<?php 
-				archivoImagen("kitty.jpg");
-				archivoImagen("Portabilidad");
-				
+		<div class="container" style="margin-top: 20px; width: 100%">
+			<?php 
+			while ($fila = $conexion->obtenerRegistro($imagenes)) {
+				archivoImagen($fila["codigo_archivo"], utf8_encode($fila["nombre_archivo"]), utf8_encode($fila["archivo"]));
+			}
 
-				?>
-			</div>
+			?>
+		</div>	
 		</div>
 	</div>
 

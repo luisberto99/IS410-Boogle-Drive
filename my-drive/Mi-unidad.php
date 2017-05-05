@@ -27,7 +27,7 @@ a.tamanio_archivo,
 a.fecha_creacion, 
 a.archivo, 
 a.descripcion,
-t.tipo_archivo tipo,
+t.tipo_archivo,
 t.extension
 FROM tbl_archivos a, tbl_tipo_archivos t
 WHERE a.codigo_archivo not in 
@@ -52,6 +52,8 @@ WHERE a.codigo_archivo not in
 	</head>
 	<body style="background-color: #EEE">
 		<?php 
+
+		$_SESSION['carpeta']="miUnidad";
 		if ($conexion->cantidadRegistros($archivos) > 0 || $conexion->cantidadRegistros($carpetas) > 0) {
 			?>
 			<div class="principal">
@@ -83,27 +85,8 @@ WHERE a.codigo_archivo not in
 					<div id="div-archivos" class="container" style="width: 100%;">
 						<div class="cabeceraContenido">Archivos</div>
 						<div>
-							<?php 
-							while ($fila = $conexion->obtenerRegistro($archivos)) {
-								$img = 'image/'.$fila["extension"];
-								if ($fila["tipo"] == $img) {
-									archivoImagen(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]),$fila["archivo"]);
-								}
-								$audio ="audio/".$fila["extension"];
-								if ($fila["tipo"] == $audio) {
-									archivoAudio(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
-								}
-								if ($fila["tipo"] == 'application/pdf') {
-									archivoPDF(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
-								}
-								switch ($fila["tipo"]) {
-									case 'comprimido':
-									archivoComprimido(utf8_encode($fila["codigo_archivo"]),utf8_encode($fila["nombre_archivo"]));
-									break;
-									
-								}
-
-							}
+							<?php
+							mostrar($conexion,$archivos);
 							?>
 						</div>
 					</div>
@@ -119,9 +102,11 @@ WHERE a.codigo_archivo not in
 				<?php
 			}
 			?>
+
 			<input type="hidden" id="seleccion" value="0" >
 			<script src="../js/jquery.min.js"></script>
 			<script src="../js/bootstrap.min.js"></script>
 			<script src="../js/funciones_archivos.js"></script>
+			<script src="../js/my-drive.js"></script>
 		</body>
 		</html>

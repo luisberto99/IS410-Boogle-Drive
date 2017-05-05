@@ -11,10 +11,12 @@
     $resultadoUsuario=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
     $resultadoUsuario2=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
 
+   
+
 		function menu_nuevo(){
 			echo '<ul class="dropdown-menu">
 			<li>
-				<a href="#">
+				<a href="#" id="agregarCarpeta">
 					<span class="glyphicon glyphicon-folder-open" aria-hiden="true">
 					</span>
 					Carpeta nueva...
@@ -25,12 +27,6 @@
 				<a href="#" onclick="subirArchivo()">
 					<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
 					Subir Archivos...
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<span class="glyphicon glyphicon-folder-open" aria-hiden="true"></span>
-					Subir Carpeta...
 				</a>
 			</li>
 			<li role="separator" class="divider"></li>
@@ -53,13 +49,13 @@
 		echo '<button class="transpariencia dropdown-toggle dere icono_lateral" data-toggle="dropdown" aria-haspopup="true" aria-expanded="iconos1" type="button" ><span class="'.$icon.'" style="font-size:20px" aria-hidden="true"></span></button>';
 	}
 
-	function btn_carpeta_expandible($icono,$nombre, $texto,$id){
+	function btn_carpeta_expandible($icono,$nombre,$id){
 		echo '<div class="btn-group" style="margin-left: 15px; width:100%">
-		<button class="transpariencia" type="button" data-toggle="collapse" data-target="#'. $nombre .'" aria-expanded="false" aria-controls="'.$nombre.'">
+		<button class="transpariencia" type="button" data-toggle="collapse" data-target="#carpeta_'. $id .'" aria-expanded="false" aria-controls="carpeta_'. $id .'">
 			<span id="'.$id.'" onclick="iconos(\'#'.$id.'\')" class="glyphicon glyphicon-triangle-right izq" aria-hidden="true"></span>
 		</button>
 		<button class="transpariencia btn_lateral">
-			<span class="glyphicon '.$icono.' izq" aria-hidden="true"></span> '.$texto.'
+			<span class="glyphicon '.$icono.' izq" aria-hidden="true"></span>'.$nombre.'
 		</button>
 	</div>';
 }
@@ -79,20 +75,12 @@ function btn_lateral($icono,$texto,$archivo){
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/personalizado.css">
 
-
-
-
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="facivon.ico">
-
-    
-    <link href="style.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="script.js"></script>
 
 
 
@@ -231,25 +219,17 @@ function btn_lateral($icono,$texto,$archivo){
 											</button>
 										</div>
 										<div id="Miunidad" class="collapse">
-											<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta1", "carpeta 1","carp1") ?>
-											<div id="carpeta1" class="collapse">
-												Contenido de carpeta 1
-											</div>
+											<?php 
 
-											<?php btn_carpeta_expandible("glyphicon-folder-close" ,"carpeta2", "carpeta 2","carp2") ?>
-											<div id="carpeta2" class="collapse">
-												Contenido de carpeta 2
-											</div>
+											 $sql ="SELECT codigo_carpeta, codigo_usuario, codigo_carpeta_padre, nombre_carpeta FROM tbl_carpetas WHERE codigo_usuario = ".$_SESSION['codigo_usuario']." AND codigo_carpeta_padre IS NULL";
 
-											<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta3", "carpeta 3","carp3") ?>
-											<div id="carpeta3" class="collapse">
-												Contenido de carpeta 3
-											</div>
-
-											<?php btn_carpeta_expandible("glyphicon-folder-close", "carpeta4", "carpeta 4","carp4") ?>
-											<div id="carpeta4" class="collapse">
-												Contenido de carpeta 4
-											</div>
+												$carpetas = $conexion->ejecutarInstruccion($sql);
+												while ($fila = $conexion->obtenerRegistro($carpetas)) {
+													btn_carpeta_expandible("glyphicon-folder-close", utf8_encode($fila["nombre_carpeta"]) ,utf8_encode($fila["codigo_carpeta"]));
+													echo '<div id="carpeta_'.$fila["codigo_carpeta"].'" class="collapse">
+														</div>';
+												}
+												 ?>
 										</div>
 									</td>
 								</div>
@@ -319,19 +299,6 @@ function btn_lateral($icono,$texto,$archivo){
 			
 
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</div>
 </div>
 
@@ -413,6 +380,29 @@ function btn_lateral($icono,$texto,$archivo){
               
           </div><!-- /.modal -->
 
+
+<!-- MODARL AGREGAR CARPETA-->
+
+<!-- Modal -->
+<div class="modal fade" id="NuevaCarpeta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nueva carpeta</h4>
+      </div>
+      <div class="modal-body">
+        <input class="form-control" placeholder="Nombre de la carpeta." type="text" id="nombreCarpetaNueva" >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="btn_crearCarpeta" class="btn btn-primary">Crear carpeta</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.modal -->
+<input type="hidden" id="carpetaAbierta">
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="../js/jquery.min.js"></script>	
 <script src="../js/bootstrap.min.js"></script>

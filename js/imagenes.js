@@ -1,5 +1,4 @@
  $(function(){
-
         $("input[name='file']").on("change", function(){
             var formData = new FormData($("#formulario")[0]);
             var ruta = "http://localhost/IS410-Boogle-Drive/ajax/ajax-imagen.php";

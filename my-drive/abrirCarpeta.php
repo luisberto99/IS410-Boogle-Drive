@@ -1,4 +1,8 @@
 <?php
+
+session_start(); 
+ if(!isset($_SESSION['codigo_usuario']))
+    header('Location:http://localhost/IS410-Boogle-Drive/entrarUsuario.php');
 include_once("../class/class-conexion.php");
 include_once("metodosCuadricula.php");
 $conexion = new Conexion();
@@ -7,12 +11,15 @@ $conexion->establecerConexion();
 $sql= "SELECT * FROM tbl_carpetas WHERE codigo_carpeta_padre =".$_GET["carpeta"];
 $carpetas = $conexion->ejecutarInstruccion($sql);
 
-$sql="SELECT a.codigo_archivo as codigo, a.nombre_archivo as archivo, ta.tipo_archivo tipo, ta.codigo_tipo_archivo
+$sql="SELECT a.codigo_archivo,
+ a.nombre_archivo,
+  a.archivo, 
+  ta.tipo_archivo, 
+  ta.extension
 FROM tbl_archivos_x_carpetas ac, tbl_archivos a, tbl_carpetas c, tbl_tipo_archivos ta
-where ac.codigo_archivo = a.codigo_archivo and ac.codigo_carpeta = c.codigo_carpeta and ta.codigo_tipo_archivo = a.codigo_tipo_archivo and c.codigo_carpeta =".$_GET["carpeta"] ;
+where ac.codigo_archivo = a.codigo_archivo and ac.codigo_carpeta = c.codigo_carpeta and ta.codigo_tipo_archivo = a.codigo_tipo_archivo and c.codigo_carpeta ='".$_GET["carpeta"]."'" ;
 
 $archivos = $conexion->ejecutarInstruccion($sql);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +30,7 @@ $archivos = $conexion->ejecutarInstruccion($sql);
 </head>
 <body style="background-color: #EEE">
 <?php 
+	$_SESSION['carpeta']=$_GET["carpeta"]; ;
 	if ($conexion->cantidadRegistros($archivos) > 0 || $conexion->cantidadRegistros($carpetas) > 0) {
 		?>
 		<div class="principal">
@@ -48,37 +56,15 @@ $archivos = $conexion->ejecutarInstruccion($sql);
 
 			<?php 
 			}
-			if ($conexion->cantidadRegistros($archivos)) {
+			if ($conexion->cantidadRegistros($archivos) > 0) {
 			?>
 				
 			<div id="div-archivos" class="container" style="width: 100%;">
 				<div class="cabeceraContenido">Archivos</div>
 				<div>
 					<?php 
-					while ($fila = $conexion->obtenerRegistro($archivos)) {
-						switch ($fila["tipo"]) {
-							case 'imagen':
-							archivoImagen(utf8_encode($fila["codigo"]),utf8_encode($fila["archivo"]));
-							break;
-							case 'comprimido':
-							archivoComprimido(utf8_encode($fila["codigo"]),utf8_encode($fila["archivo"]));
-							break;
-
-							case 'audio':
-							archivoAudio(utf8_encode($fila["codigo"]),utf8_encode($fila["archivo"]));
-							break;
-
-							case 'texto':
-								archivoPDF(utf8_encode($fila["codigo"]),utf8_encode($fila["archivo"]));
-							break;
-
-							default:
-				# code...
-							break;
-						}
-						
-					}
-					?>
+							mostrar($conexion,$archivos);
+							?>
 				</div>
 			</div>
 			<?php } ?>
