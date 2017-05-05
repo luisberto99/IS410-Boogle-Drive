@@ -150,11 +150,9 @@
                             </center>
                       </div>
                        <div class="modal-footer">
-                        
                           <td colspan="2">
                               <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                           </td>
-                        
                       </div> 
                 </div><!-- /.modal-content -->
                 

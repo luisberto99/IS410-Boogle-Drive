@@ -6,6 +6,7 @@ session_start();
   include_once("../class/class-conexion.php");
   $conexion = new Conexion();
   $conexion->establecerConexion();
+    $resultadoPlanes=$conexion->ejecutarInstruccion("SELECT codigo_plan, nombre_plan, almacenamiento, precio FROM tbl_planes");
 
     $resultadoUsuario=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
     $resultadoUsuario2=$conexion->ejecutarInstruccion("SELECT * FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION["codigo_usuario"]."");
@@ -95,14 +96,34 @@ function btn_superiores2($icon){
 
 <div  id="middle" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-<div id="grafico" class="col-lg-4 col-md-4">
-</div>
+ 
+      <?php
+      $contador=1;
+      while ($fila=$conexion->obtenerRegistro($resultadoPlanes)) {
+        $planactivo=$conexion->ejecutarInstruccion("SELECT codigo_plan FROM tbl_usuarios WHERE codigo_usuario=".$_SESSION['codigo_usuario']."");
+        echo
+        '<div  class="col-md-2 col-sm-4 col-xs-4 col-lg-storage">'.
+          '<div class="welll"> '.
+            '<p id="storage">'.$fila["nombre_plan"].'</p>'.
+            '<div class="pad'.$contador.'">';
+         
+             if (($conexion->cantidadRegistros($planactivo))>0) {
 
- <div  class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-<iframe id="contenido" src="../planes.php" ></iframe>
+                $fila2 = $conexion->obtenerRegistro($planactivo);
 
-
-</div>
+                if (!($fila2["codigo_plan"]==$contador)) {
+                  
+                    echo '<button id="preciobtn'.$contador.'">'.$fila["precio"].' $/mes</button>';
+                  }else{
+                    echo '<button id="preciobtn'.$contador.'" style="display: none;">'.$fila["precio"].' $/mes</button><label>Plan Activo</label>';
+                  }
+             }
+             echo '</div>'.
+          '</div>'.
+       '</div>';
+      $contador++; 
+      }
+      ?>
 </div>
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12 h1" >
@@ -198,13 +219,44 @@ function btn_superiores2($icon){
                   </div>
 
                 </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
+              </div><!-- /.modal-dialog -->  
+          </div><!-- /.modal -->
 
-              
+          <div class="modal fade" tabindex="-1" role="dialog" id="planees">
+              <div class="modal-dialog" role="document"  style="width:900px" style="height: 800px">
+                <div class="modal-content">
+                  
+                  <div class="modal-body">
+                  <div class="well">
+                   <center>
+                   <table>
+                     <tr>
+                       <td>
+                         <label><h3>¿Deseas adquirir este plan?</h3></label>
+                         <input type="hidden" id="oculto">
+                       </td>
+                     </tr>
+                     <tr>
+                       <td>
+                         <center><input type="submit" id="btn-aceptar"   name="btn-aceptar" value="Aceptar" class="btn btn-primary" >
+                         <button type="button" id="btn-cancelar" class="btn btn-danger" data-dismiss="modal">Cancelar</button> </center>
+                       </td>
+                     </tr>
+                   </table>
+                   </div >
+                <center>
+                 <div id="respuesta2"></div>         
+                       
+                  </div>
+                   
+
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->  
           </div><!-- /.modal -->
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
   <script src="../js/imagenes.js"></script>
+  <script type="text/javascript" src="../js/plannes.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
             $.ajax({
                 url: ruta,
                 type: "POST",
-                dataType:'html',
+                dataType:'json',
                 data: formData,
                 contentType: false,
                 processData: false,
