@@ -71,6 +71,7 @@ function btn_lateral($icono,$texto,$archivo){
 <html>
 <head>
 	<title>Mi Unidad - Boogle Drive</title>
+	<link rel="icon" href="img/logo.ico" type="image/x-icon">
 	<meta charset="ISO-8">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/personalizado.css">
@@ -203,7 +204,7 @@ function btn_lateral($icono,$texto,$archivo){
 			</div>
 		</div>
 		<div id="principal" >
-			<div data-togge="sidebar" id="menu_lateral" class="sidebar overflowSidebar col-md-2 col-sm-2 col-xs-2 col-lg-2" style="height: 480px;">
+			<div data-togge="sidebar" id="menu_lateral" class="sidebar overflowSidebar col-md-2 col-sm-2 col-xs-4 col-lg-2" style="height: 480px;">
 				<aside id="aside" style="width: 90%">
 					<div>
 						<div>
@@ -279,7 +280,7 @@ function btn_lateral($icono,$texto,$archivo){
 				</div>
 			</aside>
 		</div>
-		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-10" style="height: 480px">
+		<div class="col-md-10 col-sm-10 col-lg-10 col-xs-8" style="height: 480px">
 			<iframe src="Mi-unidad.php" id="explorador" class="transpariencia frame"></iframe>
 		</div>
 		<div style="background-color: #EEE">
